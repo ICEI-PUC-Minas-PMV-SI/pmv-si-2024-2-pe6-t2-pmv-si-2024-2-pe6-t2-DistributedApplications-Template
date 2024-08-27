@@ -3,25 +3,21 @@
 Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
 
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
-
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
-
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
-
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+Prestadores de serviços frequentemente enfrentam dificuldades na gestão eficiente de suas agendas e finanças, o que pode levar a problemas como a sobrecarga de compromissos, dificuldades no acompanhamento dos pagamentos, e falta de controle sobre despesas adicionais. A ausência de uma solução integrada que combine funcionalidades de agendamento com controle financeiro resulta em uma administração fragmentada e ineficaz. Sem um sistema centralizado, esses profissionais tendem a usar métodos manuais e desconexos, como planilhas e anotações físicas, o que pode resultar em erros, falta de precisão e perda de tempo. A necessidade de um software que ofereça uma abordagem integrada para o gerenciamento de compromissos e finanças é evidente para melhorar a eficiência operacional e o controle financeiro desses prestadores.
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+-Objetivo Geral
+Desenvolver um software de gestão integrada que permita aos prestadores de serviços gerenciarem eficientemente sua agenda e suas finanças, centralizando o controle de compromissos e transações financeiras em uma única plataforma para melhorar a organização e a administração de suas atividades profissionais.
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+-Objetivos Específicos
+1.	Criar um módulo de agendamento de compromissos:
+Desenvolver uma funcionalidade que permita aos usuários registrem, visualizem e gerenciem compromissos futuros.
+2.	Implementar um Módulo de Controle Financeiro:
+Criar funcionalidades que possibilitem o registro e acompanhamento de receitas e despesas relacionadas aos serviços prestados.
+3.	Desenvolver Ferramentas de Relatórios Financeiros:
+Implementar recursos que gerem relatórios e gráficos sobre a situação financeira, ajudando os usuários a visualizarem e analisarem
+ suas finanças e o desempenho dos serviços prestados.
 
 ## Justificativa
 
