@@ -37,17 +37,31 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 ### Requisitos Funcionais
 
-|ID    | Descrição do Requisito  | Prioridade |
-|------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+| ID    | Descrição do Requisito                                        | Prioridade |
+|-------|---------------------------------------------------------------|------------|
+| RF-001 | Permitir a gestão de clientes (criar, editar e excluir).       | ALTA       |
+| RF-002 | Permitir a gestão dos agendamentos realizados (criar, editar e excluir). | ALTA |
+| RF-003 | Permitir cadastrar e editar serviços oferecidos (descrever, precificar e determinar a duração). | MÉDIA |
+| RF-004 | Associar os serviços aos agendamentos.                        | MÉDIA      |
+| RF-005 | Permitir gerar relatórios diários, semanais e mensais de agendamentos. | ALTA |
+| RF-006 | Permitir registrar receitas e despesas.                       | ALTA       |
+| RF-007 | Permitir editar e excluir transações financeiras.             | MÉDIA      |
+| RF-008 | Calcular automaticamente receita e lucro mensal.              | ALTA       |
+| RF-009 | Permitir gerar relatórios de receitas e despesas.             | MÉDIA      |
+| RF-010 | Permitir gerar relatórios de lucro líquido.                   | ALTA       |
+
 
 ### Requisitos não Funcionais
 
-|ID     | Descrição do Requisito  |Prioridade |
-|-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
-|RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+| ID    | Descrição do Requisito                                      | Prioridade |
+|-------|-------------------------------------------------------------|------------|
+| RNF-001 | Permitir a autenticação dos usuários (login e senha).       | ALTA       |
+| RNF-002 | Oferecer uma interface intuitiva.                           | MÉDIA      |
+| RNF-003 | Desenvolver um sistema responsivo para acesso em dispositivos móveis. | ALTA |
+| RNF-004 | Preparar o sistema para suportar aumento no número de clientes, agendamentos e transações. | ALTA |
+| RNF-005 | Cumprir as normas de proteção de dados.                     | ALTA       |
+| RNF-006 | Garantir a segurança dos dados pessoais e financeiros.      | ALTA       |
+
 
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
