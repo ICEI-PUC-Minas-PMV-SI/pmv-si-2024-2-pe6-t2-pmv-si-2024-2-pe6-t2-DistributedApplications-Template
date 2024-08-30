@@ -57,6 +57,22 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |------|-----------------------------------------|----|
 |RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
 |RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+  |RF-00| app cliente login | ALTA | 
+  |RF-00| recuperar senha | MÉDIA |
+  |RF-00| visualizar gráficos | ALTA | 
+  |RF-00| visualizar campanhas | MÉDIA |
+  |RF-00| calendário | MÉDIA |
+  |RF-00| visualização/aprovação de criativos | ALTA | 
+  |RF-00| briefing | MÉDIA |
+  |RF-00| web empresa login | ALTA | 
+  |RF-00| cadastro/remoção de usuários | ALTA | 
+  |RF-00| cadastro/remoção de clientes | ALTA | 
+  |RF-00| recuperar senha | MÉDIA |
+  |RF-00| visualizar gráficos | ALTA | 
+  |RF-00| visualizar campanhas | MÉDIA |
+  |RF-00| calendário | MÉDIA |
+  |RF-00| lançamento de campanhas | MÉDIA |
+
 
 ### Requisitos não Funcionais
 
@@ -101,16 +117,62 @@ Descreva aqui todos os serviços que serão disponibilizados pelo seu projeto, d
 
 # Arquitetura da Solução
 
-Definição de como o software é estruturado em termos dos componentes que fazem parte da solução e do ambiente de hospedagem da aplicação.
+O sistema proposto é uma solução integrada, desenvolvida para gerenciar campanhas e publicações no Instagram, além de monitorar e analisar o impacto dessas ações na rede social. Ele é composto por duas aplicações principais que compartilham o mesmo backend e banco de dados: uma aplicação web voltada para o uso interno da equipe, focada no gerenciamento e monitoramento das campanhas, e uma aplicação mobile, direcionada aos clientes, que permite acompanhar os resultados e impactos das suas campanhas.
 
-![arq](https://github.com/user-attachments/assets/b9402e05-8445-47c3-9d47-f11696e38a3d)
+A aplicação web, desenvolvida em React, oferece uma interface intuitiva para que a equipe possa criar, validar e monitorar campanhas, bem como analisar o impacto no perfil do cliente no Instagram. A comunicação com o backend ocorre por meio de requisições HTTP, utilizando a biblioteca Axios para consumir os endpoints da API construída com Node.js e Express. O sistema de autenticação utiliza tokens JWT, garantindo acesso seguro e restrito às funcionalidades da aplicação. Uma vez autenticado, o usuário pode criar campanhas, validar processos e acessar relatórios detalhados sobre o desempenho das campanhas.
+
+O backend é responsável por coletar dados diretamente da API do Instagram, extraindo métricas como curtidas, comentários, compartilhamentos e alcance das publicações. Esses dados são processados e organizados, possibilitando o monitoramento em tempo real do impacto da marca do cliente. A aplicação web exibe essas informações em dashboards interativos, com gráficos e análises que auxiliam a equipe a compreender o desempenho do perfil e ajustar as estratégias conforme necessário.
+
+Por outro lado, a aplicação mobile, desenvolvida em React Native, é voltada para os clientes, oferecendo-lhes acesso em tempo real aos dados de desempenho de suas campanhas no Instagram. A aplicação permite monitorar métricas como número de interações, crescimento de seguidores e impacto geral das publicações. Assim como na aplicação web, a comunicação com o backend ocorre via chamadas RESTful protegidas por tokens JWT. O Firebase é utilizado para garantir a sincronização em tempo real dos dados, permitindo que os clientes acessem informações atualizadas sem a necessidade de recarregar a aplicação.
+
+O backend, desenvolvido com Node.js e Express, é o núcleo central da solução. Ele expõe uma série de endpoints RESTful que permitem a execução de operações CRUD para o gerenciamento das campanhas e processamento dos dados do Instagram. A autenticação de usuários é realizada via tokens JWT, garantindo operações seguras após a validação do acesso. Além disso, o backend comunica-se com o Firebase para armazenar e sincronizar as informações das campanhas. Cada vez que uma campanha é atualizada no Instagram, o backend processa as novas métricas e atualiza os dados nas aplicações web e mobile, garantindo que os relatórios sejam sempre precisos.
+
+O sistema de banco de dados utiliza o Firebase, que armazena todas as informações relacionadas às campanhas, usuários e resultados de impacto. O Firebase Authentication gerencia o login dos usuários, tanto para a equipe quanto para os clientes. Além disso, o Firebase assegura a sincronização dos dados entre as aplicações, permitindo que todos tenham acesso às informações mais recentes sobre o desempenho das campanhas.
+
+A integração com a API do Instagram é fundamental para o funcionamento do sistema, permitindo a coleta automatizada de dados sobre as publicações, como curtidas, comentários e alcance. Esses dados são processados pelo backend e exibidos de maneira clara e organizada nas interfaces web e mobile, possibilitando que tanto a equipe quanto os clientes acompanhem o impacto do perfil no Instagram e tomem decisões estratégicas baseadas nos resultados.
+
+Essa arquitetura robusta e escalável assegura uma comunicação eficiente entre todas as partes do sistema, oferecendo uma solução completa para a gestão das campanhas. A combinação das tecnologias escolhidas proporciona à equipe e aos seus clientes um acompanhamento preciso das métricas e a possibilidade de ajustes contínuos nas estratégias.
+
+![Fluxograma da Arquitetura](/docs/img/flowchart-architecture.jpg "Fluxograma da Arquitetura")
 
 
 ## Tecnologias Utilizadas
 
-Descreva aqui qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
+A arquitetura do sistema utiliza um conjunto de tecnologias, tanto no **frontend** quanto no **backend**, com foco na escalabilidade, desempenho e integração de dados. A seguir, estão as principais tecnologias empregadas.
 
-Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
+### 1. **Frontend:**
+- **React (Web)**: 
+  - É uma biblioteca JavaScript utilizada para a construção de interfaces de usuário dinâmicas e responsivas. Na aplicação web, React é utilizado para construir a interface de gerenciamento de campanhas. Ele oferece uma abordagem baseada em componentes, o que facilita a manutenção, reutilização de código e a criação de interfaces, como dashboards e gráficos, e o **React Hooks** usado para gerenciar o estado global da aplicação.
+  
+- **React Native (Mobile)**:
+  - Permite o desenvolvimento de aplicações móveis nativas para iOS e Android, utilizando a mesma base de código JavaScript do React. React Native é utilizado para criar a aplicação mobile, permitindo que os clientes da empresa acompanhem campanhas. Ele compartilha lógica de negócios com a aplicação web, mas fornece uma experiência nativa e otimizada para dispositivos móveis, com suporte a notificações push e integração direta com APIs nativas de sistema operacional.
+
+### 2. **Backend: Node.js com Express**
+- **Node.js**:
+  - É uma plataforma de execução JavaScript que permite rodar código no lado do servidor. No sistema, Node.js é responsável por toda a lógica de backend, lidando com requisições HTTP das aplicações frontend, processando dados e se comunicando com serviços externos, como o Firebase e a API do Instagram. Sua arquitetura (event-driven) permite o gerenciamento eficiente de múltiplas conexões simultâneas, ideal para escalabilidade.
+
+- **Express**:
+  - É um framework web minimalista para Node.js que facilita a construção de APIs RESTful. Express é utilizado para estruturar as rotas da API e lidar com todas as operações CRUD do sistema, como o gerenciamento de campanhas e a coleta de dados de impacto do Instagram. Ele também é responsável pela implementação de middlewares de autenticação com JWT, garantindo a segurança das requisições.
+
+### 3. **Banco de Dados: Firebase**
+- **Firebase**:
+  - É uma plataforma desenvolvida pelo Google que oferece um conjunto de ferramentas e serviços voltados para o desenvolvimento de aplicações web e mobile. Ele é utilizado por desenvolvedores para criar aplicações escaláveis e seguras, sem a necessidade de gerenciar toda a infraestrutura de servidores ou bancos de dados.
+  - **Firebase Authentication**:
+  Um serviço do Firebase que oferece autenticação baseada em email/senha, provedores de login social (Google, Facebook) e autenticação personalizada via tokens JWT. O Firebase Authentication é usado para garantir a segurança do sistema, gerenciando o acesso de usuários. Ele integra-se facilmente ao frontend e backend, permitindo autenticação fluida tanto nas aplicações web quanto mobile.
+  - **Firebase Realtime Database ou Firestore**:
+  O Firebase oferece dois tipos principais de banco de dados: Realtime Database, que armazena dados em uma estrutura JSON e permite sincronização em tempo real; e Firestore, que oferece um banco de dados NoSQL mais estruturado e flexível. O Firebase armazena todas as informações relacionadas às campanhas e seus resultados. 
+
+### 4. **APIs Externas:**
+- **API do Instagram**:
+  -  A API do Instagram permite que aplicações interajam com os dados do Instagram, obtendo informações como postagens, curtidas, comentários e outras interações. O backend do sistema, construído em Node.js, utiliza módulo **Axios** para realizar requisições HTTP à API do Instagram. Essas requisições recuperam dados sobre o impacto das campanhas de marketing da empresa, como curtidas, comentários e seguidores ganhos, que são posteriormente processados, armazenados no Firebase e exibidos nas interfaces de usuário.
+
+### 5. **Comunicação e Gerenciamento de Estado**
+- **Axios**:
+  - Bibliotecas JavaScript para realizar requisições HTTP. Tanto no React quanto no React Native, Axios é utilizado para fazer requisições à API backend, enviando dados, recebendo respostas e lidando com erros. Ele é essencial para a comunicação entre o frontend e o backend.
+
+- **JWT (JSON Web Tokens)**:
+  - JWT é um padrão aberto para autenticação que permite que as partes compartilhem informações com segurança. JWT é utilizado para autenticar e autorizar usuários no sistema. Ele garante que apenas usuários autenticados possam acessar os recursos sensíveis, tanto no backend quanto nas interfaces web e mobile.
+
 
 ## Hospedagem
 
