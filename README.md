@@ -1,4 +1,4 @@
-# TÍTULO DO PROJETO
+# Gestão de Agenda e Finanças
 
 `CURSO: Sistemas de Informação`
 
@@ -6,7 +6,7 @@
 
 `SEMESTRE: 6º`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+Este projeto visa desenvolver um software de gestão integrada para prestadores de serviços autônomos, permitindo que eles gerenciem suas agendas e finanças de forma eficiente. A plataforma centraliza o controle de compromissos e transações financeiras, ajudando a evitar problemas como sobrecarga de compromissos e falta de controle sobre receitas e despesas. Com funcionalidades específicas para agendamento, controle financeiro e geração de relatórios, o software oferece uma solução simplificada e acessível, adaptada às necessidades de profissionais que buscam maior organização e eficiência em suas atividades diárias.
 
 ## Integrantes
 
