@@ -55,31 +55,34 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
-  |RF-00| app cliente login | ALTA | 
-  |RF-00| recuperar senha | MÉDIA |
-  |RF-00| visualizar gráficos | ALTA | 
-  |RF-00| visualizar campanhas | MÉDIA |
-  |RF-00| calendário | MÉDIA |
-  |RF-00| visualização/aprovação de criativos | ALTA | 
-  |RF-00| briefing | MÉDIA |
-  |RF-00| web empresa login | ALTA | 
-  |RF-00| cadastro/remoção de usuários | ALTA | 
-  |RF-00| cadastro/remoção de clientes | ALTA | 
-  |RF-00| recuperar senha | MÉDIA |
-  |RF-00| visualizar gráficos | ALTA | 
-  |RF-00| visualizar campanhas | MÉDIA |
-  |RF-00| calendário | MÉDIA |
-  |RF-00| lançamento de campanhas | MÉDIA |
+|RF-001| Integração com API da Meta | ALTA | 
+|RF-002| Painel de Controle de Métricas   | MÉDIA |
+  |RF-003| Filtragem de Dados | ALTA | 
+  |RF-004| Exportação de Dados | MÉDIA |
+  |RF-005| Notificações e Alertas | ALTA | 
+  |RF-006| Gerenciamento de Usuários | MÉDIA |
+  |RF-007| Suporte Multiplataforma | MÉDIA |
+  |RF-008| Visualização/aprovação de criativos | ALTA | 
+  |RF-009| Cadastro/remoção de usuários | ALTA | 
+  |RF-010| Cadastro/remoção de clientes | ALTA | 
+  |RF-011| Recuperar senha | MÉDIA |
+  |RF-012| Visualizar gráficos | ALTA | 
+  |RF-013| Visualizar campanhas | MÉDIA |
+  |RF-014| Lançamento de campanhas | MÉDIA |
 
 
 ### Requisitos não Funcionais
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
+|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | ALTA | 
 |RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+|RNF-003| Os dados de autenticação e todas as comunicações com a API da Meta devem ser criptografados usando HTTPS. | ALTA | 
+|RNF-004| O aplicativo deve implementar medidas de proteção contra ataques de segurança, como injeção de SQL e ataques de força bruta.  |  ALTA | 
+|RNF-005| O aplicativo deve ser capaz de lidar com um grande número de usuários simultâneos sem degradação significativa de desempenho. | ALTA | 
+|RNF-006| O sistema deve incluir mecanismos de fallback caso a API da Meta esteja temporariamente indisponível.  |  MÉDIA | 
+|RNF-007| A interface do usuário deve ser intuitiva, permitindo que os usuários naveguem facilmente entre as diferentes seções. | MÉDIA | 
+|RNF-008| O design deve ser responsivo, garantindo uma boa experiência de usuário em diferentes tamanhos de tela. |  BAIXA | 
 
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
