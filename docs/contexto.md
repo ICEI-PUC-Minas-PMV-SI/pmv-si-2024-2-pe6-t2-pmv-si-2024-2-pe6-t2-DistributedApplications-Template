@@ -1,49 +1,29 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+O projeto será feito em parceria com a empresa Classe A Company, uma empresa que atua no ramo do marketing digital, prestando serviços de marketing para outras empresas, ajudando-as a se posicionar com autoridade nas redes sociais. O projeto de sistemas distribuídos irá colaborar com a Classe A criando uma área de integração entre a empresa e os seus clientes, onde será possível que o cliente final tenha acesso a todos os serviços ofertados dentro de uma aplicação web e um aplicativo mobile que irão centralizar as principais informações referentes à determinado cliente, para que ele tenha um acesso rápido e prático. 
 
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
-
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
-
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+A aplicação será utilizada principalmente para melhorar a comunicação entre a Classe A e os seus clientes, e consequentemente também irá beneficiar a experiência do cliente. Existem diversos pontos dentro da comunicação com o cliente, que podem ser melhorados, trazendo uma maior assertividade no cumprimento dos serviços prestados. A aprovação de criativos é um dos principais problemas que será solucionado com a aplicação, ajudando ambos os lados a dar celeridade ao processo de aprovação, e tornando a aplicação da estratégia mais assertiva.  
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
-
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
+Desenvolver um sistema distribuído que seja capaz de centralizar todas as informações que o cliente final precisa saber sobre o serviço prestado pela Classe A. Serão utilizadas APIs e Web Services para integrar as informações em tempo real. O sistema será acessível via interface Web e Mobile, permitindo aos clientes consultar as métricas do seu instagram e facebook, aprovar criativos produzidos pela Classe A, consultar datas de pagamentos e de ensaios audiovisuais, assim como vizualizar contratos e prazos de entrega de serviços. A equipe da Classe A também terá ferramentas para gerenciar os acessos dos clientes, deixando tudo apto a ser consultado pelo cliente final. 
  
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
-
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
-
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+A implementação desse sistema é essencial para a modernização e otimização dos processos internos da Classe A e também da comunicação com os seus clientes. O sistema será essencial também para uma melhor experiência do cliente em relação aos serviços contratados, com maior visibilidade sobre o andamento das campanhas, e uma comunicação mais assertiva com a prestadora dos serviços. 
 
 ## Público-Alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações
-hierárquicas, etc.
-
-Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
-
-> **Links Úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
+O público-alvo principal deste sistema inclui: 
+ 
+- Clientes da agência de Marketing Classe A Company. 
+ 
+- Equipe administrativa da Classe A. 
+ 
+- Gestores da Classe A e colaboradores que estão diretamente associados à produção dos entregáveis pré-definidos no contrato de serviço.
 
 # Especificações do Projeto
 
@@ -112,7 +92,72 @@ Enumere as restrições à sua solução. Lembre-se de que as restrições geral
 
 # Catálogo de Serviços
 
-Descreva aqui todos os serviços que serão disponibilizados pelo seu projeto, detalhando suas características e funcionalidades.
+
+Este catálogo descreve os serviços e funcionalidades da aplicação desenvolvida para a Classe A marketing digital, com foco em negócios locais. A aplicação foi projetada para centralizar e facilitar o acesso às informações dos serviços contratados, oferecendo uma interface intuitiva e prática para a gestão dessas informações.
+
+1. Área do cliente
+Descrição: Interface centralizada onde os clientes podem acessar todas as informações dos serviços contratados, incluindo detalhes sobre campanhas, relatórios, faturas e comunicação com a equipe de suporte.
+Quem pode solicitar: Todos os clientes da empresa Classe A.
+Como acessar: Através de login seguro na aplicação web ou mobile.
+Níveis de qualidade e disponibilidade: Acesso 24/7 com suporte técnico em horário comercial.
+Prazo para implementação: Imediato após a criação da conta do cliente.
+Custos: Incluso no pacote de serviços contratados.
+
+2. Área de aprovação de criativos
+Descrição: Seção dedicada a aprovação de criativos por parte do cliente.
+Quem pode solicitar: Todos os clientes da empresa Classe A.
+Como acessar: Diretamente na área do cliente.
+Níveis de qualidade e disponibilidade: Acesso 24/7 com suporte técnico em horário comercial.
+Prazo para implementação: Imediato após a criação da conta do cliente.
+Custos: Incluso no pacote de serviços contratados.
+
+3. Gerenciamento de campanhas
+Descrição: Ferramenta para visualização e acompanhamento de todas as campanhas de marketing ativas, com relatórios detalhados de desempenho, métricas e KPIs.
+Quem pode solicitar: Clientes com campanhas de marketing ativas.
+Como acessar: Diretamente na área do cliente.
+Níveis de qualidade e disponibilidade: Relatórios atualizados em tempo real, disponíveis 24/7.
+Prazo para implementação: Imediato, com relatórios disponíveis assim que as campanhas forem lançadas.
+Custos: Incluso no pacote de serviços contratados.
+
+4. Faturas e pagamentos
+Descrição: Seção dedicada à gestão de faturas, permitindo que os clientes visualizem o histórico de pagamentos, baixem faturas e realizem pagamentos online.
+Quem pode solicitar: Todos os clientes com serviços contratados.
+Como acessar: Disponível na área do cliente sob a seção “Faturas e Pagamentos”.
+Níveis de qualidade e disponibilidade: Acesso 24/7, com histórico de pagamentos detalhado.
+Prazo para implementação: Imediato após a ativação da conta.
+Custos: Incluso no pacote de serviços contratados.
+
+5. Suporte e comunicação
+Descrição: Canal de comunicação direta com a equipe de suporte, incluindo abertura de tickets, chat em tempo real, e histórico de interações.
+Quem pode solicitar: Todos os clientes.
+Como acessar: Através da área do cliente, na seção “Suporte”.
+Níveis de qualidade e disponibilidade: Suporte em horário comercial, com opção de atendimento prioritário para emergências.
+Prazo para implementação: Imediato.
+Custos: Incluso no pacote de serviços contratados; atendimento prioritário pode ter custos adicionais.
+
+6. Documentos e contratos
+Descrição: Centralização de todos os documentos e contratos relacionados aos serviços contratados, com opção de download e visualização.
+Quem pode solicitar: Todos os clientes.
+Como acessar: Na área do cliente, seção “Documentos e Contratos”.
+Níveis de qualidade e disponibilidade: Acesso 24/7.
+Prazo para implementação: Disponível imediatamente após a contratação dos serviços.
+Custos: Incluso no pacote de serviços contratados.
+
+7. Notificações e alertas
+Descrição: Sistema de notificações para manter os clientes informados sobre atualizações de campanhas, vencimento de faturas, e outras informações relevantes.
+Quem pode solicitar: Todos os clientes.
+Como acessar: Configurações disponíveis na área do cliente, com notificações enviadas via e-mail ou SMS.
+Níveis de qualidade e disponibilidade: Personalizável pelo cliente, disponível 24/7.
+Prazo para implementação: Imediato.
+Custos: Incluso no pacote de serviços contratados.
+
+Como acessar a aplicação
+Os clientes podem acessar a aplicação através de um login seguro na web ou por meio do aplicativo mobile, disponível para downloadatravés de link enviado pela empresa responsável. Após o login, todas as funcionalidades estarão disponíveis conforme os serviços contratados.
+
+Atualizações e suporte
+A aplicação é constantemente atualizada para garantir a melhor experiência possível. Qualquer nova funcionalidade ou melhoria será comunicada através da área do cliente e por e-mail.
+
+Este catálogo é um guia completo para entender as funcionalidades oferecidas pela aplicação, garantindo que todas as informações necessárias para a gestão dos serviços contratados estejam sempre acessíveis.
 
 # Arquitetura da Solução
 
