@@ -1,23 +1,27 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+Este trabalho objetiva a criação de um sistema distribuído, que permite o prestador de serviços gerenciar sua agenda de clientes, como também suas finanças, para a disciplina de Projeto: Arquitetura de Sistemas Distribuídos.
+No cotidiano os prestadores de serviços enfrentam problemas para gerenciar os agendamentos, o que ocasiona maior tempo de resposta aos clientes. Ainda, há o risco de perda das anotações físicas. 
+A Agenda Fácil pretende solucionar esses problemas substituindo as agendas físicas por uma alternativa online, onde os prestadores poderão gerir os atendimentos e as receitas obtidas nos atendimentos. A aplicação pretende facilitar as relações entre os clientes e os prestadores de serviços.
 
 ## Problema
+
 Prestadores de serviços frequentemente enfrentam dificuldades na gestão eficiente de suas agendas e finanças, o que pode levar a problemas como a sobrecarga de compromissos, dificuldades no acompanhamento dos pagamentos, e falta de controle sobre despesas adicionais. A ausência de uma solução integrada que combine funcionalidades de agendamento com controle financeiro resulta em uma administração fragmentada e ineficaz. Sem um sistema centralizado, esses profissionais tendem a usar métodos manuais e desconexos, como planilhas e anotações físicas, o que pode resultar em erros, falta de precisão e perda de tempo. A necessidade de um software que ofereça uma abordagem integrada para o gerenciamento de compromissos e finanças é evidente para melhorar a eficiência operacional e o controle financeiro desses prestadores.
 
 ## Objetivos
 
--Objetivo Geral
+**Objetivo Geral**
+
 Desenvolver um software de gestão integrada que permita aos prestadores de serviços gerenciarem eficientemente sua agenda e suas finanças, centralizando o controle de compromissos e transações financeiras em uma única plataforma para melhorar a organização e a administração de suas atividades profissionais.
 
--Objetivos Específicos
-1.	Criar um módulo de agendamento de compromissos:
+**Objetivos Específicos**
+
+* Criar um módulo de agendamento de compromissos:
 Desenvolver uma funcionalidade que permita aos usuários registrem, visualizem e gerenciem compromissos futuros.
-2.	Implementar um Módulo de Controle Financeiro:
+* Implementar um Módulo de Controle Financeiro:
 Criar funcionalidades que possibilitem o registro e acompanhamento de receitas e despesas relacionadas aos serviços prestados.
-3.	Desenvolver Ferramentas de Relatórios Financeiros:
-Implementar recursos que gerem relatórios e gráficos sobre a situação financeira, ajudando os usuários a visualizarem e analisarem
- suas finanças e o desempenho dos serviços prestados.
+* Desenvolver Ferramentas de Relatórios Financeiros:
+Implementar recursos que gerem relatórios e gráficos sobre a situação financeira, ajudando os usuários a visualizarem e analisarem suas finanças e o desempenho dos serviços prestados.
 
 ## Justificativa
 
@@ -33,50 +37,29 @@ Profissionais de natureza autônoma, com nível educacional variado, que não de
 
 ## Requisitos
 
-As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto. Para determinar a prioridade de requisitos, aplicar uma técnica de priorização de requisitos e detalhar como a técnica foi aplicada.
-
 ### Requisitos Funcionais
 
 | ID    | Descrição do Requisito                                        | Prioridade |
 |-------|---------------------------------------------------------------|------------|
-| RF-001 | Permitir a gestão de clientes (criar, editar e excluir).       | ALTA       |
-| RF-002 | Permitir a gestão dos agendamentos realizados (criar, editar e excluir). | ALTA |
-| RF-003 | Permitir cadastrar e editar serviços oferecidos (descrever, precificar e determinar a duração). | MÉDIA |
-| RF-004 | Associar os serviços aos agendamentos.                        | MÉDIA      |
-| RF-005 | Permitir gerar relatórios diários, semanais e mensais de agendamentos. | ALTA |
-| RF-006 | Permitir registrar receitas e despesas.                       | ALTA       |
-| RF-007 | Permitir editar e excluir transações financeiras.             | MÉDIA      |
-| RF-008 | Calcular automaticamente receita e lucro mensal.              | ALTA       |
-| RF-009 | Permitir gerar relatórios de receitas e despesas.             | MÉDIA      |
-| RF-010 | Permitir gerar relatórios de lucro líquido.                   | ALTA       |
+| RF-001 | Permitir que o prestador se cadastre no sistema | ALTA       |
+| RF-002 | Permitir o gerenciamento de clientes | ALTA |
+| RF-003 | Permitir o gerenciamento de serviços | MÉDIA |
+| RF-004 | Permitir o gerenciamento dos agendamentos dos prestadores | MÉDIA |
+| RF-005 |Permitir gerenciamento das transações financeiras (receitas e despesas) | ALTA |
+| RF-006 | Permitir que os usuários possam emitir relatórios | ALTA       |
 
 
 ### Requisitos não Funcionais
 
 | ID    | Descrição do Requisito                                      | Prioridade |
 |-------|-------------------------------------------------------------|------------|
-| RNF-001 | Permitir a autenticação dos usuários (login e senha).       | ALTA       |
-| RNF-002 | Oferecer uma interface intuitiva.                           | MÉDIA      |
-| RNF-003 | Desenvolver um sistema responsivo para acesso em dispositivos móveis. | ALTA |
-| RNF-004 | Preparar o sistema para suportar aumento no número de clientes, agendamentos e transações. | ALTA |
-| RNF-005 | Cumprir as normas de proteção de dados.                     | ALTA       |
-| RNF-006 | Garantir a segurança dos dados pessoais e financeiros.      | ALTA       |
+| RNF-001 | Permitir a autenticação dos usuários (login e senha) | ALTA  |
+| RNF-002 | Oferecer uma interface intuitiva | MÉDIA |
+| RNF-003 | Desenvolver um sistema responsivo para acesso em dispositivos móveis | ALTA |
+| RNF-004 | Preparar o sistema para suportar aumento no número de clientes, agendamentos e transações | ALTA |
+| RNF-005 | Adequar a aplicação perante as normas de proteção de dados | ALTA |
+| RNF-006 | Garantir a segurança dos dados pessoais e financeiros | ALTA |
 
-
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
-
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
 
 ## Restrições
 
@@ -84,22 +67,22 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
-|01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
+|01| Limitação de tempo: o sistema possui um prazo determinado para cada entrega |
+|02| Limitação orçamentária: restringindo a escolha de tecnologias por se tratar de projeto acadêmico |
 
-Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
-
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
 
 # Catálogo de Serviços
 
-Descreva aqui todos os serviços que serão disponibilizados pelo seu projeto, detalhando suas características e funcionalidades.
+•	Gerenciar os clientes: cadastro, edição e inativação dos dados cadastrais de clientes.
 
-# Caso de Uso 
+•	Gerenciar dos serviços prestados: cadastro, edição e inativação de serviços. Permite ainda, o cadastro do valor do mesmo.
 
-![Caso de uso](img/Casodeuso.png)
+•	Gerenciar os agendamentos: inclusão, edição e cancelamento dos serviços na agenda dos prestadores de serviços.
+
+•	Gestão financeira: permite ao usuário/prestadores de serviços registre suas despesas fixas e/ou variáveis.
+
+•	Emissão de relatórios: permite que o usuário emita relatório financeiro do período selecionado (diária, mensal ou anual). Bem como, relatório de lucro presumido.
+
 
 # Arquitetura da Solução
 
@@ -116,11 +99,22 @@ Apresente também uma figura explicando como as tecnologias estão relacionadas 
 
 ## Hospedagem
 
-Explique como a hospedagem e o lançamento da plataforma foi feita.
+A hospedagem e o lançamento da plataforma serão realizados na Azure, utilizando os serviços oferecidos pela Microsoft para garantir escalabilidade, segurança e disponibilidade.
 
-> **Links Úteis**:
->
-> - [Website com GitHub Pages](https://pages.github.com/)
-> - [Programação colaborativa com Repl.it](https://repl.it/)
-> - [Getting Started with Heroku](https://devcenter.heroku.com/start)
-> - [Publicando Seu Site No Heroku](http://pythonclub.com.br/publicando-seu-hello-world-no-heroku.html)
+Etapas do processo:
+
+**Preparação do Ambiente:**
+* Criaremos uma conta (estudante) na Azure e configuraremos os recursos necessários, como máquinas virtuais, banco de dados e redes virtuais.
+* Configuraremos a segurança do ambiente.
+
+**Configuração do Aplicativo:**
+* Implementaremos o código da plataforma usando o Azure DevOps para o controle de versões e pipelines de CI/CD (Integração Contínua/Entrega Contínua).
+* Configuraremos os serviços de Aplicações Web no Azure (Azure App Services) para hospedar a aplicação, garantindo que ela esteja pronta para escalar conforme a demanda.
+
+**Banco de Dados:**
+* Utilizaremos o Azure SQL Database para armazenar os dados, garantindo backups automáticos, alta disponibilidade e recuperação em caso de falhas.
+* Otimizamos o desempenho do banco de dados com base nos requisitos da aplicação.
+
+**Lançamento:**
+* Realizaremos testes finais no ambiente de staging antes de mover para produção.
+* Executamos o lançamento da plataforma de forma controlada.
