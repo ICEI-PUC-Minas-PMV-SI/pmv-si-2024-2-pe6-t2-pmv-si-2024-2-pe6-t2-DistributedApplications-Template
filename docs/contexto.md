@@ -56,20 +56,20 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
 |RF-001| Integração com API da Meta:
-O aplicativo deve se conectar à API da Meta para buscar dados sobre seguidores, interações, alcance, impressões e outras métricas relevantes.
-A integração deve suportar autenticação OAuth para acesso seguro aos dados do usuário. | ALTA | 
+O aplicativo deve se conectar à API da Meta para buscar dados sobre seguidores, interações, alcance, impressões e outras métricas relevantes. | ALTA | 
+A integração deve suportar autenticação OAuth para acesso seguro aos dados do usuário.
 |RF-002| Painel de Controle de Métricas:
-O aplicativo deve exibir um painel de controle onde os usuários possam visualizar todas as métricas disponíveis, como crescimento de seguidores, engajamento, impressões, etc.
-As métricas devem ser apresentadas em gráficos e tabelas interativas. | ALTA | 
+O aplicativo deve exibir um painel de controle onde os usuários possam visualizar todas as métricas disponíveis, como crescimento de seguidores, engajamento, | ALTA | impressões, etc.
+As métricas devem ser apresentadas em gráficos e tabelas interativas. 
 |RF-003|Exportação de Dados:
  O aplicativo deve permitir a exportação dos dados em formatos como CSV ou PDF, para que os usuários possam analisar os dados fora do aplicativo. | MÉDIA |
 |RF-004|Notificações e Alertas:
 O aplicativo deve enviar notificações push para alertar os usuários sobre mudanças significativas nas métricas. | ALTA | 
 |RF-005| Gerenciamento de Usuários:
-Deve permitir o gerenciamento de diferentes perfis de usuários, com diferentes níveis de acesso, como administradores e visualizadores.
-Cada usuário deve poder visualizar métricas apenas das contas que têm permissão para acessar.| MÉDIA |
+Deve permitir o gerenciamento de diferentes perfis de usuários, com diferentes níveis de acesso, como administradores e visualizadores.| MÉDIA |
+Cada usuário deve poder visualizar métricas apenas das contas que têm permissão para acessar.
 |RF-006| Gestão de Campanhas:
-O aplicativo deve oferecer uma seção dedicada ao gerenciamento de campanhas de marketing, permitindo que os usuários acompanhem o desempenho de campanhas específicas em termos de alcance, conversões e outras métricas relevantes. | MÉDIA |
+O aplicativo deve oferecer uma seção dedicada ao gerenciamento de campanhas de marketing, permitindo que os usuários acompanhem o desempenho de campanhas específicas em | MÉDIA | termos de alcance, conversões e outras métricas relevantes. 
 |RF-007| Análise de Conteúdo Popular:
 Deve haver uma funcionalidade que analise quais tipos de conteúdo têm o melhor desempenho em termos de engajamento, ajudando os usuários a ajustar suas estratégias de conteúdo. | ALTA | 
 |RF-008| Relatórios de ROI de Campanhas:
