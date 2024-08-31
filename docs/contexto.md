@@ -55,25 +55,15 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| Integração com API da Meta:
-O aplicativo deve se conectar à API da Meta para buscar dados sobre seguidores, interações, alcance, impressões e outras métricas relevantes. | ALTA | 
-A integração deve suportar autenticação OAuth para acesso seguro aos dados do usuário.
-|RF-002| Painel de Controle de Métricas:
-O aplicativo deve exibir um painel de controle onde os usuários possam visualizar todas as métricas disponíveis, como crescimento de seguidores, engajamento, | ALTA | impressões, etc.
-As métricas devem ser apresentadas em gráficos e tabelas interativas. 
-|RF-003|Exportação de Dados:
- O aplicativo deve permitir a exportação dos dados em formatos como CSV ou PDF, para que os usuários possam analisar os dados fora do aplicativo. | MÉDIA |
-|RF-004|Notificações e Alertas:
-O aplicativo deve enviar notificações push para alertar os usuários sobre mudanças significativas nas métricas. | ALTA | 
-|RF-005| Gerenciamento de Usuários:
-Deve permitir o gerenciamento de diferentes perfis de usuários, com diferentes níveis de acesso, como administradores e visualizadores.| MÉDIA |
-Cada usuário deve poder visualizar métricas apenas das contas que têm permissão para acessar.
-|RF-006| Gestão de Campanhas:
-O aplicativo deve oferecer uma seção dedicada ao gerenciamento de campanhas de marketing, permitindo que os usuários acompanhem o desempenho de campanhas específicas em | MÉDIA | termos de alcance, conversões e outras métricas relevantes. 
-|RF-007| Análise de Conteúdo Popular:
-Deve haver uma funcionalidade que analise quais tipos de conteúdo têm o melhor desempenho em termos de engajamento, ajudando os usuários a ajustar suas estratégias de conteúdo. | ALTA | 
-|RF-008| Relatórios de ROI de Campanhas:
-O aplicativo deve calcular e fornecer relatórios sobre o retorno sobre investimento (ROI) de campanhas publicitárias, relacionando gastos com anúncios e conversões ou outros resultados. | ALTA | 
+|RF-001| O aplicativo deve se conectar à API da Meta para buscar dados sobre seguidores, interações, alcance, impressões e outras métricas relevantes.| ALTA | 
+|RF-002| O aplicativo deve exibir um painel/dashboard/tabela onde os usuários possam visualizar todas as métricas disponíveis. | ALTA | 
+|RF-003| O aplicativo deve permitir a exportação dos dados em formatos como CSV ou PDF, para que os usuários possam analisar os dados fora do aplicativo. | MÉDIA |
+|RF-004| O aplicativo deve enviar notificações push para alertar os usuários sobre mudanças significativas nas métricas. | ALTA | 
+|RF-005| Deve permitir o gerenciamento de diferentes perfis de usuários, com diferentes níveis de acesso, como administradores e visualizadores.| MÉDIA |
+|RF-006| O aplicativo deve oferecer uma seção dedicada ao gerenciamento de campanhas de marketing. | MÉDIA |
+|RF-007| Analise quais tipos de conteúdo têm o melhor desempenho em termos de engajamento, ajudando os usuários a ajustar suas estratégias de conteúdo. | ALTA | 
+|RF-008| O aplicativo deve calcular e fornecer relatórios sobre o retorno sobre investimento (ROI) de campanhas publicitárias. | ALTA | 
+|RF-009| O aplicativo deve ter uma sessão para gerenciamento(aprovação, feedbacks, mudanças) de criativos | ALTA | 
 
 
 
@@ -83,7 +73,7 @@ O aplicativo deve calcular e fornecer relatórios sobre o retorno sobre investim
 |-------|-------------------------|----|
 |RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | ALTA | 
 |RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
-|RNF-003| Os dados de autenticação e todas as comunicações com a API da Meta devem ser criptografados usando HTTPS. | ALTA | 
+|RNF-003| As comunicações com a API da Meta devem ser criptografados usando HTTPS. | ALTA | 
 |RNF-004| O aplicativo deve implementar medidas de proteção contra ataques de segurança, como injeção de SQL e ataques de força bruta.  |  ALTA | 
 |RNF-005| O aplicativo deve ser capaz de lidar com um grande número de usuários simultâneos sem degradação significativa de desempenho. | ALTA | 
 |RNF-006| O sistema deve incluir mecanismos de fallback caso a API da Meta esteja temporariamente indisponível.  |  MÉDIA | 
