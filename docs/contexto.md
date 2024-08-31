@@ -55,20 +55,26 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| Integração com API da Meta | ALTA | 
-|RF-002| Painel de Controle de Métricas   | MÉDIA |
-  |RF-003| Filtragem de Dados | ALTA | 
-  |RF-004| Exportação de Dados | MÉDIA |
-  |RF-005| Notificações e Alertas | ALTA | 
-  |RF-006| Gerenciamento de Usuários | MÉDIA |
-  |RF-007| Suporte Multiplataforma | MÉDIA |
-  |RF-008| Visualização/aprovação de criativos | ALTA | 
-  |RF-009| Cadastro/remoção de usuários | ALTA | 
-  |RF-010| Cadastro/remoção de clientes | ALTA | 
-  |RF-011| Recuperar senha | MÉDIA |
-  |RF-012| Visualizar gráficos | ALTA | 
-  |RF-013| Visualizar campanhas | MÉDIA |
-  |RF-014| Lançamento de campanhas | MÉDIA |
+|RF-001| Integração com API da Meta:
+O aplicativo deve se conectar à API da Meta para buscar dados sobre seguidores, interações, alcance, impressões e outras métricas relevantes.
+A integração deve suportar autenticação OAuth para acesso seguro aos dados do usuário. | ALTA | 
+|RF-002| Painel de Controle de Métricas:
+O aplicativo deve exibir um painel de controle onde os usuários possam visualizar todas as métricas disponíveis, como crescimento de seguidores, engajamento, impressões, etc.
+As métricas devem ser apresentadas em gráficos e tabelas interativas. | ALTA | 
+|RF-003|Exportação de Dados:
+ O aplicativo deve permitir a exportação dos dados em formatos como CSV ou PDF, para que os usuários possam analisar os dados fora do aplicativo. | MÉDIA |
+|RF-004|Notificações e Alertas:
+O aplicativo deve enviar notificações push para alertar os usuários sobre mudanças significativas nas métricas. | ALTA | 
+|RF-005| Gerenciamento de Usuários:
+Deve permitir o gerenciamento de diferentes perfis de usuários, com diferentes níveis de acesso, como administradores e visualizadores.
+Cada usuário deve poder visualizar métricas apenas das contas que têm permissão para acessar.| MÉDIA |
+|RF-006| Gestão de Campanhas:
+O aplicativo deve oferecer uma seção dedicada ao gerenciamento de campanhas de marketing, permitindo que os usuários acompanhem o desempenho de campanhas específicas em termos de alcance, conversões e outras métricas relevantes. | MÉDIA |
+|RF-007| Análise de Conteúdo Popular:
+Deve haver uma funcionalidade que analise quais tipos de conteúdo têm o melhor desempenho em termos de engajamento, ajudando os usuários a ajustar suas estratégias de conteúdo. | ALTA | 
+|RF-008| Relatórios de ROI de Campanhas:
+O aplicativo deve calcular e fornecer relatórios sobre o retorno sobre investimento (ROI) de campanhas publicitárias, relacionando gastos com anúncios e conversões ou outros resultados. | ALTA | 
+
 
 
 ### Requisitos não Funcionais
