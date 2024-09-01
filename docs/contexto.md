@@ -81,14 +81,18 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
-|01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
+|01| O sistema deve integrar-se com a API da Meta para acessar dados sobre métricas de redes sociais. A integração deve seguir as diretrizes da Meta para autenticação OAuth e segurança. Restrições podem ocorrer devido a limitações na API ou alterações nas políticas da Meta. |
+|02| A aplicação deve ser acessível tanto via web (principais navegadores) quanto em dispositivos móveis (iOS e Android). A compatibilidade com versões específicas de sistemas operacionais e navegadores pode limitar algumas funcionalidades ou exigir ajustes técnicos. |
+|03| O sistema deve garantir tempos de resposta inferiores a 3 segundos para carregamento de métricas e visualização de dados. Restrições de desempenho podem surgir devido ao volume de dados ou complexidade das consultas. |
+|04| Todos os dados de autenticação e comunicação com a API da Meta devem ser criptografados usando HTTPS. O sistema deve proteger contra ataques como injeção de SQL e força bruta, e qualquer falha de segurança pode impactar a confidencialidade e integridade dos dados. |
+|05| O gerenciamento de usuários e permissões deve ser rigoroso para garantir que cada perfil de usuário veja apenas as informações para as quais tem permissão. Restrições podem surgir na implementação de níveis de acesso e controle de permissões. |
+|06| As fases de desenvolvimento, teste e lançamento devem ser concluídas conforme o plano de projeto. Adaptações e mudanças durante o processo podem causar atrasos. |
+|07| O sistema deve estar em conformidade com regulamentações de proteção de dados como GDPR e LGPD. A não conformidade pode resultar em penalidades e impactar a operação do sistema. |
+|08| A interface deve ser intuitiva e responsiva, mas limitações de design podem ocorrer devido a restrições de tempo ou orçamento. A experiência do usuário deve ser testada e otimizada para diversos dispositivos e tamanhos de tela. |
+|09| O sistema deve ser capaz de lidar com o tráfego e a carga previstos, garantindo alta disponibilidade e escalabilidade. Limitações na infraestrutura de servidores podem afetar o desempenho e a capacidade do sistema. |
+|10| O sistema deve ser desenvolvido e implementado dentro do prazo estabelecido. As mudanças no cronograma devem ser justificadas e comunicadas de forma adequada. |
 
-Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
-
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
+Essas restrições são essenciais para a gestão eficiente do projeto e para garantir que o sistema atenda às necessidades da Classe A Company e de seus clientes dentro dos parâmetros estabelecidos.
 
 # Catálogo de Serviços
 
