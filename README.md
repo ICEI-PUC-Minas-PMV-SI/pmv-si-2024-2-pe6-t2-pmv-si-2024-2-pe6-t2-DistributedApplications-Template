@@ -19,7 +19,7 @@ Este projeto visa desenvolver um software de gestão integrada para prestadores 
 
 ## Orientador
 
-* Kleber Souza
+* Kleber Jacques Ferreira de Souza
 
 # Planejamento
 
