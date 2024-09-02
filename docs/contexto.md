@@ -86,6 +86,8 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 # Arquitetura da Solução
 
+![Arquitetura da Solução - Agenda Fácil](docs/img/arquitetura-sistema)
+
 
 ## Tecnologias Utilizadas
 
