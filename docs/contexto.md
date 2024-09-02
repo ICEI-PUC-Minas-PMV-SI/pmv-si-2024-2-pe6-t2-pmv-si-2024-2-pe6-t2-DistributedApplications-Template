@@ -73,29 +73,25 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 # Catálogo de Serviços
 
-•	Gerenciar os clientes: cadastro, edição e inativação dos dados cadastrais de clientes.
+•	**Gerenciar os clientes:** o módulo de gerenciamento de clientes oferece uma solução para a administração dos dados dos clientes/usuários. Com ele, é possível realizar o cadastro, fazer edições nas informações existentes e inativar registros quando necessário. Isso garante que todos os dados estejam sempre atualizados e organizados, facilitando a comunicação e o atendimento personalizado.
 
-•	Gerenciar dos serviços prestados: cadastro, edição e inativação de serviços. Permite ainda, o cadastro do valor do mesmo.
+•	**Gerenciar dos serviços prestados:** permite o gerenciamento eficiente dos serviços oferecidos pela empresa. É possível cadastrar novos serviços, editar informações de serviços existentes e inativar aqueles que não estão mais disponíveis. Além disso, o sistema permite o registro dos valores cobrados por cada serviço, proporcionando um controle das finanças.
 
-•	Gerenciar os agendamentos: inclusão, edição e cancelamento dos serviços na agenda dos prestadores de serviços.
+•	**Gerenciar os agendamentos:** a funcionalidade de gerenciamento de agendamentos assegura que todos os serviços sejam programados e administrados de maneira eficaz. Os usuários podem incluir novos agendamentos, editar os existentes e cancelar aqueles que não são mais necessários. Isso ajuda a manter a agenda dos prestadores de serviços organizada e evita conflitos ou sobreposições de horários.
 
-•	Gestão financeira: permite ao usuário/prestadores de serviços registre suas despesas fixas e/ou variáveis.
+•	**Gestão financeira:** oferece uma maneira prática para registrar e acompanhar as despesas fixas e variáveis. Os usuários e prestadores de serviços podem registrar todas as suas despesas, o que facilita o controle financeiro e a análise dos custos operacionais. 
 
-•	Emissão de relatórios: permite que o usuário emita relatório financeiro do período selecionado (diária, mensal ou anual). Bem como, relatório de lucro presumido.
+•	**Emissão de relatórios:** a funcionalidade de emissão de relatórios detalhados com base em períodos específicos, como diários, mensais ou anuais. Os usuários podem criar relatórios financeiros para acompanhar o desempenho econômico da empresa e relatórios de lucro presumido para entender melhor a rentabilidade dos serviços prestados.
 
 
 # Arquitetura da Solução
 
-Definição de como o software é estruturado em termos dos componentes que fazem parte da solução e do ambiente de hospedagem da aplicação.
-
-![arq](https://github.com/user-attachments/assets/b9402e05-8445-47c3-9d47-f11696e38a3d)
-
 
 ## Tecnologias Utilizadas
 
-Descreva aqui qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
-
-Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
+**Back-End:** utilizaremos JavaScript com Node.js e o framework Express, que oferecem um ambiente de execução leve e escalável para construir APIs e gerenciar a lógica do servidor. 
+**Front-End:** optamos por React, uma biblioteca JavaScript que permite criar interfaces de usuário dinâmicas e responsivas com eficiência. 
+**Aplicações móveis:** empregamos React Native junto com a biblioteca Expo, que simplifica a criação e o teste de aplicativos para iOS e Android, promovendo uma experiência de desenvolvimento ágil e integrada.
 
 ## Hospedagem
 
