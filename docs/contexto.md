@@ -4,9 +4,11 @@ Este trabalho objetiva a criação de um sistema distribuído, que permite o pre
 No cotidiano os prestadores de serviços enfrentam problemas para gerenciar os agendamentos, o que ocasiona maior tempo de resposta aos clientes. Ainda, há o risco de perda das anotações físicas. 
 A Agenda Fácil pretende solucionar esses problemas substituindo as agendas físicas por uma alternativa online, onde os prestadores poderão gerir os atendimentos e as receitas obtidas nos atendimentos. A aplicação pretende facilitar as relações entre os clientes e os prestadores de serviços.
 
+
 ## Problema
 
 Prestadores de serviços frequentemente enfrentam dificuldades na gestão eficiente de suas agendas e finanças, o que pode levar a problemas como a sobrecarga de compromissos, dificuldades no acompanhamento dos pagamentos, e falta de controle sobre despesas adicionais. A ausência de uma solução integrada que combine funcionalidades de agendamento com controle financeiro resulta em uma administração fragmentada e ineficaz. Sem um sistema centralizado, esses profissionais tendem a usar métodos manuais e desconexos, como planilhas e anotações físicas, o que pode resultar em erros, falta de precisão e perda de tempo. A necessidade de um software que ofereça uma abordagem integrada para o gerenciamento de compromissos e finanças é evidente para melhorar a eficiência operacional e o controle financeiro desses prestadores.
+
 
 ## Objetivos
 
@@ -16,11 +18,11 @@ Desenvolver um software de gestão integrada que permita aos prestadores de serv
 
 **Objetivos Específicos**
 
-* Criar um módulo de agendamento de compromissos:
+* **Criar um módulo de agendamento de compromissos:**
 Desenvolver uma funcionalidade que permita aos usuários registrem, visualizem e gerenciem compromissos futuros.
-* Implementar um Módulo de Controle Financeiro:
+* **Implementar um Módulo de Controle Financeiro:**
 Criar funcionalidades que possibilitem o registro e acompanhamento de receitas e despesas relacionadas aos serviços prestados.
-* Desenvolver Ferramentas de Relatórios Financeiros:
+* **Desenvolver Ferramentas de Relatórios Financeiros:**
 Implementar recursos que gerem relatórios e gráficos sobre a situação financeira, ajudando os usuários a visualizarem e analisarem suas finanças e o desempenho dos serviços prestados.
 
 ## Justificativa
@@ -29,9 +31,11 @@ O mercado nacional oferece diversas soluções em matéria de sistemas de gestã
 
 Observando-se este cenário, foi possível identificar a ausência de software voltado para o trabalhador autônomo, que carece de ferramenta de apresentação mais simplificada com leque de funcionalidades mais reduzidos, quando comparados às alternativas mencionadas anteriormente, mas que forneça funcionalidades que estejam na medida de suas necessidades operacionais.
 
+
 ## Público-Alvo
 
 Profissionais de natureza autônoma, com nível educacional variado, que não desejam investir em software sofisticado para gestão de agendamentos e para gestão financeira de seus serviços e que, portanto, buscam solução simplificada que permita, via web ou mobile, acompanhar os gastos com insumos, os valores recebidos e a receber, os compromissos com clientes, e gerar relatórios com dados de interesse para seu negócio.
+
 
 # Especificações do Projeto
 
@@ -86,14 +90,14 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 # Arquitetura da Solução
 
-![Arquitetura da Solução - Agenda Fácil](docs/img/arquitetura-sistema)
+![Arquitetura da Solução - Agenda Fácil](img/arquitetura-sistema)
 
 
 ## Tecnologias Utilizadas
 
-**Back-End:** utilizaremos JavaScript com Node.js e o framework Express, que oferecem um ambiente de execução leve e escalável para construir APIs e gerenciar a lógica do servidor. 
-**Front-End:** optamos por React, uma biblioteca JavaScript que permite criar interfaces de usuário dinâmicas e responsivas com eficiência. 
-**Aplicações móveis:** empregamos React Native junto com a biblioteca Expo, que simplifica a criação e o teste de aplicativos para iOS e Android, promovendo uma experiência de desenvolvimento ágil e integrada.
+* **Back-End:** utilizaremos JavaScript com Node.js e o framework Express, que oferecem um ambiente de execução leve e escalável para construir APIs e gerenciar a lógica do servidor. 
+* **Front-End:** optamos por React, uma biblioteca JavaScript que permite criar interfaces de usuário dinâmicas e responsivas com eficiência. 
+* **Aplicações móveis:** empregamos React Native junto com a biblioteca Expo, que simplifica a criação e o teste de aplicativos para iOS e Android, promovendo uma experiência de desenvolvimento ágil e integrada.
 
 ## Hospedagem
 
