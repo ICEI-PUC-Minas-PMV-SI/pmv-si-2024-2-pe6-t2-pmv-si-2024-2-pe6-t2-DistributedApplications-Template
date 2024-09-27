@@ -1,3 +1,3 @@
 const app = require('./app')
 
-app.listen(3333, () => console.log('deu certo'));
+app.listen(3000, () => console.log('deu certo'));
