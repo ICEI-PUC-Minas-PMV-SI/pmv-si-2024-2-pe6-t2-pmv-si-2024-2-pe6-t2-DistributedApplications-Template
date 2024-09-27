@@ -1,4 +1,4 @@
-const Servico = require('../models/servicoModel');
+const Servico = require('../models/servicoModel.js');
 
 const createServico = async (req, res) => {
     const { descricao, preco, duracao } = req.body;

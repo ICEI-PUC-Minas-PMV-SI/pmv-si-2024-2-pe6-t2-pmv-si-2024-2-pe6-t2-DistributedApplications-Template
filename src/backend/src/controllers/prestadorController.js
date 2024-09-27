@@ -1,4 +1,4 @@
-const prestadorModel = require('../models/prestadorModel');
+const prestadorModel = require('../models/prestadorModel.js');
 
 
 exports.getAll = async (req, res) => {
