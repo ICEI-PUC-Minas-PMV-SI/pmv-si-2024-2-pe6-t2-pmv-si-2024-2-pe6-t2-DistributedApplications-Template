@@ -1,0 +1,11 @@
+const conn = require ('../db/conn');
+
+const getAll =  async () => {
+    console.log('tá funcionando');
+ };
+
+ 
+
+ module.exports = {
+     getAll
+ }
