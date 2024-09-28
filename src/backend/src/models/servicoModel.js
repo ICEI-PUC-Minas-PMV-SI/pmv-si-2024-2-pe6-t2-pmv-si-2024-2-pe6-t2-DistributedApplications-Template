@@ -21,8 +21,13 @@ const update = async (id, data) => {
     return await Servico.findByIdAndUpdate(id, data, { new: true });
 };
 
+const remove = async (id) => {
+    return await Servico.findByIdAndDelete(id);
+};
+
 module.exports = {
     getAll,
     create,
-    update
+    update,
+    remove
 };
