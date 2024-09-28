@@ -19,6 +19,6 @@ router.post('/agendamentos', agendamentosController.createAgendamento);
 router.delete('/agendamentos/:id', agendamentosController.deleteAgendamento);
 
 router.get('/financeiro/:id/faturamento/:data', financeiroController.getFaturamentoDia);
-router.get('/financeiro/:id/faturamento', financeiroController.getAgendamentosPorIntervalo);
+router.get('/financeiro/:id/faturamento', financeiroController.getFaturamentoPorIntervalo);
 
 module.exports = router;
