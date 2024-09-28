@@ -2,9 +2,10 @@ const mongoose = require('mongoose');
 
 
 const agendamentoSchema = new mongoose.Schema({
-  descricao: { type: String, required: true },
-  preco: { type: Number, require: true },
-  duracao: { type: Number, required: true }
+  nomePrestador: { type: String, required: true },
+  data: { type: Date, require: true },
+  horario: { type: Number, required: true },
+  //idPrestador: {type: Number, required: true}
 });
 
 const Agendamento = mongoose.model('Agendamento', agendamentoSchema);
@@ -15,18 +16,35 @@ const getAll = async () => {
 };
 
 const createAgendamento = async (data) => {
-  const novoAgendamentoo = new Agendamento(data);
-  return await novoAgendamentoo.save();
+  try {
+    const createdAgendamento = new Agendamento(data);
+    return await createdAgendamento.save(); 
+  } catch (error) {
+    throw error; 
+  }
 };
 
+
 const deleteAgendamento = async (id) => {
-  return await Agendamento.findByIdAndDelete(id);
+  try {
+    const deletedAgendamento = await Agendamento.findByIdAndDelete(id);
+    return deletedAgendamento;
+  } catch (error) {
+    throw error; 
+  }
 };
+
 
 
 const updateAgendamento = async (id, data) => {
-  return await Agendamento.findByIdAndUpdate(id, data, { new: true });
+  try {
+    const updatedAgendamento = await Agendamento.findByIdAndUpdate(id, data, { new: true, runValidators: true });
+    return updatedAgendamento; 
+  } catch (error) {
+    throw error; 
+  }
 };
+
 
 
 module.exports = {
