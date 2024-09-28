@@ -12,9 +12,11 @@ router.post('/prestador', prestadorController.register);
 router.delete('/prestador', prestadorController.delete);
 router.patch('/prestador', prestadorController.patch);
 
+// Serviços
 router.get('/servicos', servicoController.getAllServicos);
 router.post('/servicos', servicoController.createServico);
 router.put('/servicos/:id', servicoController.updateServico);
+router.delete('/servicos/:id', servicoController.deleteServico);
 
 //Agendamentos
 router.get('/agendamentos', agendamentosController.getAll);
