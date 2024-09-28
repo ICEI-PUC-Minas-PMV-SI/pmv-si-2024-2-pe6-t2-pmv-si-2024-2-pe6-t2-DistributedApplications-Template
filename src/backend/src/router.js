@@ -14,9 +14,12 @@ router.patch('/prestador', prestadorController.patch);
 router.post('/servicos', servicoController.createServico);
 router.put('/servicos/:id', servicoController.updateServico);
 
+//Agendamentos
 router.get('/agendamentos', agendamentosController.getAll);
-router.post('/agendamentos', agendamentosController.createAgendamento);
-router.delete('/agendamentos/:id', agendamentosController.deleteAgendamento);
+router.post('/agendamentos/createAgendamento', agendamentosController.createAgendamento);
+router.delete('/agendamentos/deleteAgendamento/:id', agendamentosController.deleteAgendamento);
+router.put('/agendamentos/updateAgendamento/:id', agendamentosController.updateAgendamento);
+
 
 // Rotas do CRUD de Clientes
 router.post('/clientes', clienteController.createCliente);
