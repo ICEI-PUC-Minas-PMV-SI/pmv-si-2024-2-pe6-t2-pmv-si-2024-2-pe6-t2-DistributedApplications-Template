@@ -3,6 +3,7 @@ const router = express.Router();
 
 const prestadorController = require('./controllers/prestadorController');
 const servicoController = require('./controllers/servicosController');
+const agendamentosController = require('./controllers/agendamentosController')
 
 router.get('/prestador', prestadorController.getAll);
 router.post('/prestador', prestadorController.register);
