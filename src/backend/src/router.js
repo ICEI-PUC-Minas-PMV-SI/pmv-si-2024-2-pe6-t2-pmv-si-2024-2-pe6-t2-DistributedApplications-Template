@@ -11,4 +11,9 @@ router.patch('/prestador', prestadorController.patch);
 
 router.post('/servicos', servicoController.createServico);
 router.put('/servicos/:id', servicoController.updateServico);
+
+router.get('/agendamentos', agendamentosController.getAll);
+router.post('/agendamentos', agendamentosController.createAgendamento);
+router.delete('/agendamentos/:id', agendamentosController.deleteAgendamento);
+
 module.exports = router;
