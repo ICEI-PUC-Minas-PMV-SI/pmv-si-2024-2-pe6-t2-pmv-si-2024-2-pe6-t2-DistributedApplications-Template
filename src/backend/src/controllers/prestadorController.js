@@ -14,7 +14,7 @@ exports.register = async function(req, res) {
 
   exports.delete = async function(req, res) {
     try {
-        // Supondo que você tenha um serviço ou função para deletar o usuário, como deleteUserById
+        // Supondo que tenha um serviço ou função para deletar o usuário, como deleteUserById
         
         console.log('Usuário excluído com sucesso.');
         return res.status(200).send('Usuário excluído com sucesso.');
@@ -26,8 +26,8 @@ exports.register = async function(req, res) {
 
 exports.patch = async function(req, res) {
     try {
-        // Supondo que você tenha um serviço ou função para deletar o usuário, como deleteUserById
-        
+        // Supondo que  tenha um serviço ou função para deletar o usuário, como deleteUserById
+            
         console.log('Usuário editado com sucesso.');
         return res.status(200).send('Usuário editado com sucesso');
     } catch (error) {
