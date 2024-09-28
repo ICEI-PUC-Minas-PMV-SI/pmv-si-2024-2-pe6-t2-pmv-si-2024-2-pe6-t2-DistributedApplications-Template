@@ -1,4 +1,4 @@
-const conn = require ('../db/conn');
+const mongoose = require('mongoose');
 
 
 const agendamentoSchema = new mongoose.Schema({
