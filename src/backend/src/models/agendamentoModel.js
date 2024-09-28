@@ -5,7 +5,7 @@ const agendamentoSchema = new mongoose.Schema({
   nomePrestador: { type: String, required: true },
   data: { type: Date, require: true },
   horario: { type: Number, required: true },
-  idPrestador: {type: Number, required: true}
+  //idPrestador: {type: Number, required: true}
 });
 
 const Agendamento = mongoose.model('Agendamento', agendamentoSchema);
