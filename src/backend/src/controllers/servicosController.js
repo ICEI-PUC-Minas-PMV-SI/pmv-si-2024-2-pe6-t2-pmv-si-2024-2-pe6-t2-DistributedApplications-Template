@@ -32,8 +32,19 @@ const updateServico = async (req, res) => {
     }
 };
 
+const deleteServico = async (req, res) => {
+    try {
+        const { id } = req.params;
+        await Servico.remove(id);
+        return res.status(204).send();
+    } catch (error) {
+        return res.status(500).json({ error: error.message });
+    }
+};
+
 module.exports = {
     getAllServicos,
     createServico,
-    updateServico
+    updateServico,
+    deleteServico
 };
