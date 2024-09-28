@@ -12,6 +12,7 @@ router.post('/prestador', prestadorController.register);
 router.delete('/prestador', prestadorController.delete);
 router.patch('/prestador', prestadorController.patch);
 
+router.get('/servicos', servicoController.getAllServicos);
 router.post('/servicos', servicoController.createServico);
 router.put('/servicos/:id', servicoController.updateServico);
 
