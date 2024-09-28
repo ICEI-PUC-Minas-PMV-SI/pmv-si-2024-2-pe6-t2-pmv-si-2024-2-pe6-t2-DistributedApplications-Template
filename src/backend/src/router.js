@@ -4,6 +4,7 @@ const router = express.Router();
 const prestadorController = require('./controllers/prestadorController');
 const servicoController = require('./controllers/servicosController');
 const agendamentosController = require('./controllers/agendamentosController');
+const financeiroController = require('./controllers/financeiroContoller')
 const clienteController = require('./controllers/clienteController');
 
 router.get('/prestador', prestadorController.getAll);
@@ -27,5 +28,9 @@ router.get('/clientes', clienteController.getAllClientes);
 router.get('/clientes/:id', clienteController.getClienteById);
 router.put('/clientes/:id', clienteController.updateCliente);
 router.delete('/clientes/:id', clienteController.deleteCliente);
+
+// Rotas dos relatórios
+router.get('/financeiro/:id/faturamento/:data', financeiroController.getFaturamentoDia);
+router.get('/financeiro/:id/faturamento', financeiroController.getFaturamentoPorIntervalo);
 
 module.exports = router;
