@@ -1,33 +1,33 @@
 const conn = require ('../db/conn');
 
+
+const agendamentoSchema = new mongoose.Schema({
+  descricao: { type: String, required: true },
+  preco: { type: Number, require: true },
+  duracao: { type: Number, required: true }
+});
+
+const Agendamento = mongoose.model('Agendamento', agendamentoSchema);
+
+
 const getAll = async () => {
-  const [agendamentos] = await connection.execute('SELECT * FROM agendamentos');
-  return agendamentos;
+  return await Agendamento.find();
 };
 
-const createAgendamento = async (agendamento) => {
-  const { title } = agendamento;
-  const dateUTC = new Date(Date.now()).toUTCString();
-
-  //const query = 'incluir as querys';
-
-  const [createdAgendamento] = await connection.execute(query, [title, 'pendente', dateUTC]);  // discutir parametros
-  return { insertId: createdAgendamento.insertId };
+const createAgendamento = async (data) => {
+  const novoAgendamentoo = new Agendamento(data);
+  return await novoAgendamentoo.save();
 };
 
 const deleteAgendamento = async (id) => {
-  //const [removedAgendamento] = await connection.execute('DELETE FROM agendamentos WHERE id = ?', [id]);
- // return removedAgendamento;
+  return await Agendamento.findByIdAndDelete(id);
 };
 
-const updateAgendamento = async (id, agendamento) => {
-  const { title, status } = agendamento;
-  
-  //const query = 'incluir as querys';
 
-  const [updatedAgendamento] = await connection.execute(query, [title, status, id]);  // discutir parametros
-  return updatedAgendamento;
+const updateAgendamento = async (id, data) => {
+  return await Agendamento.findByIdAndUpdate(id, data, { new: true });
 };
+
 
 module.exports = {
   getAll,
