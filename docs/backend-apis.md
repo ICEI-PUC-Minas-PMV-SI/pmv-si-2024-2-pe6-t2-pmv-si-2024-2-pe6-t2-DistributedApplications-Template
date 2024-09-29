@@ -1,21 +1,14 @@
 # APIs e Web Services
 
-O planejamento de uma aplicação de APIS Web é uma etapa fundamental para o sucesso do projeto. Ao planejar adequadamente, você pode evitar muitos problemas e garantir que a sua API seja segura, escalável e eficiente.
-
-Aqui estão algumas etapas importantes que devem ser consideradas no planejamento de uma aplicação de APIS Web.
-
-[Inclua uma breve descrição do projeto.]
+O objetivo deste projeto é desenvolver uma plataforma de gestão integrada para prestadores de serviços autônomos, que facilite o gerenciamento de agendas e finanças. Com uma interface intuitiva, o software centraliza o controle de compromissos e transações financeiras, permitindo que os usuários evitem a sobrecarga de compromissos e tenham um acompanhamento eficaz de suas receitas e despesas.
 
 ## Objetivos da API
 
-O primeiro passo é definir os objetivos da sua API. O que você espera alcançar com ela? Você quer que ela seja usada por clientes externos ou apenas por aplicações internas? Quais são os recursos que a API deve fornecer?
-
-[Inclua os objetivos da sua api.]
-
+A API  densenvolvida será voltada para prestadores de serviços, com uso interno na empresa. Os principais recursos que ela deve fornecer incluem agendamento de compromissos, controle financeiro e geração de relatórios. 
 
 ## Arquitetura
 
-[Descrição da arquitetura das APIs, incluindo os componentes e suas interações.]
+ Utilizaremos JavaScript com Node.js e o framework Express. Essa combinação oferece um ambiente leve e escalável para construir APIs, gerenciando a lógica do servidor de forma eficiente. Com o Express, será possível estruturar rotas e middlewares, facilitando a implementação de funcionalidades como agendamento de compromissos e controle financeiro. Para o gerenciamento de dados, empregaremos o MongoDB como banco de dados NoSQL, que permite armazenar informações de maneira flexível e escalável. Usaremos também o Mongoose, uma biblioteca que fornece uma interface elegante para interagir com o MongoDB, facilitando a modelagem de dados e a validação de esquemas.
 
 ## Modelagem da Aplicação
 
