@@ -114,7 +114,7 @@ Etapas do processo:
 * Configuraremos os serviços de Aplicações Web no Azure (Azure App Services) para hospedar a aplicação, garantindo que ela esteja pronta para escalar conforme a demanda.
 
 **Banco de Dados:**
-* Utilizaremos o Azure SQL Database para armazenar os dados, garantindo backups automáticos, alta disponibilidade e recuperação em caso de falhas.
+* Utilizaremos o banco de dados MongoDB para armazenar os dados, garantindo backups automáticos, alta disponibilidade e recuperação em caso de falhas.
 * Otimizamos o desempenho do banco de dados com base nos requisitos da aplicação.
 
 **Lançamento:**
