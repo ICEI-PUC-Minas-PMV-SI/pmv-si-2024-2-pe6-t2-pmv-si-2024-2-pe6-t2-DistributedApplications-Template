@@ -3,3 +3,4 @@
 *.env.*
 *.env
 **/node_modules/*
+src/classe-a-rest-api/classe-a-firebase-adm.json
