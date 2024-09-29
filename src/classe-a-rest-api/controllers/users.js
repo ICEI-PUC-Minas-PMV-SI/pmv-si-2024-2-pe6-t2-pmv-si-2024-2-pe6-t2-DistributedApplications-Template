@@ -12,7 +12,7 @@ export default {
       return res.status(400).json({
         status: false,
         error: {
-          message: 'Body is empty, can not update the user.',
+          message: 'Body is empty, cannot update the user.',
         },
       });
     }
@@ -85,7 +85,7 @@ export default {
       return res.status(400).json({
         status: false,
         error: {
-          message: 'Body is empty, can not update the user.',
+          message: 'Body is empty, cannot update the user.',
         },
       });
     }
