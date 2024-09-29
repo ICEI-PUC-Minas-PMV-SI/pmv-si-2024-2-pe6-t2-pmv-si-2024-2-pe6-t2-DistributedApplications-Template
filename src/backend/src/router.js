@@ -7,6 +7,7 @@ const agendamentosController = require('./controllers/agendamentosController');
 const financeiroController = require('./controllers/financeiroContoller')
 const clienteController = require('./controllers/clienteController');
 
+// Cad. de Prestadores de Serviços
 router.get('/prestador', prestadorController.getAllPrestador);
 router.post('/prestador', prestadorController.createPrestador);
 router.delete('/prestador/:id', prestadorController.deletePrestador);

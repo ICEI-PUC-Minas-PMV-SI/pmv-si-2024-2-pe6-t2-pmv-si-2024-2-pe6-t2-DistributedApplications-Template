@@ -10,13 +10,11 @@ const getAllPrestador = async (req, res) => {
 };
 
 const createPrestador = async (req, res) => {
-    if (!nome || !cnpj || !email) {
-        return res.status(400).json({ mensagem: 'Por favor, preencha todos os campos.' });
-      }
+
 
     try {
-        const { nome, cnpj, telefone } = req.body;
-        const novoPrestador = await Prestador.create({ nome, cnpj, telefone });
+        const { nome, cnpj, telefone, endereco, password } = req.body;
+        const novoPrestador = await Prestador.create({ nome, cnpj, telefone, endereco, password });
         return res.status(201).json(novoPrestador);
     } catch (error) {
         return res.status(500).json({ error: error.message });
@@ -27,8 +25,8 @@ const updatePrestador = async (req, res) => {
 
     try {
         const { id } = req.params;
-        const { nome, cnpj, telefone } = req.body;
-        const novoPrestador = await Prestador.update(id, { nome, cnpj, telefone });
+        const { nome, cnpj, telefone, endereco, password } = req.body;
+        const novoPrestador = await Prestador.update(id, { nome, cnpj, telefone, endereco, password });
         return res.status(200).json(novoPrestador);
     } catch (error) {
         return res.status(500).json({ error: error.message });

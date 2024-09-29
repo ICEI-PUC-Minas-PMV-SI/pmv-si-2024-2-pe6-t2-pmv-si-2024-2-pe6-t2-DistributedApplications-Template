@@ -1,0 +1,34 @@
+//Testes Rotas Prestadores de Serviços
+
+POST http://localhost:3000/prestador
+Content-Type: application/json
+
+{
+    "nome": "Thalita Teste 2",
+    "cnpj": "12345678910",
+    "telefone": "31999998888",
+    "endereco": "Rua A, Bairro B, Cidade C",
+    "password": "123456"
+
+}
+
+###
+
+PUT http://localhost:3000/prestador/66f976be3ee201353402f7d9
+Content-Type: application/json
+
+{
+    "nome": "Thalita Oliveira",
+    "cnpj": "000000000000",
+    "telefone": "31999999999",
+    "endereco": "Rua A, Bairro B, Cidade C",
+    "password": "123456"
+
+}
+
+###
+
+DELETE http://localhost:3000/prestador/66f97b34c0d7960a53bdc32c
+
+###
+GET http://localhost:3000/prestador/
