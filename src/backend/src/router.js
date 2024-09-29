@@ -7,10 +7,10 @@ const agendamentosController = require('./controllers/agendamentosController');
 const financeiroController = require('./controllers/financeiroContoller')
 const clienteController = require('./controllers/clienteController');
 
-router.get('/prestador', prestadorController.getAll);
-router.post('/prestador', prestadorController.register);
-router.delete('/prestador', prestadorController.delete);
-router.patch('/prestador', prestadorController.patch);
+router.get('/prestador', prestadorController.getAllPrestador);
+router.post('/prestador', prestadorController.createPrestador);
+router.delete('/prestador/:id', prestadorController.deletePrestador);
+router.put('/prestador/:id', prestadorController.updatePrestador);
 
 // Serviços
 router.get('/servicos', servicoController.getAllServicos);

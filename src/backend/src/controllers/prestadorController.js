@@ -1,37 +1,53 @@
-const prestadorModel = require('../models/prestadorModel.js');
+const Prestador = require('../models/prestadorModel');
 
-
-exports.getAll = async (req, res) => {
-    const prestador = await prestadorModel.getAll();
-    return res.status(200).json(prestador);
-};
-
-
-exports.register = async function(req, res) {
-    console.log('Seu usuário foi criado com sucesso.');
-    return res.status(200).send('Usuário criado com sucesso');
-  }
-
-  exports.delete = async function(req, res) {
+const getAllPrestador = async (req, res) => {
     try {
-        // Supondo que tenha um serviço ou função para deletar o usuário, como deleteUserById
-        
-        console.log('Usuário excluído com sucesso.');
-        return res.status(200).send('Usuário excluído com sucesso.');
+        const prestadores = await Prestador.getAll();
+        return res.status(200).json(prestadores);
     } catch (error) {
-        console.error('Erro ao excluir o usuário:', error);
-        return res.status(500).send('Erro ao excluir o usuário.');
+        return res.status(500).json({ error: error.message });
     }
 };
 
-exports.patch = async function(req, res) {
+const createPrestador = async (req, res) => {
+    if (!nome || !cnpj || !email) {
+        return res.status(400).json({ mensagem: 'Por favor, preencha todos os campos.' });
+      }
+
     try {
-        // Supondo que  tenha um serviço ou função para deletar o usuário, como deleteUserById
-            
-        console.log('Usuário editado com sucesso.');
-        return res.status(200).send('Usuário editado com sucesso');
+        const { nome, cnpj, telefone } = req.body;
+        const novoPrestador = await Prestador.create({ nome, cnpj, telefone });
+        return res.status(201).json(novoPrestador);
     } catch (error) {
-        console.error('Erro ao editar o usuário:', error);
-        return res.status(500).send('Erro ao editar o usuário.');
+        return res.status(500).json({ error: error.message });
     }
+};
+
+const updatePrestador = async (req, res) => {
+
+    try {
+        const { id } = req.params;
+        const { nome, cnpj, telefone } = req.body;
+        const novoPrestador = await Prestador.update(id, { nome, cnpj, telefone });
+        return res.status(200).json(novoPrestador);
+    } catch (error) {
+        return res.status(500).json({ error: error.message });
+    }
+};
+
+const deletePrestador = async (req, res) => {
+    try {
+        const { id } = req.params;
+        await Prestador.remove(id);
+        return res.status(204).send();
+    } catch (error) {
+        return res.status(500).json({ error: error.message });
+    }
+};
+
+module.exports = {
+    getAllPrestador,
+    createPrestador,
+    updatePrestador,
+    deletePrestador
 };
