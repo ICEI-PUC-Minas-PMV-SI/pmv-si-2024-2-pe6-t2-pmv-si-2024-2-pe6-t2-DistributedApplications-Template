@@ -18,12 +18,21 @@ O primeiro passo é definir os objetivos da sua API. O que você espera alcança
 [Descrição da arquitetura das APIs, incluindo os componentes e suas interações.]
 
 ## Modelagem da Aplicação
-[Descreva a modelagem da aplicação, incluindo a estrutura de dados, diagramas de classes ou entidades, e outras representações visuais relevantes.]
 
+As entidades:
+
+* Prestador de Serviços: os usuários da aplicação.
+* Clientes: aquele consume os serviços dos Prestadores de serviços do sistema.
+* Serviços: atividade prestada pelo Prestador de serviços.
+* Agendamentos: marcação de atendimentos no sistema, demonstrando assim, a sua descrição, data e horário.
+  
 
 ## Fluxo de Dados
 
-[Diagrama ou descrição do fluxo de dados na aplicação.]
+O fluxo de dados da aplicação adota o modelo cliente-servidor, conforme demonstrado no diagrama a seguir:
+
+![diagrama](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/diagramaagendaf%C3%A1cil.png)
+
 
 ## Requisitos Funcionais
 
@@ -35,9 +44,11 @@ O primeiro passo é definir os objetivos da sua API. O que você espera alcança
 
 ## Tecnologias Utilizadas
 
-Existem muitas tecnologias diferentes que podem ser usadas para desenvolver APIs Web. A tecnologia certa para o seu projeto dependerá dos seus objetivos, dos seus clientes e dos recursos que a API deve fornecer.
+* JavaScript com Node.js e o framework Express utilizados para o desenvolvimento da API;
+* Visual Studio Code: IDE utilizada em conjunto com JavaScript.
+* Github: plataforma de versionamento;
+* Banco de dados: MongoDB
 
-[Lista das tecnologias principais que serão utilizadas no projeto.]
 
 ## API Endpoints
 
