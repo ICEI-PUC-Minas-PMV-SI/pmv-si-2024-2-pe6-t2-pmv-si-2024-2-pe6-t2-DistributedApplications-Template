@@ -16,7 +16,7 @@ app.use(cookieParser());
 app.use(express.json());
 
 app.use('/', AuthenticationRoutes);
-app.use('/user', UserRoutes);
+app.use('/users', UserRoutes);
 
 const swaggerConfig = swaggerJsdoc(config.swaggerOptions);
 app.use(bodyParser.json());
