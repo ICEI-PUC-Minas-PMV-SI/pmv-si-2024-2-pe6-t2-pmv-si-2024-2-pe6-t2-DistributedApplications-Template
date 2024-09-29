@@ -181,7 +181,10 @@ keep-alive: timeout=5
 
 ## Considerações de Segurança
 
-[Discuta as considerações de segurança relevantes para a aplicação distribuída, como autenticação, autorização, proteção contra ataques, etc.]
+* Autenticação: cada usuário possui um usuário (ID) e senha própria para acessar o sistema.
+* Banco de dados - MongoDB: apenas os usuários administradores da aplicação podem alterar o banco de dados.
+* Usuários do sistema: apenas o prestador de serviços cadastrados podem realizar o gerenciamento de atividades de um perfil.
+
 
 ## Implantação
 
