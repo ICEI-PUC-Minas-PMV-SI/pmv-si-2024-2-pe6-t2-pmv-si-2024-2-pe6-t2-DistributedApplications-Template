@@ -52,7 +52,7 @@ O fluxo de dados da aplicação adota o modelo cliente-servidor, conforme demons
 
 ## API Endpoints
 
-[Liste os principais endpoints da API, incluindo as operações disponíveis, os parâmetros esperados e as respostas retornadas.]
+Os principais endpoints da API, incluindo as operações disponíveis, os parâmetros esperados e as respostas retornadas.
 
 ### Endpoint 1
 - Método: GET
@@ -137,7 +137,7 @@ keep-alive: timeout=5
 }
 
 - Resposta:
-- 
+
 HTTP/1.1 200 OK
 X-Powered-By: Express
 Access-Control-Allow-Origin: *
