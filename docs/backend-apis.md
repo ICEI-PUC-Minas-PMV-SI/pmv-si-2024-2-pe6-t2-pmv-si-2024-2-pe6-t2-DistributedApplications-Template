@@ -97,7 +97,6 @@ keep-alive: timeout=5
     "telefone": "31999998888",
     "endereco": "Rua A, Bairro B, Cidade C",
     "password": "123456"
-
 }
 
 - Resposta:
@@ -133,7 +132,6 @@ keep-alive: timeout=5
     "telefone": "31999999999",
     "endereco": "Rua A, Bairro B, Cidade C",
     "password": "123456"
-
 }
 
 - Resposta:
