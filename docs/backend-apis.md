@@ -29,11 +29,23 @@ O fluxo de dados da aplicação adota o modelo cliente-servidor, conforme demons
 
 ## Requisitos Funcionais
 
-[Liste os principais requisitos funcionais da aplicação.]
+ID	Descrição do Requisito	Prioridade
+RF-001	Permitir que o prestador se cadastre no sistema	ALTA
+RF-002	Permitir o gerenciamento de clientes	ALTA
+RF-003	Permitir o gerenciamento de serviços	MÉDIA
+RF-004	Permitir o gerenciamento dos agendamentos dos prestadores	MÉDIA
+RF-005	Permitir gerenciamento das transações financeiras (receitas e despesas)	ALTA
+RF-006	Permitir que os usuários possam emitir relatórios	ALTA
 
 ## Requisitos Não Funcionais
 
-[Liste os principais requisitos não funcionais da aplicação, como desempenho, segurança, escalabilidade, etc.]
+ID	Descrição do Requisito	Prioridade
+RNF-001	Permitir a autenticação dos usuários (login e senha)	ALTA
+RNF-002	Oferecer uma interface intuitiva	MÉDIA
+RNF-003	Desenvolver um sistema responsivo para acesso em dispositivos móveis	ALTA
+RNF-004	Preparar o sistema para suportar aumento no número de clientes, agendamentos e transações	ALTA
+RNF-005	Adequar a aplicação perante as normas de proteção de dados	ALTA
+RNF-006	Garantir a segurança dos dados pessoais e financeiros	ALTA
 
 ## Tecnologias Utilizadas
 
