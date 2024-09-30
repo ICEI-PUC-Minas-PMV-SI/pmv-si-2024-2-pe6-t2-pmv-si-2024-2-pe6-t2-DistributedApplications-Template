@@ -19,6 +19,7 @@ As entidades:
 * Serviços: atividade prestada pelo Prestador de serviços.
 * Agendamentos: marcação de atendimentos no sistema, demonstrando assim, a sua descrição, data e horário.
   
+  ![alt text](\img\diagClasses.png)
 
 ## Fluxo de Dados
 
