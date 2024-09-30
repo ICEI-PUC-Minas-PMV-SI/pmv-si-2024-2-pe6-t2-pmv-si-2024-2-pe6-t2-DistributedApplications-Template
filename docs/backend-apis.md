@@ -20,10 +20,13 @@ O primeiro passo é definir os objetivos da sua API. O que você espera alcança
 ## Modelagem da Aplicação
 [Descreva a modelagem da aplicação, incluindo a estrutura de dados, diagramas de classes ou entidades, e outras representações visuais relevantes.]
 
+![UML Back-End](/docs/img/uml-database.jpg "UML Back-End")
+
 
 ## Fluxo de Dados
 
 [Diagrama ou descrição do fluxo de dados na aplicação.]
+![Fluxo de Requisições](/docs/img/data-request-flow.jpg "Fluxo de Requisições")
 
 ## Requisitos Funcionais
 
