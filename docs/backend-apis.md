@@ -209,4 +209,6 @@ keep-alive: timeout=5
 
 # Referências
 
-Inclua todas as referências (livros, artigos, sites, etc) utilizados no desenvolvimento do trabalho.
+* Como criar uma API completa com NodeJS e Express | Backend - Projeto Full Stack (https://www.youtube.com/watch?v=Cdu0WJhI-d8);
+* Microfundamento: Apis e Web Services;
+* Introdução às Web APIs (mdnwebdocs).
