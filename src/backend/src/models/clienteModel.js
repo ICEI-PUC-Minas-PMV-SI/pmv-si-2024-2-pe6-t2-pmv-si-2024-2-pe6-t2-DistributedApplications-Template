@@ -1,43 +1,39 @@
-let clientes = []; // Banco de dados 
+const mongoose = require('mongoose');
 
-const findClienteById = (id) => {
-  return clientes.find(cliente => cliente.id === id);
+const clienteSchema = new mongoose.Schema({
+    nome: { type: String, required: true },
+    telefone: { type: String, required: true },
+    email: { type: String, required: true, unique: true }, // email único
+});
+
+const Cliente = mongoose.model('Cliente', clienteSchema);
+
+
+const getAllClientes = async () => {
+    return await Cliente.find();
 };
 
-const addCliente = (cliente) => {
-  cliente.id = clientes.length + 1;
-  clientes.push(cliente);
-  return cliente;
+const addCliente = async (data) => {
+    const novoCliente = new Cliente(data);
+    return await novoCliente.save();
 };
 
-const getAllClientes = () => {
-  return clientes;
+const findClienteById = async (id) => {
+    return await Cliente.findById(id);
 };
 
-const updateCliente = (id, data) => {
-  const cliente = findClienteById(id);
-  if (cliente) {
-    cliente.nome = data.nome || cliente.nome;
-    cliente.telefone = data.telefone || cliente.telefone;
-    cliente.email = data.email || cliente.email;
-    return cliente;
-  }
-  return null;
+const updateCliente = async (id, data) => {
+    return await Cliente.findByIdAndUpdate(id, data, { new: true });
 };
 
-const deleteCliente = (id) => {
-  const index = clientes.findIndex(cliente => cliente.id === id);
-  if (index !== -1) {
-    clientes.splice(index, 1);
-    return true;
-  }
-  return false;
+const deleteCliente = async (id) => {
+    return await Cliente.findByIdAndDelete(id);
 };
 
 module.exports = {
-  findClienteById,
-  addCliente,
-  getAllClientes,
-  updateCliente,
-  deleteCliente
+    getAllClientes,
+    addCliente,
+    findClienteById,
+    updateCliente,
+    deleteCliente
 };
