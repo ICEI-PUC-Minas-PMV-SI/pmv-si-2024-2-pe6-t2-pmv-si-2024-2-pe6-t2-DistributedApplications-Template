@@ -21,9 +21,9 @@ router.delete('/servicos/:id', servicoController.deleteServico);
 
 //Agendamentos
 router.get('/agendamentos', agendamentosController.getAll);
-router.post('/agendamentos/createAgendamento', agendamentosController.createAgendamento);
-router.delete('/agendamentos/deleteAgendamento/:id', agendamentosController.deleteAgendamento);
-router.put('/agendamentos/updateAgendamento/:id', agendamentosController.updateAgendamento);
+router.post('/agendamentos', agendamentosController.createAgendamento);
+router.delete('/agendamentos/:id', agendamentosController.deleteAgendamento);
+router.put('/agendamentos/:id', agendamentosController.updateAgendamento);
 
 
 // Rotas do CRUD de Clientes
