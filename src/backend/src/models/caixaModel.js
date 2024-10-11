@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
-const caixaSchema = new mongoose.caixaSchema({
+const caixaSchema = new mongoose.Schema({
     valor: { type: Number, required: true},
 });
 
-const Caixa = mongoose.model('Caixa, caixaSchema');
+const Caixa = mongoose.model('Caixa', caixaSchema);
 
 const getAll = async () => {
     return await Caixa.find();

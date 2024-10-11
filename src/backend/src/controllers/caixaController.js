@@ -6,7 +6,7 @@ try {
     const caixa = await Caixa.getAll();
     return request.status(200).json(caixa);
 }catch (error) {
-    return request.status(500).json({error : errormensagem});
+    return request.status(500).json({ error: "Internal server error" });
     }
 };
 
@@ -17,7 +17,7 @@ try {
     const novoCaixa = await Caixa.create ({ valor })
     return request.status(201).json(novoCaixa);
     }catch (error) {
-    return request.status(500).json({error : errormensagem});
+        return request.status(500).json({ error: "Internal server error" });
     }
 };
 
@@ -29,7 +29,7 @@ const updateCaixa = async (require, request) => {
         const caixaAtualizado = await Caixa.update( id, { valor });
         return request.status(200).json(caixaAtualizado);
     }catch (error) {
-        return request.status(500).json({error : errormensagem});
+        return request.status(500).json({ error: "Internal server error" });
     }
 };
 
@@ -39,7 +39,7 @@ const deleteCaixa = async ( require, request ) => {
         await Caixa.remove(id);
         return request.status(204).send();
     }catch (error) {
-        return request.status(500).json({error : errormensagem});
+        return request.status(500).json({ error: "Internal server error" });
     }
 };
 
