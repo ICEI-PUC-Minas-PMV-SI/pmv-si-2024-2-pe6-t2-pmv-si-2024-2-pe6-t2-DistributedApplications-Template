@@ -203,7 +203,7 @@ Para garantir a qualidade e o bom funcionamento da API, verificamos se cada fun�
 
 **Casos de teste**
  * Método GET (Agendamento)
- (https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/DocTeste/docs/backend-apis.md/![Get Agendamento](img/GET_Agendamento.png)
+ ![GET Agendamento](./img/GET_Agendamento.png)
  * Método POST (Agendamento)
  (https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/POST_Agendamento.png)
  * Método PUT (Agendamento)
