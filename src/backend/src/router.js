@@ -6,6 +6,7 @@ const servicoController = require('./controllers/servicosController');
 const agendamentosController = require('./controllers/agendamentosController');
 const financeiroController = require('./controllers/financeiroContoller')
 const clienteController = require('./controllers/clienteController');
+const caixaController = require('./controllers/caixaController')
 
 // Cad. de Prestadores de Serviços
 router.get('/prestador', prestadorController.getAllPrestador);
@@ -32,6 +33,12 @@ router.get('/clientes', clienteController.getAllClientes);
 router.get('/clientes/:id', clienteController.getClienteById);
 router.put('/clientes/:id', clienteController.updateCliente);
 router.delete('/clientes/:id', clienteController.deleteCliente);
+
+// Caixa
+router.get('/caixa', caixaController.getAllCaixa);
+router.post('/caixa', caixaController.createCaixa);
+router.put('/caixa/:id', caixaController.updateCaixa);
+router.delete('/caixa/:id', caixaController.deleteCaixa);
 
 // Rotas dos relatórios
 router.get('/financeiro/:id/faturamento/:data', financeiroController.getFaturamentoDia);

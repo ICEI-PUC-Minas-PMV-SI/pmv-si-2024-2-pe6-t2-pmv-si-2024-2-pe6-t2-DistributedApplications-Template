@@ -1,6 +1,25 @@
 const mongoose = require('mongoose');
 
 const agendamentoModel = require('./agendamentoModel');
+const prestadorModel = require('./prestadorModel');
+
+
+const faturamentoSchema = new mongoose.Schema({
+    
+    idPrestador: { type: String, required: true },
+    data: { type: Date, required: true },
+    valor: { type: Number, required: true },
+  });
+  
+  const Faturamento = mongoose.model('Faturamento', faturamentoSchema);
+  
+  
+  
+  const getAll = async () => {
+    return await Faturamento.find();
+  };
+
+
 
 const getFaturamentoDia = async (id, data) => {
     const inicioDia = new Date(data);
@@ -14,9 +33,9 @@ const getFaturamentoDia = async (id, data) => {
         data: { $gte: inicioDia, $lte: fimDia }
     });
 
-    const faturamento = agendamentos.reduce((total, agendamento) => total + agendamento.preco, 0);
+    // const faturamento = agendamentos.reduce((total, agendamento) => total + agendamento.preco, 0);
 
-    return { faturamento, agendamentos };
+    return { agendamentos };
 }
 
 const getFaturamentoPorIntervalo = async (id, dataInicial, dataFinal) => {
@@ -31,9 +50,9 @@ const getFaturamentoPorIntervalo = async (id, dataInicial, dataFinal) => {
         data: { $gte: inicioIntervalo, $lte: fimIntervalo }
     });
     
-    const faturamento = agendamentos.reduce((total, agendamento) => total + agendamento.preco, 0);
+    // const faturamento = agendamentos.reduce((total, agendamento) => total + agendamento.preco, 0);
 
-    return { faturamento, agendamentos };
+    return { agendamentos };
 }
 
 module.exports = {
