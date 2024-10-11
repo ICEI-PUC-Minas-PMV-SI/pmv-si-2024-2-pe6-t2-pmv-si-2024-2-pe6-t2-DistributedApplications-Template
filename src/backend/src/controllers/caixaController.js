@@ -24,7 +24,7 @@ try {
 const updateCaixa = async (require, request) => {
     console.log('updateCaixa');
     try {
-        const { id } = request.params;
+        const { id } = require.params;
         const { valor } = require.body;
         const caixaAtualizado = await Caixa.update( id, { valor });
         return request.status(200).json(caixaAtualizado);
