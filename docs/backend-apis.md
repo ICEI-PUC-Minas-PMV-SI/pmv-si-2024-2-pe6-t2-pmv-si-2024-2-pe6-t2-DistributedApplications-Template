@@ -199,13 +199,44 @@ keep-alive: timeout=5
 
 ## Testes
 
-[Descreva a estratégia de teste, incluindo os tipos de teste a serem realizados (unitários, integração, carga, etc.) e as ferramentas a serem utilizadas.]
+Para garantir a qualidade e o bom funcionamento da API, verificamos se cada função ou método da API funciona corretamente isoladamente, utilizando o Insomnia para a realização dos testes. Com o objetivo de testar se os diferentes módulos da aplicação estão interagindo corretamente junto ao banco de dados (MongoDB).
 
-1. Crie casos de teste para cobrir todos os requisitos funcionais e não funcionais da aplicação.
-2. Implemente testes unitários para testar unidades individuais de código, como funções e classes.
-3. Realize testes de integração para verificar a interação correta entre os componentes da aplicação.
-4. Execute testes de carga para avaliar o desempenho da aplicação sob carga significativa.
-5. Utilize ferramentas de teste adequadas, como frameworks de teste e ferramentas de automação de teste, para agilizar o processo de teste.
+**Casos de teste**
+ * Método GET (Agendamento)
+ (https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/GET_Agendamento.png)
+ * Método POST (Agendamento)
+ (https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/POST_Agendamento.png)
+ * Método PUT (Agendamento)
+ (https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/PUT_Agendamento.png)
+ * Método DELETE (Agendamento)
+ (https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/DELETE_Agendamento.png)
+
+  * Método GET (Clientes)
+ (https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/GET_Cliente.png)
+ * Método POST (Clientes)
+ (https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/POST_Cliente.png)
+ * Método PUT (Clientes)
+ (https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/PUT_Cliente.png)
+ * Método DELETE (Clientes)
+ (https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/DELETE_Cliente.png)
+
+  * Método GET (Prestador)
+ (https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/GET_Prestador.png)
+ * Método POST (Prestador)
+ (https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/POST_Prestador.png)
+ * Método PUT (Prestador)
+ (https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/PUT_Prestador.png)
+ * Método DELETE (Prestador)
+ (https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/DELETE_Prestador.png)
+
+  * Método GET (Serviços)
+ (https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/GET_Servicos.png)
+ * Método POST (Serviços)
+ (https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/POST_Servicos.png)
+ * Método PUT (Serviços)
+ (https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/PUT_Servicos.png)
+ * Método DELETE (Serviços)
+ (https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/DELETE_Servicos.png)
 
 # Referências
 
