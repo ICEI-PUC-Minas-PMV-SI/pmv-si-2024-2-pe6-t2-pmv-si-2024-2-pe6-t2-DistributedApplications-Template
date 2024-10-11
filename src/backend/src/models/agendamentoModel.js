@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 const agendamentoSchema = new mongoose.Schema({
   nomePrestador: { type: String, required: true },
-  data: { type: Date, require: true },
+  data: { type: Date, required: true },
   horario: { type: Number, required: true },
   //idPrestador: {type: Number, required: true}
 });
