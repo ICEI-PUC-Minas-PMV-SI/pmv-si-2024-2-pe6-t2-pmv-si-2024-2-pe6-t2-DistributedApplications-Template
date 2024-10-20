@@ -20,8 +20,11 @@ Para a construção da aplicação web Agenda Fácil, utilizamos um conjunto de 
 A aplicação Agenda Fácil é dividida em 03 (três) camadas principais: Front-End, Back-End e Banco de Dados, cada uma desempenhando um papel fundamental na experiência de usuário e no fluxo de dados. A escolha do React para o front-end visa proporcionar uma interface dinâmica e responsiva.
 
 **Front-End**
+
 Biblioteca: **REACT**
+
 Objetivo: Criar uma interface de usuário moderna e fluida para agendamento de serviços.
+
 Componentes principais:
 * **Página de Login/Cadastro:** Autenticação de usuários.
 * **Dashboard do Usuário:** Onde os prestador de serviços podem visualizar seus próximos compromissos.
@@ -30,6 +33,7 @@ Componentes principais:
 
 **Interação com o Back-End**
 ----Complentar infos----
+
 
 **Fluxo de Interação dos Componentes**
 * Usuário acessa a aplicação e realiza o login pela interface React, enviando as credenciais para a API de autenticação no back-end.
@@ -55,13 +59,9 @@ A interface web da Agenda Fácil é projetada para proporcionar uma experiência
 
 **Layout das páginas:** A interface será composta por várias páginas-chave, cada uma com um layout intuitivo e funcional.
 * **Página de Login/Cadastro:** Os prestadores de serviços terão campos específicos para completar ou editar o seu perfil.
-
 * **Dashboard do usuário:** Prestadores de serviços poderão visualizar os próximos agendamentos. Vale desacar, que eles poderão editar ou excluir os agendamentos.
-
 * **Página de agendamento:** Um calendário que permite ao prestador de serviços selecionar datas e horários disponíveis para agendar os serviços disponíveis. Após escolher a data, o prestador de serviços poderá preencher um formulário com os detalhes como serviço, o cliente a ser atendido, tempo de duração e o valor. 
-
 * **Página de Perfil:** Inclui campos para editar nome, e-mail, telefone e descrição dos serviços.
-
 * **Página de Serviços:** Lista de Serviços disponíveis, onde o prestador de serviços poderão gerenciar os serviços prestados, editando ou excluindo opções com descrição, tempo estimado e preço. 
 
 **Interações do usuários:**
