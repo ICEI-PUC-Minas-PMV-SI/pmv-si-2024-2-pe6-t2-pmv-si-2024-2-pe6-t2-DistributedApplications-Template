@@ -17,33 +17,86 @@ Para a construção da aplicação web Agenda Fácil, utilizamos um conjunto de 
 
 ## Arquitetura
 
-[Descrição da arquitetura das aplicação web, incluindo os componentes e suas interações.]
+A aplicação Agenda Fácil é dividida em 03 (três) camadas principais: Front-End, Back-End e Banco de Dados, cada uma desempenhando um papel fundamental na experiência de usuário e no fluxo de dados. A escolha do React para o front-end visa proporcionar uma interface dinâmica e responsiva.
+
+**Front-End**
+Biblioteca: **REACT**
+Objetivo: Criar uma interface de usuário moderna e fluida para agendamento de serviços.
+Componentes principais:
+* **Página de Login/Cadastro:** Autenticação de usuários.
+* **Dashboard do Usuário:** Onde os prestador de serviços podem visualizar seus próximos compromissos.
+* **Calendário Interativo:** Interface para visualização e agendamento de serviços, integrando com o back-end para exibir dados em tempo real.
+* **Formulários dinâmicos:** Para agendamento dos horários, personalização de serviços e retirada do caixa (sangria caixa).
+
+**Interação com o Back-End**
+----Complentar infos----
+
+**Fluxo de Interação dos Componentes**
+* Usuário acessa a aplicação e realiza o login pela interface React, enviando as credenciais para a API de autenticação no back-end.
+* Front-End solicita dados (agendamentos, serviços) ao back-end através de chamadas à API, enviando o token JWT para garantir autorização.
+* Back-End valida o login e retorna um JWT para que o front-end armazene no localStorage.
+
 
 ## Modelagem da Aplicação
-[Descreva a modelagem da aplicação, incluindo a estrutura de dados, diagramas de classes ou entidades, e outras representações visuais relevantes.]
+
+As entidades: **[Descreva a modelagem da aplicação, incluindo a estrutura de dados, diagramas de classes ou entidades, e outras representações visuais relevantes.]**
+* **Prestador de Serviços:** os usuários da aplicação.
+* **Clientes:** aquele consume os serviços dos Prestadores de serviços do sistema.
+* **Serviços:** atividade prestada pelo Prestador de serviços.
+* **Agendamentos:** marcação de atendimentos no sistema, demonstrando assim, a sua descrição, data e horário.
+
+----Complentar infos----
+
 
 ## Projeto da Interface Web
-[Descreva o projeto da interface Web da aplicação, incluindo o design visual, layout das páginas, interações do usuário e outros aspectos relevantes.]
+
+**[Descreva o projeto da interface Web da aplicação, incluindo o design visual, layout das páginas, interações do usuário e outros aspectos relevantes.]**
+A interface web da Agenda Fácil é projetada para proporcionar uma experiência intuitiva. O design visual reflete sofisticação e credibilidade, com o uso predominante de dois tons, um roxo (#7E5A9B) e um laranja (#F79824), além de uma estrutura responsiva e otimizada para diferentes dispositivos.
+
+**Layout das páginas:** A interface será composta por várias páginas-chave, cada uma com um layout intuitivo e funcional.
+* **Página de Login/Cadastro:** Os prestadores de serviços terão campos específicos para completar ou editar o seu perfil.
+
+* **Dashboard do usuário:** Prestadores de serviços poderão visualizar os próximos agendamentos. Vale desacar, que eles poderão editar ou excluir os agendamentos.
+
+* **Página de agendamento:** Um calendário que permite ao prestador de serviços selecionar datas e horários disponíveis para agendar os serviços disponíveis. Após escolher a data, o prestador de serviços poderá preencher um formulário com os detalhes como serviço, o cliente a ser atendido, tempo de duração e o valor. 
+
+* **Página de Perfil:** Inclui campos para editar nome, e-mail, telefone e descrição dos serviços.
+
+* **Página de Serviços:** Lista de Serviços disponíveis, onde o prestador de serviços poderão gerenciar os serviços prestados, editando ou excluindo opções com descrição, tempo estimado e preço. 
+
+**Interações do usuários:**
+* **Feedback Imediato:** O sistema fornecerá feedback visual imediato ao usuário para ações como salvar agendamentos, atualizar perfil, ou preencher formulários incorretamente.
+
+**Aspectos adicionais:** 
+* **Acessibilidade:** Foco em boas práticas de acessibilidade no uso da aplicação.
+* **Responsividade:** Design totalmente responsivo, adaptado tanto para telas grandes quanto para dispositivos móveis.
+
 
 ### Wireframes
 [Inclua os wireframes das páginas principais da interface, mostrando a disposição dos elementos na página.]
 
+
 ### Design Visual
 
-![Paleta de Cores](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Paleta%20de%20cores.png)
+![Paleta de Cores](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Paleta%20de%20cores%20(1).png)
 ![Justificativa das Cores](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cores.png)
 ![Botões e Campos de texto](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Tipografia%20-%2002.png)
 ![Ícones](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Iconografia.png)
 
+
 ### Layout Responsivo
 [Discuta como a interface será adaptada para diferentes tamanhos de tela e dispositivos.]
+
 
 ### Interações do Usuário
 [Descreva as interações do usuário na interface, como animações, transições entre páginas e outras interações.]
 
+
 ## Fluxo de Dados
 
+O fluxo de dados da aplicação adota o modelo cliente-servidor, conforme demonstrado no diagrama a seguir:
 [Diagrama ou descrição do fluxo de dados na aplicação.]
+
 
 ## Requisitos Funcionais
 
@@ -70,7 +123,14 @@ Para a construção da aplicação web Agenda Fácil, utilizamos um conjunto de 
 
 ## Considerações de Segurança
 
-[Discuta as considerações de segurança relevantes para a aplicação distribuída, como autenticação, autorização, proteção contra ataques, etc.]
+É essencial pensar e aplicar medidas de segurança, uma aplicação distribuída que lida com dados sensíveis, como a Agenda Fácil. Esses cuidados são fundamentais para proteger as informações dos usuários, garantir que tudo funcione corretamente e tornar a aplicação confiável. 
+
+* **Autenticação com JWT:** O uso de JWT permite que a autenticação seja segura e escalável, pois não requer que o servidor mantenha sessões. Os tokens contêm informações sobre o usuário e são assinados digitalmente para garantir que não sejam alterados. 
+
+* **Validação de Dados:** A validação no front-end melhora a experiência do usuário, mas a validação no back-end é crucial para evitar ataques. 
+
+* **Comunicação Segura:** Uso do protocolo HTTPS para proteger a comunicação entre o cliente e o servidor. Isso garante que os dados, como senhas e informações pessoais, sejam transmitidos de forma segura e não possam ser interceptados.
+
 
 ## Implantação
 
