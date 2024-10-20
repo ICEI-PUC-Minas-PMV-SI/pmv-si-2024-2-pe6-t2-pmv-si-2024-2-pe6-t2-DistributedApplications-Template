@@ -1,9 +1,19 @@
 # Front-end Web
 
-[Inclua uma breve descrição do projeto e seus objetivos.]
+O Agenda Fácil é uma plataforma pensada para ajudar empreendedores a gerenciarem seus compromissos de forma simples e prática. A ideia é facilitar tanto para quem oferece serviços quanto para quem precisa agendar, criando uma experiência fácil e organizada para ambos.
+No desenvolvimento do site, escolhemos usar o React para o Front-End. O React é uma tecnologia que nos ajuda a criar interfaces que respondem rápido e se adaptam bem a qualquer dispositivo, seja no computador ou no celular. Assim, os usuários podem navegar pelo site de forma tranquila, com uma experiência visual moderna e um desempenho fluido, tornando todo o processo de agendamento mais agradável e eficiente.
+
 
 ## Tecnologias Utilizadas
-[Lista das tecnologias principais que serão utilizadas no projeto.]
+
+Para a construção da aplicação web Agenda Fácil, utilizamos um conjunto de tecnologias que nos permitiu desenvolver uma plataforma robusta e eficiente. Abaixo estão as principais ferramentas e recursos usados no projeto:
+
+**React:** No Front-End da aplicação, optamos por utilizar o React, uma das principais bibliotecas JavaScript para criar interfaces dinâmicas e responsivas. Vale destacar, que o React deixa o site mais rápido e com uma experiência mais agradável para quem o utiliza. O React nos permite desenvolver componentes que podem ser reutilizados, nos desenvolvimento mobile.
+
+**Visual Studio Code:** Escolhemos o VS Code como nosso editor de código, o que torna o nosso processo de desenvolvimento mais rápido e organizado.
+
+**GitHub:** Para garantir que todas as versões do projeto fossem salvas e compartilhadas corretamente entre a equipe, usamos o GitHub. Ele nos permitiu acompanhar as mudanças no código, colaborar de forma organizada e garantir que todos os desenvolvedores pudessem contribuir sem confusão.
+
 
 ## Arquitetura
 
@@ -19,7 +29,11 @@
 [Inclua os wireframes das páginas principais da interface, mostrando a disposição dos elementos na página.]
 
 ### Design Visual
-[Descreva o estilo visual da interface, incluindo paleta de cores, tipografia, ícones e outros elementos gráficos.]
+
+![Paleta de Cores](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Paleta%20de%20cores.png)
+![Justificativa das Cores](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cores.png)
+![Botões e Campos de texto](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Tipografia%20-%2002.png)
+![Ícones](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Iconografia.png)
 
 ### Layout Responsivo
 [Discuta como a interface será adaptada para diferentes tamanhos de tela e dispositivos.]
@@ -33,11 +47,25 @@
 
 ## Requisitos Funcionais
 
-[Liste os principais requisitos funcionais da aplicação.]
+| ID    | Descrição do Requisito                                        | Prioridade |
+|-------|---------------------------------------------------------------|------------|
+| RF-001 | Permitir que o prestador se cadastre no sistema | ALTA       |
+| RF-002 | Permitir o gerenciamento de clientes | ALTA |
+| RF-003 | Permitir o gerenciamento de serviços | MÉDIA |
+| RF-004 | Permitir o gerenciamento dos agendamentos dos prestadores | MÉDIA |
+| RF-005 |Permitir gerenciamento das transações financeiras (receitas e despesas) | ALTA |
+| RF-006 | Permitir que os usuários possam emitir relatórios | ALTA       |
 
 ## Requisitos Não Funcionais
 
-[Liste os principais requisitos não funcionais da aplicação, como desempenho, segurança, escalabilidade, etc.]
+| ID    | Descrição do Requisito                                      | Prioridade |
+|-------|-------------------------------------------------------------|------------|
+| RNF-001 | Permitir a autenticação dos usuários (login e senha) | ALTA  |
+| RNF-002 | Oferecer uma interface intuitiva | MÉDIA |
+| RNF-003 | Desenvolver um sistema responsivo para acesso em dispositivos móveis | ALTA |
+| RNF-004 | Preparar o sistema para suportar aumento no número de clientes, agendamentos e transações | ALTA |
+| RNF-005 | Adequar a aplicação perante as normas de proteção de dados | ALTA |
+| RNF-006 | Garantir a segurança dos dados pessoais e financeiros | ALTA |
 
 
 ## Considerações de Segurança
@@ -66,4 +94,4 @@
 
 # Referências
 
-Inclua todas as referências (livros, artigos, sites, etc) utilizados no desenvolvimento do trabalho.
+CODE ZERO. Curso Completo de um Projeto Com Node.JS e  React.JS: Utilizando a famosa Stack MERN: MongoDB + Express + React JS + Node JS. YouTube, 2020.
