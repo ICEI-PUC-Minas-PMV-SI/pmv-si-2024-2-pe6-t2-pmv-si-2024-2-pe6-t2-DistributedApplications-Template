@@ -1,18 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Cad from './App';
+import App from './App';
 import AppClientes from './AppClientes';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Cad />
+    <App />
   </React.StrictMode>
 )
-root.render(
-  <React.StrictMode>
-    <AppClientes />
-  </React.StrictMode>
-);
+;
 

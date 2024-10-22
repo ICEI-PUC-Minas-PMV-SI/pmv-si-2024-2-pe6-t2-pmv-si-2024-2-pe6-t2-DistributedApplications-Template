@@ -1,17 +1,25 @@
+import {BrouserRouter, BrowserRouter, Route, Routes} from 'react-router-dom'
 import Cadastro from './components/Cadastro';
+import CadastroClientes from './components/CadastroClientes';
 import './global.css'
 
 
 
 
-function Cad() {
+
+function App() {
   return (
-    <div className="Cad">
-      <header className="Cad-header">
-        <Cadastro/>
-      </header>
-    </div>
+
+    <BrowserRouter>
+    <Routes>
+      <Route path='/prestador' element={<Cadastro/>} />
+      <Route path='/clientes'element={<CadastroClientes/>}/>
+      <Route path='*'element={<h1>Informe a rota</h1>}/>
+     
+    </Routes>
+    </BrowserRouter>
+
   );
 }
 
-export default Cad;
+export default App;
