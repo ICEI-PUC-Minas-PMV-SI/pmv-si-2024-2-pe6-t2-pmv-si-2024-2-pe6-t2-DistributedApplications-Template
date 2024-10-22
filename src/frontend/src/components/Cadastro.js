@@ -9,6 +9,7 @@ import api from '../services/api';
 
 
 
+
 function Cadastro() {
 
   const [nome, setNome] = useState('');
@@ -37,8 +38,9 @@ function Cadastro() {
   }
 
   return (
+      <body>
 
-    <Container className='w-50 p-5' controlId="container" >
+<Container className='w-50 p-5' controlId="container" >
       <Row className='row justify-content-md-center'>
           <h1 className="mb-4 mt-3"  style={{ color: '#F79824', fontSize: '58px' }}>CADASTRO</h1>
 
@@ -116,6 +118,9 @@ function Cadastro() {
         </Form>
       </Row>
     </Container>
+    </body>
+
+    
 
   )
 }

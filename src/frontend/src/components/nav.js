@@ -1,27 +1,31 @@
-import React, { useState, useEffect } from 'react';
-import Figure from 'react-bootstrap/Figure';
-import { Link } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import '../Nav.css'
 
-
-
-function Navbar() {
-  
+function Nbar() {
   return (
-   <div>
-    <Link to="/"><Figure>
-      <Figure.Image
-        width={171}
-        height={180}
-        alt="171x180"
-        src="./icon.png"
-      />
-    </Figure></Link>
-    <Link to="/">Cadastre-se</Link>
-    <Link to="/">Login</Link>
+    <>
+      <Navbar style={{ backgroundColor: '#7E5A9B' }}>
+        <Container className='d-flex'>
+          <Navbar.Brand href="#home" className='d-flex flex-row'>
+            <img
+              alt=""
+              src="/icon.png"
+              width="50"
+              height="50"
+              className='me-5'
+            />{' '}
+            <Nav className='Nav'>
+            <Nav.Link style={{ color: '#F79824' }} href="/clientes" >Cadastro</Nav.Link>
+            <Nav.Link style={{ color: '#F79824' }} href="/login">Login</Nav.Link>
+            </Nav>
 
-
-   </div>
+          </Navbar.Brand >
+        </Container>
+      </Navbar>
+    </>
   );
 }
 
-export default Navbar;
+export default Nbar;
