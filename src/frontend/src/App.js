@@ -1,14 +1,17 @@
-import Cadastro from './components/Cadastro'
+import Cadastro from './components/Cadastro';
+import './global.css'
 
 
-function App() {
+
+
+function Cad() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="Cad">
+      <header className="Cad-header">
         <Cadastro/>
       </header>
     </div>
   );
 }
 
-export default App;
+export default Cad;
