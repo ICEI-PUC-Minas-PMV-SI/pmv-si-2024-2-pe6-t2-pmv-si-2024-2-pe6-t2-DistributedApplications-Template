@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes} from 'react-router-dom'
 import Cadastro from './components/Cadastro';
 import CadastroClientes from './components/CadastroClientes';
-import './global.css'
-import Nb from './components/nav'
+import './global.css';
 import Nbar from './components/nav';
+
 
 
 
