@@ -3,6 +3,7 @@ import Cadastro from './components/Cadastro';
 import CadastroClientes from './components/CadastroClientes';
 import './global.css';
 import Nbar from './components/nav';
+import Servico from './components/Servico';
 
 
 
@@ -16,6 +17,7 @@ function App() {
     <Routes>
       <Route path='/prestador' element={<Cadastro/>} />
       <Route path='/clientes'element={<CadastroClientes/>}/>
+      <Route path='/servico'element={<Servico/>}/>
       <Route path='*'element={<h1>Informe a rota</h1>}/>
      
     </Routes>
