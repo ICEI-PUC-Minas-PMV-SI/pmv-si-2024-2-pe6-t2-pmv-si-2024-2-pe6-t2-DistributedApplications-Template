@@ -17,7 +17,11 @@ const Agendamento = () => {
   const handleRedirect = () => {
     navigate('/agendamentoCadastro')
   };
-  // const [accessToken, setAccessToken] = useState('');
+
+  const handleRedirectEdit = () => {
+    navigate('/agendamentoView')
+  };
+ 
   const [events, setEvents] = useState([]);
 
   const customHeaderToolbar = {
@@ -76,7 +80,7 @@ const Agendamento = () => {
               </svg>
             </Button>
 
-            <Button variant="light" style={{ padding: 0, border: 'none' }}>
+            <Button variant="light" style={{ padding: 0, border: 'none' }} onClick={handleRedirectEdit}>
               <svg width="79px" height="83px" viewBox="0 0 79 83" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="79" height="83" rx="8" fill="#F79824" />
                 <rect x="13" y="14" width="53" height="55" fill="url(#pattern0_10_484)" />

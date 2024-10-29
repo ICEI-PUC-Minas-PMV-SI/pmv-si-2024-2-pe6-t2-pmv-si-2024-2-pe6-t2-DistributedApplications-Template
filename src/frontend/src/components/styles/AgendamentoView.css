@@ -1,0 +1,21 @@
+.agendamentos-view table {
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    border-collapse: collapse; /* Para que as bordas não tenham espaço entre si */
+}
+
+.agendamentos-view th, 
+.agendamentos-view td {
+    border: 1px solid black; /* Define a borda da tabela */
+    padding: 10px; /* Adiciona espaçamento nas células */
+    font-weight: bold; /* Define o texto em negrito */
+}
+
+.agendamentos-view tr:nth-child(even) {
+    background-color: #7E5A9B !important; /* Força a cor das linhas pares */
+}
+
+.agendamentos-view tr:nth-child(odd) {
+    background-color: white !important; /* Força a cor das linhas ímpares */
+}
