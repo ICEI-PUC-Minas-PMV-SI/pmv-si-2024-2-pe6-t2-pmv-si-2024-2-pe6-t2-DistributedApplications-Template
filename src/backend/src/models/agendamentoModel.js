@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 
 
 const agendamentoSchema = new mongoose.Schema({
+  nomeCliente: { type: String, required: true },
   nomePrestador: { type: String, required: true },
   data: { type: Date, required: true },
-  horario: { type: Number, required: true },
-  //idPrestador: {type: Number, required: true}
+  horario: { type: String, required: true },
 });
 
 const Agendamento = mongoose.model('Agendamento', agendamentoSchema);
