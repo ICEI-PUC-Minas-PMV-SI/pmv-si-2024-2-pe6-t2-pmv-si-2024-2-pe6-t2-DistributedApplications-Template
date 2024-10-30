@@ -4,11 +4,14 @@ POST http://localhost:3000/prestador
 Content-Type: application/json
 
 {
-    "nome": "Thalita Teste 2",
-    "cnpj": "12345678910",
-    "telefone": "31999998888",
+  "nome": "Teste Login Novo 2",
+    "email":"teste2@gmail.com",
+    "cnpj": "000000000000",
+    "telefone": "31999999999",
     "endereco": "Rua A, Bairro B, Cidade C",
-    "password": "123456"
+    "password": "1234",
+    "confirmpassword": "1234"
+
 
 }
 
@@ -19,6 +22,7 @@ Content-Type: application/json
 
 {
     "nome": "Thalita Oliveira",
+    "email":"teste@teste.com",
     "cnpj": "000000000000",
     "telefone": "31999999999",
     "endereco": "Rua A, Bairro B, Cidade C",
@@ -32,3 +36,13 @@ DELETE http://localhost:3000/prestador/66f97b34c0d7960a53bdc32c
 
 ###
 GET http://localhost:3000/prestador/
+
+###
+POST  http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email":"teste@gmail.com",
+    "password": "123"
+
+}

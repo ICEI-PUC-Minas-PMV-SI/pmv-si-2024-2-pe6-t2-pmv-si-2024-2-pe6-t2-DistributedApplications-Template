@@ -7,6 +7,7 @@ const agendamentosController = require('./controllers/agendamentosController');
 const financeiroController = require('./controllers/financeiroContoller')
 const clienteController = require('./controllers/clienteController');
 const caixaController = require('./controllers/caixaController')
+const loginController = require('./controllers/loginController')
 
 // Cad. de Prestadores de Serviços
 router.get('/prestador', prestadorController.getAllPrestador);
@@ -43,5 +44,9 @@ router.delete('/caixa/:id', caixaController.deleteCaixa);
 // Rotas dos relatórios
 router.get('/financeiro/:id/faturamento/:data', financeiroController.getFaturamentoDia);
 router.get('/financeiro/:id/faturamento', financeiroController.getFaturamentoPorIntervalo);
+
+// Login
+
+router.post("/login", loginController.login);
 
 module.exports = router;

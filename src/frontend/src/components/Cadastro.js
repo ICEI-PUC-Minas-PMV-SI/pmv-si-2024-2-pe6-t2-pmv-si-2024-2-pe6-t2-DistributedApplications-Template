@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import api from '../services/api';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -14,25 +15,37 @@ function Cadastro() {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmpassword, setConfirmpassword] = useState('');
   const [cnpj, setCnpj] = useState('');
   const [telefone, setTelefone] = useState('');
   const [endereco, setEndereco] = useState('');
 
+  const navigate = useNavigate();
 
   async function handleCadastro(e) {
     e.preventDefault();
+    try {
+      const response = await api.post('/prestador', {
+        nome,
+        email,
+        cnpj,
+        telefone,
+        endereco,
+        password,
+        confirmpassword
 
-    const response = await api.post('/prestador', {
-      nome,
-      email,
-      cnpj,
-      telefone,
-      endereco,
-      password,
+
+      });
+      if (response.status === 201) {
+        alert(response.data.message); // Exibe popup de sucesso
+        navigate('/login'); // Redireciona para a página de login
+      }
 
 
-    })
-
+    } catch (error) {
+      console.error("Erro no cadastro:", error);
+      alert("Erro ao tentar realizar o cadastro.");
+    }
 
   }
 
@@ -71,8 +84,8 @@ function Cadastro() {
 
             <Form.Group className="mb-3" controlId="email">
               <Form.Label >Email</Form.Label>
-              <div className='input' 
-              style={{
+              <div className='input'
+                style={{
                   border: '3px solid #7E5A9B',
                   borderRadius: '8px'
                 }}>
@@ -85,10 +98,10 @@ function Cadastro() {
             <Form.Group className="mb-3" controlId="cnpj">
               <Form.Label >CPF ou CNPJ</Form.Label>
               <div className='input'
-              style={{
-                border: '3px solid #7E5A9B',
-                borderRadius: '8px'
-              }}>
+                style={{
+                  border: '3px solid #7E5A9B',
+                  borderRadius: '8px'
+                }}>
                 <Form.Control
                   type="string"
                   name='cnpj'
@@ -98,10 +111,10 @@ function Cadastro() {
             <Form.Group className="mb-3" controlId="telefone">
               <Form.Label >Telefone</Form.Label>
               <div className='input'
-              style={{
-                border: '3px solid #7E5A9B',
-                borderRadius: '8px'
-              }}>
+                style={{
+                  border: '3px solid #7E5A9B',
+                  borderRadius: '8px'
+                }}>
                 <Form.Control
                   type="string"
                   name='telefone'
@@ -111,10 +124,10 @@ function Cadastro() {
             <Form.Group className="mb-3" controlId="endereco">
               <Form.Label >Endereço completo</Form.Label>
               <div className='input'
-              style={{
-                border: '3px solid #7E5A9B',
-                borderRadius: '8px'
-              }}>
+                style={{
+                  border: '3px solid #7E5A9B',
+                  borderRadius: '8px'
+                }}>
                 <Form.Control
                   type="string"
                   name='endereco'
@@ -124,16 +137,29 @@ function Cadastro() {
             <Form.Group className="mb-3" controlId="password">
               <Form.Label >Senha</Form.Label>
               <div className='input'
-              style={{
-                border: '3px solid #7E5A9B',
-                borderRadius: '8px'
-              }}>
+                style={{
+                  border: '3px solid #7E5A9B',
+                  borderRadius: '8px'
+                }}>
                 <Form.Control
                   type="password"
                   name='password'
                   onChange={(e) => setPassword(e.target.value)} /></div>
             </Form.Group>
 
+            <Form.Group className="mb-3" controlId="password">
+
+              <Form.Label >Confirmação de senha</Form.Label>
+              <div className='input'
+                style={{
+                  border: '3px solid #7E5A9B',
+                  borderRadius: '8px'
+                }}>
+                <Form.Control
+                  type="password"
+                  name='password'
+                  onChange={(e) => setConfirmpassword(e.target.value)} /></div>
+            </Form.Group>
 
             <div className='d-grid gap-2 d-md-flex justify-content-md-end mb-3'>
               <Button type='submit' className="btn btn-success d-flex align-items-end"

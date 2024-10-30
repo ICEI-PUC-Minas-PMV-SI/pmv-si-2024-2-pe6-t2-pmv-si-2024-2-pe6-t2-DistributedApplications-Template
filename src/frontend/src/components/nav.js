@@ -17,7 +17,7 @@ function Nbar() {
               className='me-5'
             />{' '}
             <Nav className='Nav'>
-            <Nav.Link style={{ color: '#F79824' }} href="/clientes" >Cadastro</Nav.Link>
+            <Nav.Link style={{ color: '#F79824' }} href="/prestador" >Cadastro</Nav.Link>
             <Nav.Link style={{ color: '#F79824' }} href="/login">Login</Nav.Link>
             </Nav>
 

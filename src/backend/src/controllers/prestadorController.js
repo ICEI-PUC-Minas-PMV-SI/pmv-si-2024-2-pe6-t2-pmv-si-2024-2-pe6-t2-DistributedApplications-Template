@@ -1,4 +1,5 @@
-const Prestador = require('../models/prestadorModel');
+// controllers/authController.js
+const Prestador = require("../models/prestadorModel");
 
 const getAllPrestador = async (req, res) => {
     try {
@@ -10,23 +11,43 @@ const getAllPrestador = async (req, res) => {
 };
 
 const createPrestador = async (req, res) => {
+    const { nome, email, cnpj, telefone, endereco, password, confirmpassword } = req.body;
+    
+    // Verificação de unicidade para email, telefone e cnpj
+    const existingPrestador = await Prestador.findOne({
+        $or: [
+            { email },
+            { telefone },
+            { cnpj }
+        ]
+    });
 
+    if (existingPrestador) {
+        return res.status(400).json({
+            error: "Já existe um prestador cadastrado com o mesmo e-mail, telefone ou CNPJ."
+        });
+    }
+
+    // Validação de confirmação de senha
+    if (password !== confirmpassword) {
+        return res.status(400).json({ error: "A confirmação de senha não corresponde à senha." });
+    }
 
     try {
-        const { nome, cnpj, telefone, endereco, password } = req.body;
-        const novoPrestador = await Prestador.create({ nome, cnpj, telefone, endereco, password });
-        return res.status(201).json(novoPrestador);
+        // Criação do novo prestador sem o campo confirmpassword
+        const novoPrestador = await Prestador.create({ nome, email, cnpj, telefone, endereco, password });
+        return res.status(201).json({message: "Cadastro concluído com sucesso!"});
+        
     } catch (error) {
         return res.status(500).json({ error: error.message });
     }
 };
 
 const updatePrestador = async (req, res) => {
-
     try {
         const { id } = req.params;
-        const { nome, cnpj, telefone, endereco, password } = req.body;
-        const novoPrestador = await Prestador.update(id, { nome, cnpj, telefone, endereco, password });
+        const { nome, email, cnpj, telefone, endereco, password } = req.body;
+        const novoPrestador = await Prestador.update(id, { nome, email, cnpj, telefone, endereco, password });
         return res.status(200).json(novoPrestador);
     } catch (error) {
         return res.status(500).json({ error: error.message });
@@ -47,5 +68,5 @@ module.exports = {
     getAllPrestador,
     createPrestador,
     updatePrestador,
-    deletePrestador
+    deletePrestador,
 };
