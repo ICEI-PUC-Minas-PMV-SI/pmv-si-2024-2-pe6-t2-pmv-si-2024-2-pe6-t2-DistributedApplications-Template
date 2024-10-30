@@ -1,0 +1,70 @@
+.fc .fc-col-header-cell-cushion {
+    color: black;
+    /* an override! */
+}
+
+.fc .fc-daygrid-day-number {
+    color: black;
+    align-items: start;
+    /* an override! */
+}
+
+.fc .fc-daygrid-day-top {
+    display: flex;
+    flex-direction: row;
+    /* an override! */
+}
+
+
+.fc .fc-scrollgrid-liquid {
+    height: 100%;
+    border-radius: 15px;
+    border-color: black;
+    overflow: hidden !important;
+    border-width: 2px;
+    border-style: solid;
+    /* an override! */
+}
+
+.fc .fc-toolbar.fc-header-toolbar {
+
+    text-transform: uppercase;
+    justify-content: space-evenly;
+    /* an override! */
+}
+
+.fc .fc-button-primary:disabled {
+
+    background: #7E5A9B;
+    border-color: #7E5A9B;
+    /* an override! */
+}
+
+.fc-direction-ltr .fc-button-group>.fc-button:not(:last-child) {
+
+    background-color: #7E5A9B;
+    border-color: #7E5A9B;
+    /* an override! */
+}
+
+.fc-direction-ltr .fc-button-group>.fc-button:not(:first-child) {
+    background-color: #7E5A9B;
+    border-color: #7E5A9B;
+    /* an override! */
+}
+
+.botoes {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 100%;
+    justify-items: flex-end;
+    margin-top: -17%;
+
+}
+
+h1 {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 200px!important;
+    justify-content: center !important;
+}

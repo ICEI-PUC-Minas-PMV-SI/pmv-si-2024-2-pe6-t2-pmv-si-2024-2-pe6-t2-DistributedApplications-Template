@@ -19,6 +19,7 @@ function Nbar() {
             <Nav className='Nav'>
             <Nav.Link style={{ color: '#F79824' }} href="/prestador" >Cadastro</Nav.Link>
             <Nav.Link style={{ color: '#F79824' }} href="/login">Login</Nav.Link>
+            <Nav.Link style={{ color: '#F79824' }} href="/agendamento">Agendamento</Nav.Link>
             </Nav>
 
           </Navbar.Brand >
