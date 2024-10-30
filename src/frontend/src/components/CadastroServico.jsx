@@ -1,41 +1,61 @@
-import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Container from 'react-bootstrap/Container';
-import './styles/cadastroServico.css';
+import React, { useState } from "react";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import Container from "react-bootstrap/Container";
+import axios from "axios";
+import "./styles/cadastroServico.css";
 
+const api = axios.create({ baseURL: "http://localhost:3000" });
 
 const CadastroServico = () => {
   const [formServico, setFormServico] = useState({
-    descricao: '',
-    preco: '',
-    duracao: ''
+    descricao: "",
+    preco: "",
+    duracao: "",
   });
+
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
 
   const alteraCadastroServico = (e) => {
     setFormServico({
       ...formServico,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
-  }
+  };
 
   const enviaCadastroServico = async (e) => {
     e.preventDefault();
     try {
-      console.log(formServico);
+      const response = await api.post("/servicos", formServico);
+      console.log("Serviço criado:", response.data);
+      setMessage("Serviço criado com sucesso");
+      setError("");
+      setFormServico({ descricao: "", preco: "", duracao: "" });
     } catch (error) {
-      console.error('Erro ao enviar o formulário:', error);
+      setError("Falha ao criar serviço:", error);
+      console.error("Erro ao enviar o formulário:", error);
     }
-  }
+  };
 
   return (
-    <Container className='w-50 p-5'>
+    <Container className="w-50 p-5">
       <h1 className="title">CADASTRO</h1>
       <div className="svg-container">
         <Button variant="light" className="svg-button">
-          <svg width="79" height="83" viewBox="0 0 79 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg
+            width="79"
+            height="83"
+            viewBox="0 0 79 83"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <rect width="79" height="83" rx="8" fill="#7E5A9B" />
-            <image x="13" y="14" width="53" height="55" 
+            <image
+              x="13"
+              y="14"
+              width="53"
+              height="55"
               href="data:image/png;base64,iVBORw0KGgoAAAA
               NSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAA
               7DAAAOwwHHb6hkAAAAGXRFWHRTb2Z0d2FyZQB3d3cua
@@ -87,21 +107,38 @@ const CadastroServico = () => {
               IpOn4e9Rxy24B/B78gbgdEDDT5d02PF8fwEwE9iG//i
               xt8UrCcXSGNvwd46ZI/gHBMAI+aTkVElPyC9ywyU16O
               4tdPnz+W75RfJn+VR9q3OuKyS//wF8DjUAzr7fOQAAA
-              ABJRU5ErkJggg==" 
+              ABJRU5ErkJggg=="
             />
 
             <defs>
-              <pattern id="pattern0_10_473" patternContentUnits="objectBoundingBox" width="1" height="1">
-                <use href="#image0_10_473" transform="matrix(0.0162146 0 0 0.015625 -0.0188679 0)" />
+              <pattern
+                id="pattern0_10_473"
+                patternContentUnits="objectBoundingBox"
+                width="1"
+                height="1"
+              >
+                <use
+                  href="#image0_10_473"
+                  transform="matrix(0.0162146 0 0 0.015625 -0.0188679 0)"
+                />
               </pattern>
             </defs>
           </svg>
         </Button>
         <Button variant="light" className="svg-button">
-          <svg width="79" height="83" viewBox="0 0 79 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg
+            width="79"
+            height="83"
+            viewBox="0 0 79 83"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <rect width="79" height="83" rx="8" fill="#F79824" />
-            <image 
-              x="13" y="14" width="53" height="55" 
+            <image
+              x="13"
+              y="14"
+              width="53"
+              height="55"
               href="data:image/png;base64,iVBORw0KGgoA
               AAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBI
               WXMAAA7DAAAOwwHHb6hkAAAAGXRFWHRTb2Z0d2Fy
@@ -134,20 +171,30 @@ const CadastroServico = () => {
               ZCuERg04Jaki6bsiWWNM+f7hoAkjzjFwVtJ211jJ
               QdJNY8wB+2KNJGAk/ZE0qcBgRTIkqc0YU6leqDkC
               xhiAfZK2Fp2sIG7Z8oFAQP8BMeOQk9LgP9gAAAAA
-              SUVORK5CYII=" 
+              SUVORK5CYII="
             />
             <defs>
-              <pattern id="pattern0_10_483" patternContentUnits="objectBoundingBox" width="1" height="1">
-                <use href="#image0_10_483" transform="matrix(0.015625 0 0 0.0159375 0 -0.01)" />
+              <pattern
+                id="pattern0_10_483"
+                patternContentUnits="objectBoundingBox"
+                width="1"
+                height="1"
+              >
+                <use
+                  href="#image0_10_483"
+                  transform="matrix(0.015625 0 0 0.0159375 0 -0.01)"
+                />
               </pattern>
             </defs>
           </svg>
         </Button>
       </div>
+      {message && <div className="alert alert-success">{message}</div>}
+      {error && <div className="alert alert-danger">{error}</div>}
       <Form onSubmit={enviaCadastroServico} className="form-style">
         <Form.Group className="mb-3">
           <Form.Label>Descrição</Form.Label>
-          <div className='input'>
+          <div className="input">
             <Form.Control
               type="text"
               name="descricao"
@@ -159,7 +206,7 @@ const CadastroServico = () => {
         </Form.Group>
         <Form.Group className="mb-3">
           <Form.Label>Preço</Form.Label>
-          <div className='input'>
+          <div className="input">
             <Form.Control
               type="text"
               name="preco"
@@ -171,7 +218,7 @@ const CadastroServico = () => {
         </Form.Group>
         <Form.Group className="mb-3">
           <Form.Label>Duração</Form.Label>
-          <div className='input'>
+          <div className="input">
             <Form.Control
               type="text"
               name="duracao"
@@ -181,21 +228,37 @@ const CadastroServico = () => {
             />
           </div>
         </Form.Group>
-        <div className='d-grid gap-2 d-md-flex justify-content-md-end mb-3'>
-          <Button type='submit' className="btn btn-success">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
+        <div className="d-grid gap-2 d-md-flex justify-content-md-end mb-3">
+          <Button type="submit" className="btn btn-success">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#FFFFFF"
+            >
               <path d="M400-304 240-464l56-56 104 104 264-264 56 56-320 320Z" />
             </svg>
             SALVAR
           </Button>
-          <Button type='button' className="btn btn-danger" onClick={() => {
-            setFormServico({
-              descricao: '',
-              preco: '',
-              duracao: ''
-            });
-          }}>
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
+          <Button
+            type="button"
+            className="btn btn-danger"
+            onClick={() => {
+              setFormServico({
+                descricao: "",
+                preco: "",
+                duracao: "",
+              });
+            }}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#FFFFFF"
+            >
               <path d="m336-280-56-56 144-144-144-143 56-56 144 144 143-144 56 56-144 143 144 144-56 56-143-144-144 144Z" />
             </svg>
             CANCELAR
@@ -204,6 +267,6 @@ const CadastroServico = () => {
       </Form>
     </Container>
   );
-}
+};
 
 export default CadastroServico;
