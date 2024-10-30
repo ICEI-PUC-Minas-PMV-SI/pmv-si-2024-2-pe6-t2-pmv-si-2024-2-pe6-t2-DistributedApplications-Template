@@ -24,7 +24,7 @@ const createPrestador = async (req, res) => {
     });
 
     if (existingPrestador) {
-        return res.status(400).json({
+        return res.status(409).json({
             error: "Já existe um prestador cadastrado com o mesmo e-mail, telefone ou CNPJ."
         });
     }

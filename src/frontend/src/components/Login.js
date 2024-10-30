@@ -29,8 +29,10 @@ function Login() {
             if (error.response) {
                 // Verifica o status da resposta
                 if (error.response.status === 401) {
-                    alert("Senha incorreta!"); // Mensagem específica para senha incorreta
-                } else if (error.response.data && error.response.data.message) {
+                    alert("Senha incorreta!"); // Mensagem específica para senha incorreta     
+                } else if (error.response.status === 404) {
+                    alert("Usuário não encontrado!");} 
+                else if (error.response.data && error.response.data.message) {
                     alert(error.response.data.message); // Exibe a mensagem de erro do servidor
                 } else {
                     alert("Erro ao tentar realizar o login.");
@@ -41,6 +43,8 @@ function Login() {
 
 
     return (
+
+
         <Container className='w-50 p-1' controlId="container">
             <Row className='row justify-content-md-center'>
                 <Col xs={1} md={6}>
@@ -57,7 +61,7 @@ function Login() {
                         fontSize: '24px',
                         margin: '0 auto'
                     }}
-                    onSubmit={handleLogin} // Adicionando o onSubmit ao Form
+                    onSubmit={handleLogin}
                 >
                     <Form.Group className="mb-3 mt-3" controlId="email">
                         <Form.Label>Email</Form.Label>
@@ -79,7 +83,7 @@ function Login() {
                                 borderRadius: '8px'
                             }}
                             type="password"
-                            required // Adicionado
+                            required 
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </Form.Group>

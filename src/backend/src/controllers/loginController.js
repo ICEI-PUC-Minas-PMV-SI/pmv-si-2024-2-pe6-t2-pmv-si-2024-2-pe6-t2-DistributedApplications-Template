@@ -9,7 +9,7 @@ exports.login = async (req, res) => {
         // Procura o usuário pelo e-mail
         const prestador = await Prestador.findOne({ email });
         if (!prestador) {
-            return res.status(404).json({ error: "Email não encontrado!" });
+            return res.status(404).json({ error: "Usuário não encontrado!" });
         }
 
         // Compara a senha inserida com o hash armazenado
