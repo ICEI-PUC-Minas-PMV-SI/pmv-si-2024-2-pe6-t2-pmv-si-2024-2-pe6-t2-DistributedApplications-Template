@@ -3,22 +3,41 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
-import api from '../services/api';
+import axios from "axios";
+
+const api = axios.create({ baseURL: "http://localhost:3000" });
 
 function CadastroClientes() {
   const [clienteNome, setClienteNome] = useState('');
   const [clienteEmail, setClienteEmail] = useState('');
   const [clienteTelefone, setClienteTelefone] = useState('');
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
-  async function handleCadastroCliente(e) {
+  const handleCadastroCliente = async (e) => {
     e.preventDefault();
 
-    const response = await api.post('/clientes', {
+    const clienteData = {
       nome: clienteNome,
       email: clienteEmail,
       telefone: clienteTelefone,
-    });
-  }
+    };
+
+    try {
+      const response = await api.post('/clientes', clienteData);
+      console.log("Cliente cadastrado:", response.data);
+      setSuccess("Cliente cadastrado com sucesso!");
+      setError("");
+
+      setClienteNome('');
+      setClienteEmail('');
+      setClienteTelefone('');
+    } catch (error) {
+      setError("Falha ao cadastrar:", error);
+      console.error("Erro ao enviar o formulário:", error);
+    }
+  };
+
 
   return (
     <Container className='w-50 p-3'>
@@ -44,9 +63,13 @@ function CadastroClientes() {
             </svg>
           </Button>
         </div>
-
+        
+        {success && <div className="alert alert-success">{success}</div>}
+        {error && <div className="alert alert-danger">{error}</div>}
+        
         <Form
           className="p-4"
+          onSubmit={handleCadastroCliente}
           style={{
             backgroundColor: '#F5F5F5',
             borderRadius: '8px',
@@ -57,37 +80,37 @@ function CadastroClientes() {
 
           <Form.Group className="mb-3 mt-3" controlId="clienteNome">
             <Form.Label>Nome</Form.Label>
-            
-              <Form.Control style={{ border: '3px solid #BDBDBD', borderradius: '8px'}}
-                type="text"
-                name='clienteNome'
-                value={clienteNome}
-                onChange={(e) => setClienteNome(e.target.value)}
-                required />
-            
+
+            <Form.Control style={{ border: '3px solid #BDBDBD', borderradius: '8px' }}
+              type="text"
+              name='clienteNome'
+              value={clienteNome}
+              onChange={(e) => setClienteNome(e.target.value)}
+              required />
+
           </Form.Group>
 
           <Form.Group className="mb-3 mt-3" controlId="clienteEmail">
             <Form.Label>Email</Form.Label>
-            
-              <Form.Control style={{ border: '3px solid #BDBDBD', borderradius: '8px'}}
-                type="email"
-                value={clienteEmail}
-                onChange={(e) => setClienteEmail(e.target.value)}
-                required />
-            
+
+            <Form.Control style={{ border: '3px solid #BDBDBD', borderradius: '8px' }}
+              type="email"
+              value={clienteEmail}
+              onChange={(e) => setClienteEmail(e.target.value)}
+              required />
+
           </Form.Group>
 
           <Form.Group className="mb-3 mt-3" controlId="clienteTelefone">
             <Form.Label>Telefone</Form.Label>
-            
-              <Form.Control style={{ border: '3px solid #BDBDBD', borderradius: '8px'}}
-                type="tel"
-                name='clienteTelefone'
-                value={clienteTelefone}
-                onChange={(e) => setClienteTelefone(e.target.value)}
-                required />
-            
+
+            <Form.Control style={{ border: '3px solid #BDBDBD', borderradius: '8px' }}
+              type="tel"
+              name='clienteTelefone'
+              value={clienteTelefone}
+              onChange={(e) => setClienteTelefone(e.target.value)}
+              required />
+
           </Form.Group>
 
           <div className="d-grid gap-2 d-md-flex justify-content-md-end mb-3">
