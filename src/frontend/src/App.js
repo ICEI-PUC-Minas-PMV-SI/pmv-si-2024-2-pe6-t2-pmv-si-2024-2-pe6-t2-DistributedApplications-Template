@@ -6,7 +6,7 @@ import Nbar from './components/nav';
 import Servico from './components/Servico';
 import Agedamento from './components/Agendamento';
 import Login from './components/Login';
-
+import PagInicial from './components/pagInicial';
 
 
 
@@ -21,6 +21,7 @@ function App() {
       <Route path='/servico'element={<Servico/>}/>
       <Route path='/agendamento'element={<Agedamento/>}/>
       <Route path='/login'element={<Login/>}/>
+      <Route path='/inicio'element={<PagInicial/>}/>
       <Route path='*'element={<h1>Informe a rota</h1>}/>
      
     </Routes>
