@@ -8,7 +8,8 @@ import Agedamento from './components/Agendamento';
 import Login from './components/Login';
 import PagInicial from './components/pagInicial';
 import { useAuth } from './components/AuthContext';
-
+import AgendamentoCadastro from './components/AgendamentoCadastro';
+import AgendamentosView from './components/AgendamentoView';
 
 
 function App() {
@@ -22,6 +23,8 @@ function App() {
         <Route path='/clientes' element={<CadastroClientes />} />
         <Route path='/servico' element={<Servico />} />
         <Route path='/agendamento' element={<Agedamento />} />
+        <Route path='/agendamentoCadastro' element={<AgendamentoCadastro/>}/>    
+      <Route path='/agendamentoView' element={<AgendamentosView/>}/>  
         <Route path='/login' element={<Login />} />
         <Route path='/inicio' element={<PagInicial />} />
         {isLoggedIn ? (
