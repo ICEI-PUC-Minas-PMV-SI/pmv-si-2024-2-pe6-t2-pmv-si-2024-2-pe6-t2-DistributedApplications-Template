@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes} from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Cadastro from './components/Cadastro';
 import CadastroClientes from './components/CadastroClientes';
 import './global.css';
@@ -7,24 +7,33 @@ import Servico from './components/Servico';
 import Agedamento from './components/Agendamento';
 import Login from './components/Login';
 import PagInicial from './components/pagInicial';
+import { useAuth } from './components/AuthContext';
 
 
 
 function App() {
+  const { isLoggedIn, userName } = useAuth();
   return (
 
     <BrowserRouter>
-        <Nbar/>
-    <Routes>
-      <Route path='/prestador' element={<Cadastro/>} />
-      <Route path='/clientes'element={<CadastroClientes/>}/>
-      <Route path='/servico'element={<Servico/>}/>
-      <Route path='/agendamento'element={<Agedamento/>}/>
-      <Route path='/login'element={<Login/>}/>
-      <Route path='/inicio'element={<PagInicial/>}/>
-      <Route path='*'element={<h1>Informe a rota</h1>}/>
-     
-    </Routes>
+      <Nbar />
+      <Routes>
+        <Route path='/prestador' element={<Cadastro />} />
+        <Route path='/clientes' element={<CadastroClientes />} />
+        <Route path='/servico' element={<Servico />} />
+        <Route path='/agendamento' element={<Agedamento />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/inicio' element={<PagInicial />} />
+        {isLoggedIn ? (
+          <Route path='*' element={<h1>Bem Vindo(a) {userName}, informe sua rota </h1>} />
+
+        ) : (
+          <Route path='*' element={<h1>Informe a rota </h1>} />
+
+        )}
+
+
+      </Routes>
     </BrowserRouter>
 
   );
