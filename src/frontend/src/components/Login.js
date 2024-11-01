@@ -7,17 +7,21 @@ import Image from 'react-bootstrap/Image';
 import Col from 'react-bootstrap/Col';
 import api from '../services/api';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from './AuthContext'
 
 function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
+    const { login } = useAuth(); // Usa a função login do contexto
 
     async function handleLogin(e) {
         e.preventDefault();
         try {
             const response = await api.post('/login', { email, password });
             if (response.status === 200) {
+                // Chama a função login do contexto para atualizar o estado
+                login(response.data.token, response.data.user.nome); // Atualiza o estado no contexto
                 navigate('/home');
             }
         } catch (error) {
@@ -39,16 +43,13 @@ function Login() {
     return (
         <Container fluid className="d-flex justify-content-center min-vh-100">
             <Row className="text-center w-75" xs={1} md={6}>
-            <Col md={6} lg={4} className="mx-auto mt-5">
-                   <Col lg={8} className="mx-auto">
-                   <Image className="rounded mx-auto d-block" src="./icon.png" style={{ width: '75%' }} />
-                   <figcaption class="figure-caption"style={{ color: '#F79824', fontSize: '50px', textAlign: 'center', fontFamily: 'Luckiest Guy' }}>
-                   Agenda <br /> Fácil</figcaption>
-
-                   </Col>
-                    
-                
-                
+                <Col md={6} lg={4} className="mx-auto mt-5">
+                    <Col lg={8} className="mx-auto">
+                        <Image className="rounded mx-auto d-block" src="./icon.png" style={{ width: '75%' }} />
+                        <figcaption className="figure-caption" style={{ color: '#F79824', fontSize: '50px', textAlign: 'center', fontFamily: 'Luckiest Guy' }}>
+                            Agenda <br /> Fácil
+                        </figcaption>
+                    </Col>
                     <Form className="shadow p-4 rounded text-start mt-3" style={{ border: '2px solid #7E5A9B', color:'#7E5A9B' }} onSubmit={handleLogin}>
                         <Form.Group className="mb-3" controlId="email">
                             <Form.Label>Email</Form.Label>
