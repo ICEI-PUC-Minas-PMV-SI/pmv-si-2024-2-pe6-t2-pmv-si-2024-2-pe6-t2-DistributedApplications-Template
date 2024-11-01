@@ -58,14 +58,14 @@ function Cadastro() {
 
   return (
     <Container fluid className="d-flex justify-content-center align-items-center min-vh-100">
-      <Row className="w-50">
-        <h1 className="text-center" style={{ color: '#7E5A9B', fontSize: '58px', fontFamily: 'Roboto' }}>
+      <Row className="w-100 justify-content-center">
+        <h1  className="text-center custom-title mt-5" style={{ color: '#7E5A9B', fontSize: '36px', fontFamily: 'Roboto' }}>
           CADASTRO DO PRESTADOR
         </h1>
         <Form 
           className="w-100 mx-auto rounded"
           onSubmit={handleCadastro}
-          style={{ maxWidth: '700px', borderRadius: '8px', color: '#7E5A9B', fontSize: '24px'}}
+          style={{ maxWidth: '700px', borderRadius: '8px', color: '#7E5A9B', fontSize: '16px'}}
         >
           <Form.Group className="mb-3" controlId="nome">
             <Form.Label>Nome</Form.Label>
