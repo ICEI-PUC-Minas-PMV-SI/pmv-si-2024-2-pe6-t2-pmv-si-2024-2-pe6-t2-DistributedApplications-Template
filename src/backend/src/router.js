@@ -6,8 +6,9 @@ const servicoController = require('./controllers/servicosController');
 const agendamentosController = require('./controllers/agendamentosController');
 const financeiroController = require('./controllers/financeiroContoller')
 const clienteController = require('./controllers/clienteController');
-const caixaController = require('./controllers/caixaController')
-const loginController = require('./controllers/loginController')
+const caixaController = require('./controllers/caixaController');
+const loginController = require('./controllers/loginController');
+const authMiddleware = require('./middleware/authMiddleware');
 
 // Cad. de Prestadores de Serviços
 router.get('/prestador', prestadorController.getAllPrestador);
@@ -16,10 +17,10 @@ router.delete('/prestador/:id', prestadorController.deletePrestador);
 router.put('/prestador/:id', prestadorController.updatePrestador);
 
 // Serviços
-router.get('/servicos', servicoController.getAllServicos);
-router.post('/servicos', servicoController.createServico);
-router.put('/servicos/:id', servicoController.updateServico);
-router.delete('/servicos/:id', servicoController.deleteServico);
+router.get('/servicos', authMiddleware, servicoController.getAllServicos);
+router.post('/servicos', authMiddleware, servicoController.createServico);
+router.put('/servicos/:id', authMiddleware, servicoController.updateServico);
+router.delete('/servicos/:id', authMiddleware, servicoController.deleteServico);
 
 //Agendamentos
 router.get('/agendamentos', agendamentosController.getAll);
