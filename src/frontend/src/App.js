@@ -7,6 +7,7 @@ import Servico from './components/Servico';
 import Agedamento from './components/Agendamento';
 import Login from './components/Login';
 import PagInicial from './components/pagInicial';
+import BoasVindas from './components/BoasVindas';
 
 
 
@@ -22,6 +23,7 @@ function App() {
       <Route path='/agendamento'element={<Agedamento/>}/>
       <Route path='/login'element={<Login/>}/>
       <Route path='/inicio'element={<PagInicial/>}/>
+      <Route path='/boasvindas'element={<BoasVindas/>}/>
       <Route path='*'element={<h1>Informe a rota</h1>}/>
      
     </Routes>
