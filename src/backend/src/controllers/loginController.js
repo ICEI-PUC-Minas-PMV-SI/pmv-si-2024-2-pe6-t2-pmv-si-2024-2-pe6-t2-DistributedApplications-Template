@@ -2,7 +2,7 @@ const bcryptjs = require("bcryptjs");
 const Prestador = require("../models/prestadorModel");
 const jwt = require("jsonwebtoken");
 
-const SECRET_KEY = "agendafacil"; // Certifique-se de usar uma variável de ambiente para a chave secreta
+const SECRET_KEY = process.env.CHAVE_JWT;
 
 exports.login = async (req, res) => {
     const { email, password } = req.body;
