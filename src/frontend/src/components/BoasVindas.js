@@ -1,10 +1,14 @@
 import React from 'react';
 import { Form } from 'react-bootstrap';
+import { useAuth } from './AuthContext';
+
 
 function BoasVindas() {
+  const { userName } = useAuth();
+
   return (
     <div className="boas-vindas-container" style={{ padding: '5px' }}> 
-      <h1 style={{ marginBottom: '0px', marginLeft: '10%', textAlign: 'left'}}> Bem-vindo(a), Aline!</h1>
+      <h1 style={{ marginBottom: '0px', marginLeft: '10%', textAlign: 'left'}}> Bem-vindo(a), {userName}!</h1>
 
       <Form
         className="p-3"

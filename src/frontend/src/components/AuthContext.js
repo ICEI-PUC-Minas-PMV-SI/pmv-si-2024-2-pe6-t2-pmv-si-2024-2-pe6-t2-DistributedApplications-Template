@@ -4,29 +4,41 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userName, setUserName] = useState('')
+  const [userName, setUserName] = useState(''); 
+  const [userId, setUserId] = useState(''); 
 
   useEffect(() => {
     const token = localStorage.getItem('authToken');
-    if (token) {
+    const storedUserName = localStorage.getItem('userName'); 
+    const storedUserId = localStorage.getItem('userId'); 
+
+    if (token && storedUserName && storedUserId) {
       setIsLoggedIn(true);
+      setUserName(storedUserName); 
+      setUserId(storedUserId); 
     }
   }, []);
 
-  const login = (token, nome) => {
+  const login = (token, nome, id) => {
     localStorage.setItem('authToken', token);
-    setUserName(nome);
-    setIsLoggedIn(true); // Atualiza o estado imediatamente
+    localStorage.setItem('userName', nome); 
+    localStorage.setItem('userId', id); 
+    setUserName(nome); 
+    setUserId(id);
+    setIsLoggedIn(true);
   };
 
   const logout = () => {
     localStorage.removeItem('authToken');
-    setIsLoggedIn(false); // Atualiza o estado imediatamente
-    setUserName('');
+    localStorage.removeItem('userName'); 
+    localStorage.removeItem('userId'); 
+    setIsLoggedIn(false);
+    setUserName(''); 
+    setUserId(''); 
   };
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, userName, login, logout }}>
+    <AuthContext.Provider value={{ isLoggedIn, userName, userId, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

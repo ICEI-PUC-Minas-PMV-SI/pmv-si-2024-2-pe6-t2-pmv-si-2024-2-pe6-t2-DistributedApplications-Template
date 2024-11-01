@@ -13,16 +13,15 @@ function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
-    const { login } = useAuth(); // Usa a função login do contexto
+    const { login } = useAuth(); 
 
     async function handleLogin(e) {
         e.preventDefault();
         try {
             const response = await api.post('/login', { email, password });
             if (response.status === 200) {
-                // Chama a função login do contexto para atualizar o estado
-                login(response.data.token, response.data.user.nome); // Atualiza o estado no contexto
-                navigate('/home');
+                login(response.data.token, response.data.user.nome, response.data.user._id);
+                navigate('/boasvindas');
             }
         } catch (error) {
             console.error("Erro no Login:", error);
