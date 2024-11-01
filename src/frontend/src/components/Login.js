@@ -41,7 +41,7 @@ function Login() {
 
     return (
         <Container fluid className="d-flex justify-content-center min-vh-100">
-            <Row className="text-center w-75" xs={1} md={6}>
+            <Row className="text-center w-75 mt-5" xs={1} md={6}>
                 <Col md={6} lg={4} className="mx-auto mt-5">
                     <Col lg={8} className="mx-auto">
                         <Image className="rounded mx-auto d-block" src="./icon.png" style={{ width: '75%' }} />
