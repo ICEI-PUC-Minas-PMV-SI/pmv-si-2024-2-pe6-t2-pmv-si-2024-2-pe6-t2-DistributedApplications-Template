@@ -11,6 +11,7 @@ import BoasVindas from './components/BoasVindas';
 import { useAuth } from './components/AuthContext';
 import AgendamentoCadastro from './components/AgendamentoCadastro';
 import AgendamentosView from './components/AgendamentoView';
+import Opcoes from './components/opcoesCadastro';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path='/agendamentoCadastro' element={<AgendamentoCadastro />} />
           <Route path='/agendamentoView' element={<AgendamentosView />} />
           <Route path='/boasvindas' element={<BoasVindas />} />
+          <Route path='/opcoes' element={<Opcoes />} />
         </>
         ) : (
           <>

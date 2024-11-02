@@ -31,7 +31,7 @@ function Nbar() {
                 <>
                   <Nav.Link style={{ color: '#FFFFFF' }} href="/boasvindas">Página Inicial</Nav.Link>
                   <Nav.Link style={{ color: '#FFFFFF' }} href="/agendamento">Agendamento</Nav.Link>
-                  <Nav.Link style={{ color: '#FFFFFF' }} href="/cadastros">Cadastros</Nav.Link>
+                  <Nav.Link style={{ color: '#FFFFFF' }} href="/opcoes">Cadastros</Nav.Link>
                   <Nav.Link style={{ color: '#FFFFFF' }} href="/financeiro">Financeiro</Nav.Link>
                   <Nav.Link style={{ color: '#FFFFFF' }} href="/relatorios">Relatórios</Nav.Link>
                 </>
