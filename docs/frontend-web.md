@@ -73,8 +73,12 @@ A interface web da Agenda Fácil é projetada para proporcionar uma experiência
 ![Página Cadastro - Opções](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cadastro.png)
 **Cadastro de Clientes**
 ![Cadastro de Clientes](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Frame%2021.png)
+**Lista de Clientes**
+![Lista de Clientes](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Frame%2019.png)
 **Cadastro de Serviços**
 ![Cadastro de Serviços](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cadastro%20-%20Servi%C3%A7os%20(1).png)
+**Lista de Serviços**
+![Lista de Serviços](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Frame%2028.png)
 **Calendário - Agendamento**
 ![Calendário - Agendamento](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Agendamento%20-%20Usar%20API.png)
 **Página de agendamento**
