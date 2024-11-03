@@ -18,7 +18,6 @@ import ListaClientes from './components/listaclientes';
 function App() {
   const { isLoggedIn, userName } = useAuth();
   return (
-
     <BrowserRouter>
       <Nbar />
       <Routes>
@@ -36,21 +35,15 @@ function App() {
         </>
         ) : (
           <>
-            <Route path='*' element={<h1>Informe a rota </h1>} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/inicio' element={<PagInicial />} />
-            <Route path='/prestador' element={<Cadastro />} />
-
+            <Route path="*" element={<h1>Informe a rota </h1>} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/inicio" element={<PagInicial />} />
+            <Route path="/prestador" element={<Cadastro />} />
           </>
-
         )}
-
       </Routes>
     </BrowserRouter>
-
   );
 }
 
 export default App;
-
-
