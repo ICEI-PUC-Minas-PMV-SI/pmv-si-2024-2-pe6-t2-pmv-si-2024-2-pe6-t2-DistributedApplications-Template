@@ -11,7 +11,7 @@ function Nbar() {
     <>
       <Navbar expand="lg" className='fixed-top' style={{ backgroundColor: '#7E5A9B' }}>
         <Container>
-          <Navbar.Brand href="#home" className='d-flex flex-row align-items-center'>
+          <Navbar.Brand href="/inicio" className='d-flex flex-row align-items-center'>
             <img
               alt="Logo"
               src="/icon.png"
