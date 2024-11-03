@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './financeiro.css';
 import api from '../services/api';
 import { useAuth } from './AuthContext';
-
-
 
 const Financeiro = () => {
   const [showModal, setShowModal] = useState(false);
@@ -143,6 +140,71 @@ const Financeiro = () => {
 
   return (
     <div className="financeiro-container container">
+      <style jsx="true">{`
+        .financeiro-container {
+          color: #7E5A9B;
+          margin-top: 20px;
+        }
+
+        h2 {
+          color: #7E5A9B;
+          font-weight: bold;
+        }
+
+        .periodo label {
+          color: #7E5A9B;
+        }
+
+        .financial-item {
+          border: 1px solid #7E5A9B;
+          border-radius: 5px;
+          background-color: #FFFFFF;
+          color: #7E5A9B;
+        }
+
+        .action-buttons .btn {
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+        }
+
+        .add-button {
+          background-color: #7E5A9B;
+          color: #FFFFFF;
+        }
+
+        .edit-button {
+          background-color: #F79824;
+          color: #FFFFFF;
+        }
+
+        .action-buttons .btn:hover {
+          opacity: 0.8;
+        }
+
+        .form-control {
+          width: 150px;
+        }
+
+        .square-button {
+          width: 40px;
+          height: 40px;
+          padding: 0;
+          border-radius: 10px !important;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .mx-1 {
+          margin-top: 20px;
+        }
+
+        .button-icon {
+          width: 24px;
+          height: 24px;
+        }
+      `}</style>
       <header className="text-center mb-4">
         <h2>FINANCEIRO</h2>
       </header>
@@ -191,7 +253,8 @@ const Financeiro = () => {
         ))}
       </div>
 
-      {/* Modal para adicionar item financeiro */}
+      {/* Modals */}
+      {/* Adicionar Modal */}
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Adicionar Retirada</Modal.Title>
@@ -217,22 +280,18 @@ const Financeiro = () => {
                 id="valor"
                 value={valor}
                 onChange={(e) => setValor(e.target.value)}
-                placeholder="Ex: 200,00"
+                placeholder="Ex: 1000"
               />
             </div>
           </form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Cancelar
-          </Button>
-          <Button variant="primary" onClick={(e) => handleCadastro(e)}>
-            Adicionar
-          </Button>
+          <Button variant="secondary" onClick={handleClose}>Cancelar</Button>
+          <Button variant="primary" onClick={handleCadastro}>Salvar</Button>
         </Modal.Footer>
       </Modal>
 
-      {/* Modal para editar item financeiro */}
+      {/* Editar Modal */}
       <Modal show={showEditModal} onHide={handleEditClose}>
         <Modal.Header closeButton>
           <Modal.Title>Editar Retirada</Modal.Title>
@@ -240,55 +299,31 @@ const Financeiro = () => {
         <Modal.Body>
           <form>
             <div className="mb-3">
-              <label htmlFor="retiradaSelect" className="form-label">Selecionar Retirada</label>
-              <select
-                className="form-control"
-                id="retiradaSelect"
-                onChange={(e) => handleSelectRetirada(e.target.value)}
-                value={retiradaSelecionada ? retiradaSelecionada._id : ""}
-              >
-                <option value="">Escolha uma retirada</option>
-                {retiradas.map((retirada) => (
-                  <option key={retirada._id} value={retirada._id}>
-                    {retirada.titulo}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="mb-3">
-              <label htmlFor="editTitulo" className="form-label">Título</label>
+              <label htmlFor="titulo" className="form-label">Título</label>
               <input
                 type="text"
                 className="form-control"
-                id="editTitulo"
+                id="titulo"
                 value={titulo}
                 onChange={(e) => setTitulo(e.target.value)}
-                placeholder="Ex: Retirada Editada"
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="editValor" className="form-label">Valor</label>
+              <label htmlFor="valor" className="form-label">Valor</label>
               <input
                 type="number"
                 className="form-control"
-                id="editValor"
+                id="valor"
                 value={valor}
                 onChange={(e) => setValor(e.target.value)}
-                placeholder="Ex: 300,00"
               />
             </div>
           </form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleEditClose}>
-            Cancelar
-          </Button>
-          <Button variant="danger" onClick={handleDelete}>
-            Excluir
-          </Button>
-          <Button variant="primary" onClick={handleSaveEdit}>
-            Salvar
-          </Button>
+          <Button variant="secondary" onClick={handleEditClose}>Cancelar</Button>
+          <Button variant="danger" onClick={handleDelete}>Excluir</Button>
+          <Button variant="primary" onClick={handleSaveEdit}>Salvar</Button>
         </Modal.Footer>
       </Modal>
     </div>
