@@ -3,7 +3,6 @@ import axios from 'axios';
 import { Table, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
-
 const ListaClientes = () => {
     const [clientes, setClientes] = useState([]);
     const navigate = useNavigate();
@@ -31,13 +30,13 @@ const ListaClientes = () => {
     };
 
     const handleEdit = (cliente) => {
-        navigate('/clientes', { state: { cliente} });
+        navigate('/clientes', { state: { cliente } });
     };
 
     return (
-        <div style={{ padding: '20px', backgroundColor: '#F5F5F5' }}>
-            <h1 style={{ color: '#7E5A9B', fontSize: '58px', textAlign: 'center' }}>Lista de Clientes</h1>
-            <Table striped bordered hover style={{ marginTop: '20px' }}>
+        <div style={{ padding: '50px 20px 20px 20px', backgroundColor: '#F5F5F5' }}>
+            <h1 style={{ color: '#7E5A9B', fontSize: '58px', textAlign: 'center', marginTop: '100px' }}>Lista de Clientes</h1>
+            <Table striped bordered hover style={{ marginTop: '100px' }}>
                 <thead>
                     <tr>
                         <th>Nome</th>

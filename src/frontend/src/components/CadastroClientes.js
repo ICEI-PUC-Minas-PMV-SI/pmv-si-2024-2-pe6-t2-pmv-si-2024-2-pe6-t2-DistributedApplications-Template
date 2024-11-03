@@ -44,10 +44,10 @@ function CadastroClientes() {
 
 
   return (
-    <Container className='w-50 p-3'>
+    <Container className='w-50 p-3' style={{ marginTop: '100px' }}>
 
       <Row className='justify-content-center'>
-        <h1 className="mb-4 mt-3 text-center" style={{ color: '#7E5A9B', fontSize: '58px', textAlign: 'center' }}>CADASTRO</h1>
+        <h1 className="mb-4 mt-3 text-center" style={{ color: '#7E5A9B', fontSize: '58px', textAlign: 'center'  }}>CADASTRO</h1>
 
         <div className="d-flex justify-content-end  gap-2 mb-3">
           <Button variant="light" style={{ padding: 0, border: 'none' }} >
@@ -85,7 +85,7 @@ function CadastroClientes() {
           <Form.Group className="mb-3 mt-3" controlId="clienteNome">
             <Form.Label>Nome</Form.Label>
 
-            <Form.Control style={{ border: '3px solid #BDBDBD', borderradius: '8px' }}
+            <Form.Control style={{width: '100%', border: '3px solid #BDBDBD', borderradius: '8px' }}
               type="text"
               name='clienteNome'
               value={clienteNome}
@@ -97,7 +97,7 @@ function CadastroClientes() {
           <Form.Group className="mb-3 mt-3" controlId="clienteEmail">
             <Form.Label>Email</Form.Label>
 
-            <Form.Control style={{ border: '3px solid #BDBDBD', borderradius: '8px' }}
+            <Form.Control style={{width: '100%', border: '3px solid #BDBDBD', borderradius: '8px' }}
               type="email"
               value={clienteEmail}
               onChange={(e) => setClienteEmail(e.target.value)}
@@ -108,7 +108,7 @@ function CadastroClientes() {
           <Form.Group className="mb-3 mt-3" controlId="clienteTelefone">
             <Form.Label>Telefone</Form.Label>
 
-            <Form.Control style={{ border: '3px solid #BDBDBD', borderradius: '8px' }}
+            <Form.Control style={{width: '100%', border: '3px solid #BDBDBD', borderradius: '8px' }}
               type="tel"
               name='clienteTelefone'
               value={clienteTelefone}
