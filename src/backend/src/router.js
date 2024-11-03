@@ -23,10 +23,10 @@ router.put('/servicos/:id', authMiddleware, servicoController.updateServico);
 router.delete('/servicos/:id', authMiddleware, servicoController.deleteServico);
 
 //Agendamentos
-router.get('/agendamentos', agendamentosController.getAll);
-router.post('/agendamentos', agendamentosController.createAgendamento);
-router.delete('/agendamentos/:id', agendamentosController.deleteAgendamento);
-router.put('/agendamentos/:id', agendamentosController.updateAgendamento);
+router.get('/agendamentos', authMiddleware, agendamentosController.getAll);
+router.post('/agendamentos', authMiddleware, agendamentosController.createAgendamento);
+router.delete('/agendamentos/:id', authMiddleware, agendamentosController.deleteAgendamento);
+router.put('/agendamentos/:id', authMiddleware, agendamentosController.updateAgendamento);
 
 
 // Rotas do CRUD de Clientes
