@@ -1,0 +1,21 @@
+.servicos-view table {
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.servicos-view th, 
+.servicos-view td {
+    border: 1px solid black; 
+    padding: 10px; 
+    font-weight: bold;
+}
+
+.servicos-view tr:nth-child(even) {
+    background-color: #7E5A9B !important;
+}
+
+.servicos-view tr:nth-child(odd) {
+    background-color: white !important;
+}

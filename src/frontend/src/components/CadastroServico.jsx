@@ -1,20 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import api from '../services/api';
 import "./styles/cadastroServico.css";
+import { useLocation } from "react-router-dom";
 
 
 const CadastroServico = () => {
+  const location = useLocation();
+  const servico = location.state?.servico || {};
+
   const [formServico, setFormServico] = useState({
     descricao: "",
     preco: "",
     duracao: "",
   });
 
-  const [message, setMessage] = useState("");
   const [error, setError] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+
+
+  useEffect(() => {
+    if (servico._id){
+      setFormServico({ 
+        descricao: servico.descricao || "", 
+        preco: servico.preco || "", 
+        duracao: servico.duracao || "", 
+      }); 
+    }
+  }, [servico]);
 
   const alteraCadastroServico = (e) => {
     setFormServico({
@@ -22,23 +37,31 @@ const CadastroServico = () => {
       [e.target.name]: e.target.value,
     });
   };
-
-  const enviaCadastroServico = async (e) => { 
+  
+  const enviaCadastroServico = async (e) => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('authToken');
-      const response = await api.post("http://localhost:3000/servicos", formServico,
-        { headers: { 
-          Authorization: `Bearer ${token}` } 
+      if (servico._id) {
+        await api.put(`http://localhost:3000/servicos/${servico._id}`, formServico,
+          { headers: {
+            Authorization: `Bearer ${token}` 
+          },
         });
-      console.log("Serviço criado:", response.data); 
-      setMessage("Serviço criado com sucesso");
-      setError("");
-      setFormServico({ descricao: "", preco: "", duracao: "" }); 
+        setSuccessMessage("Serviço atualizado com sucesso!");
+      } else {
+        await api.post("http://localhost:3000/servicos", formServico, {
+         headers: { 
+          Authorization: `Bearer ${token}`, 
+         }, 
+        });
+        setSuccessMessage("Serviço criado com sucesso!");
+      }
     } catch (error) {
       setError("Falha ao criar serviço:", error.message);
-      console.error("Erro ao enviar o formulário:", error); 
-    } 
+      setSuccessMessage("");
+      console.error("Erro ao enviar o formulário:", error);
+    }
   };
 
   return (
@@ -192,7 +215,7 @@ const CadastroServico = () => {
           </svg>
         </Button>
       </div>
-      {message && <div className="alert alert-success">{message}</div>}
+      {successMessage && <div className="alert alert-success">{successMessage}</div>}
       {error && <div className="alert alert-danger">{error}</div>}
       <Form onSubmit={enviaCadastroServico} className="form-style">
         <Form.Group className="mb-3">
