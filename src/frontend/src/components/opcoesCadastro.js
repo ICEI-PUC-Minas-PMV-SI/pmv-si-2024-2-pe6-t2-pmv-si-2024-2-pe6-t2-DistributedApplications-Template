@@ -8,7 +8,7 @@ function Opcoes() {
   return (
     <div className='row justify-content-center'>
       <div className='col-sm-6 mb-3 mb-sm-0 pe-0'>
-        <div className="container text-center pe-0 p-3" style={{ padding: '5px' }}>
+        <div className="container text-center pe-0 p-3 m-5" style={{ padding: '5px' }}>
           <h1
             className="custom-title mt-5 mb-2"
             style={{ color: '#7E5A9B', fontSize: '50px', fontFamily: 'Roboto', textAlign: 'center' }}
