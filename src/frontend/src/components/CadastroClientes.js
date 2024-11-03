@@ -4,6 +4,8 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
+import ListaClientes from './listaclientes';
 
 const api = axios.create({ baseURL: "http://localhost:3000" });
 
@@ -13,6 +15,8 @@ function CadastroClientes() {
   const [clienteTelefone, setClienteTelefone] = useState('');
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+
+  const navigate = useNavigate(ListaClientes);
 
   const handleCadastroCliente = async (e) => {
     e.preventDefault();
@@ -54,7 +58,7 @@ function CadastroClientes() {
             </svg>
           </Button>
 
-          <Button variant="light" style={{ padding: 0, border: 'none' }}>
+          <Button variant="light" style={{ padding: 0, border: 'none' }} onClick={() => navigate('/listaclientes')}>
             <svg width="79px" height="83px" viewBox="0 0 79 83" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="79" height="83" rx="8" fill="#F79824" />
 

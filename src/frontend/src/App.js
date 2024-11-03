@@ -12,6 +12,7 @@ import { useAuth } from './components/AuthContext';
 import AgendamentoCadastro from './components/AgendamentoCadastro';
 import AgendamentosView from './components/AgendamentoView';
 import Opcoes from './components/opcoesCadastro';
+import ListaClientes from './components/listaclientes';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path='/agendamentoView' element={<AgendamentosView />} />
           <Route path='/boasvindas' element={<BoasVindas />} />
           <Route path='/opcoes' element={<Opcoes />} />
+          <Route path='/listaclientes' element={<ListaClientes />} />
         </>
         ) : (
           <>
