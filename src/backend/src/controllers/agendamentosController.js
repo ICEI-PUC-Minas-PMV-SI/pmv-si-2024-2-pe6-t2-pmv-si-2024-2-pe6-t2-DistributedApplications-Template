@@ -17,9 +17,9 @@ const createAgendamento = async (request, response) => {
       nomePrestador,
       data,
       horario,
-      prestadorId: request.prestaddor._id
+      prestadorId: request.prestador._id
     });
-    return response.status(201).json(createdAgendamento); 
+    return response.status(201).json(novoAgendamento); 
   } catch (error) {
     return response.status(500).json({ message: 'Erro ao criar agendamento', error: error.message }); 
   }
@@ -28,7 +28,7 @@ const createAgendamento = async (request, response) => {
 const deleteAgendamento = async (request, response) => {
   try {
     const { id } = request.params;
-    const deletedAgendamento = await agendamentosModel.deleteAgendamento(id, request._id);
+    const deletedAgendamento = await agendamentosModel.deleteAgendamento(id, request.prestador._id);
     
     if (!deletedAgendamento) {
       return response.status(404).json({ message: 'Agendamento não encontrado' });
