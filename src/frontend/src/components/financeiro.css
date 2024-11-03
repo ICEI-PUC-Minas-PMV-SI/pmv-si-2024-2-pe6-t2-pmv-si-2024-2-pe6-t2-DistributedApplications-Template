@@ -1,0 +1,69 @@
+/* src/Financeiro.css */
+.financeiro-container {
+    color: #7E5A9B; /* Roxo base */
+  }
+  
+  h2 {
+    color: #7E5A9B; /* Roxo base */
+    font-weight: bold;
+  }
+  
+  .periodo label {
+    color: #7E5A9B;
+  }
+  
+  .financial-item {
+    border: 1px solid #7E5A9B;
+    border-radius: 5px;
+    background-color: #FFFFFF; /* Branco */
+    color: #7E5A9B;
+  }
+  
+  .action-buttons .btn {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .add-button {
+    background-color: #7E5A9B; /* Roxo */
+    color: #FFFFFF;
+  }
+  
+  .edit-button {
+    background-color: #F79824; /* Laranja */
+    color: #FFFFFF;
+  }
+  
+  .action-buttons .btn:hover {
+    opacity: 0.8;
+  }
+
+  .form-control {
+width: 150px;
+  }
+
+  .financeiro-container {
+    margin-top: 20px;
+  }
+
+  .square-button {
+    width: 40px; /* Defina o tamanho desejado */
+    height: 40px; /* Use a mesma altura e largura */
+    padding: 0; /* Remove espaçamento interno */
+    border-radius: 10px !important; /* Remove arredondamento */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mx-1 {
+    margin-top: 20px;
+  }
+
+  .button-icon {
+    width: 24px; /* Ajuste para que a imagem caiba bem no botão */
+    height: 24px;
+  }
+  
+  
