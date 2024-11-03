@@ -36,7 +36,7 @@ A aplicação Agenda Fácil é dividida em 03 (três) camadas principais: Front-
 
 ## Modelagem da Aplicação
 
-![UserFlow](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/UserFlow.png)
+![UserFlow](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/UserFlow..png)
 
 
 ## Projeto da Interface Web
@@ -72,17 +72,17 @@ A interface web da Agenda Fácil é projetada para proporcionar uma experiência
 **Página Cadastro - Opções**
 ![Página Cadastro - Opções](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cadastro.png)
 **Cadastro de Clientes**
-![Cadastro de Clientes](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Frame%2021.png)
+![Cadastro de Clientes](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cadastro%20-%20CLIENTES%20(1).png)
 **Lista de Clientes**
-![Lista de Clientes](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Frame%2019.png)
+![Lista de Clientes](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Lista%20de%20CLIENTES.png)
 **Cadastro de Serviços**
-![Cadastro de Serviços](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cadastro%20-%20Servi%C3%A7os%20(1).png)
+![Cadastro de Serviços](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cadastro%20-%20SERVI%C3%87OS%20(2).png)
 **Lista de Serviços**
-![Lista de Serviços](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Frame%2028.png)
+![Lista de Serviços](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Lista%20de%20SERVI%C3%87OS.png)
 **Calendário - Agendamento**
-![Calendário - Agendamento](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Agendamento%20-%20Usar%20API.png)
+![Calendário - Agendamento](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Agendamento%20-%20Usar%20API%20(3).png)
 **Página de agendamento**
-![Página de agendamento](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Agendamento%20-%20Usar%20API%20(1).png)
+![Página de agendamento](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Agendamento%20-%20Usar%20API%20(2).png)
 **Lista de agendamento**
 ![Lista de agendamento](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Agendamento%20-%20Lista%20de%20agendamento.png)
 **Relatórios**
@@ -107,14 +107,9 @@ A interface responsiva será essencial para garantir que a experiência do usuá
 A seguir estão algumas abordagens e melhores práticas que serão implementadas para otimizar a interface em várias resoluções.
 
 1.	**Design Responsivo:** O design do site será adaptado para redimensionar, esconder, ajustar e reorganizar elementos com base no tamanho da tela do dispositivo.
-•	Desktop: Exibirá o layout completo, com barras laterais e menus expandidos, aproveitando a tela maior.
-•	Tablet: Manterá um layout mais compacto, geralmente com menus em forma de ícones ou um menu dobrável (menu hamburger) para liberar espaço.
-•	Celulares: Foco na navegação simplificada e principal, eliminando elementos secundários, e com botões maiores para facilitar o uso com o toque.
-
+Desktop: Exibirá o layout completo, com barras laterais e menus expandidos, aproveitando a tela maior | Tablet: Manterá um layout mais compacto, geralmente com menus em forma de ícones ou um menu dobrável (menu hamburger) para liberar espaço | Celulares: Foco na navegação simplificada e principal, eliminando elementos secundários, e com botões maiores para facilitar o uso com o toque.
 2.	**Imagens e Ícones Escaláveis:** Utilizaremos imagens e ícones vetoriais, mantendo assim, a qualidade visual independentemente do tamanho.
-
 3.	**Tipografia e Espaçamento Ajustáveis:** As fontes e o espaçamento serão escaláveis para garantir que o texto seja legível em todas as telas.
-
 4.	**Componentes Interativos e Funcionalidades:** Componentes como agendamentos, formulários de contato, e a área do cliente serão ajustados para manter a funcionalidade principal em telas menores.
 
 
@@ -189,8 +184,8 @@ Exemplo | Fluxo em duas etapas (front-end e back-end), Agendamento de Serviço:
 
 ## Implantação
 
-1. Requisitos de Hardware e Software:
-   
+Requisitos de Hardware e Software:
+
 **Hardware:**
 * CPU: 2 núcleos ou mais, dependendo da quantidade de acessos simultâneos;
 * Memória RAM: 4 GB no mínimo; 8 GB para uma aplicação com tráfego médio a alto;
@@ -200,7 +195,7 @@ Exemplo | Fluxo em duas etapas (front-end e back-end), Agendamento de Serviço:
 * Sistema Operacional: Windows Server 2019 ou superior;
 * Gerenciador de Processos;
 
-2. **Nuvem - AZURE:** A hospedagem e o lançamento da plataforma serão realizados na Azure, utilizando os serviços oferecidos pela Microsoft para garantir escalabilidade, segurança e disponibilidade.
+**Nuvem - AZURE:** A hospedagem e o lançamento da plataforma serão realizados na Azure, utilizando os serviços oferecidos pela Microsoft para garantir escalabilidade, segurança e disponibilidade.
 Servidor Dedicado com Windows Server.
 
 
