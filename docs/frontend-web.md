@@ -42,7 +42,7 @@ As entidades:
 * **Serviços:** atividade prestada pelo Prestador de serviços.
 * **Agendamentos:** marcação de atendimentos no sistema, demonstrando assim, a sua descrição, data e horário.
 
-----Complentar infos----
+![UserFlow](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/UserFlow.png)
 
 
 ## Projeto da Interface Web
