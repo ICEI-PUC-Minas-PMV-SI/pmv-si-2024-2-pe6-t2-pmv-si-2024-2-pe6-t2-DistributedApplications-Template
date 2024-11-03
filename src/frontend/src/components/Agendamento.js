@@ -1,6 +1,3 @@
-
-
-
 import React, { useEffect, useState } from 'react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
@@ -39,7 +36,12 @@ const Agendamento = () => {
 
   const fetchEvents = async () => {
     try {
-      const response = await fetch('http://localhost:3000/agendamentos');
+      const token = localStorage.getItem('authToken');
+      const response = await fetch('http://localhost:3000/agendamentos', {
+        headers: { Authorization: `Bearer ${token}`
+        }
+      });
+      
       const data = await response.json();
 
       const formattedEvents = data.map(agendamento => ({
