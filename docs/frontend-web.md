@@ -91,7 +91,20 @@ A interface web da Agenda Fácil é projetada para proporcionar uma experiência
 
 
 ### Layout Responsivo
-[Discuta como a interface será adaptada para diferentes tamanhos de tela e dispositivos.]
+
+A interface responsiva será essencial para garantir que a experiência do usuário seja intuitiva e agradável em qualquer dispositivo, seja ele um desktop, tablet ou celular. 
+A seguir estão algumas abordagens e melhores práticas que serão implementadas para otimizar a interface em várias resoluções.
+
+1.	**Design Responsivo:** O design do site será adaptado para redimensionar, esconder, ajustar e reorganizar elementos com base no tamanho da tela do dispositivo.
+•	Desktop: Exibirá o layout completo, com barras laterais e menus expandidos, aproveitando a tela maior.
+•	Tablet: Manterá um layout mais compacto, geralmente com menus em forma de ícones ou um menu dobrável (menu hamburger) para liberar espaço.
+•	Celulares: Foco na navegação simplificada e principal, eliminando elementos secundários, e com botões maiores para facilitar o uso com o toque.
+
+2.	**Imagens e Ícones Escaláveis:** Utilizaremos imagens e ícones vetoriais, mantendo assim, a qualidade visual independentemente do tamanho.
+
+3.	**Tipografia e Espaçamento Ajustáveis:** As fontes e o espaçamento serão escaláveis para garantir que o texto seja legível em todas as telas.
+
+4.	**Componentes Interativos e Funcionalidades:** Componentes como agendamentos, formulários de contato, e a área do cliente serão ajustados para manter a funcionalidade principal em telas menores.
 
 
 ### Interações do Usuário
@@ -161,13 +174,20 @@ Exemplo | Fluxo em duas etapas (front-end e back-end), Agendamento de Serviço:
 
 ## Implantação
 
-[Instruções para implantar a aplicação distribuída em um ambiente de produção.]
+1. Requisitos de Hardware e Software:
+   
+**Hardware:**
+* CPU: 2 núcleos ou mais, dependendo da quantidade de acessos simultâneos;
+* Memória RAM: 4 GB no mínimo; 8 GB para uma aplicação com tráfego médio a alto;
+* Armazenamento: SSD com pelo menos 20 GB de espaço livre, considerando um crescimento futuro.
 
-1. Defina os requisitos de hardware e software necessários para implantar a aplicação em um ambiente de produção.
-2. Escolha uma plataforma de hospedagem adequada, como um provedor de nuvem ou um servidor dedicado.
-3. Configure o ambiente de implantação, incluindo a instalação de dependências e configuração de variáveis de ambiente.
-4. Faça o deploy da aplicação no ambiente escolhido, seguindo as instruções específicas da plataforma de hospedagem.
-5. Realize testes para garantir que a aplicação esteja funcionando corretamente no ambiente de produção.
+**Software:**
+* Sistema Operacional: Windows Server 2019 ou superior;
+* Gerenciador de Processos;
+
+2. Nuvem - AZURE: A hospedagem e o lançamento da plataforma serão realizados na Azure, utilizando os serviços oferecidos pela Microsoft para garantir escalabilidade, segurança e disponibilidade.
+Servidor Dedicado com Windows Server.
+
 
 ## Testes
 
