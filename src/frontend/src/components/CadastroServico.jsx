@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
-import axios from "axios";
+import api from '../services/api';
 import "./styles/cadastroServico.css";
 
-const api = axios.create({ baseURL: "http://localhost:3000" });
 
 const CadastroServico = () => {
   const [formServico, setFormServico] = useState({
@@ -24,18 +23,22 @@ const CadastroServico = () => {
     });
   };
 
-  const enviaCadastroServico = async (e) => {
+  const enviaCadastroServico = async (e) => { 
     e.preventDefault();
     try {
-      const response = await api.post("/servicos", formServico);
-      console.log("Serviço criado:", response.data);
+      const token = localStorage.getItem('authToken');
+      const response = await api.post("http://localhost:3000/servicos", formServico,
+        { headers: { 
+          Authorization: `Bearer ${token}` } 
+        });
+      console.log("Serviço criado:", response.data); 
       setMessage("Serviço criado com sucesso");
       setError("");
-      setFormServico({ descricao: "", preco: "", duracao: "" });
+      setFormServico({ descricao: "", preco: "", duracao: "" }); 
     } catch (error) {
-      setError("Falha ao criar serviço:", error);
-      console.error("Erro ao enviar o formulário:", error);
-    }
+      setError("Falha ao criar serviço:", error.message);
+      console.error("Erro ao enviar o formulário:", error); 
+    } 
   };
 
   return (
