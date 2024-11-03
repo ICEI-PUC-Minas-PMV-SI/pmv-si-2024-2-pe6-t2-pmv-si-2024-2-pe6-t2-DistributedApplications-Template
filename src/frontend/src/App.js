@@ -13,6 +13,7 @@ import { useAuth } from "./components/AuthContext";
 import AgendamentoCadastro from "./components/AgendamentoCadastro";
 import AgendamentosView from "./components/AgendamentoView";
 import Opcoes from "./components/opcoesCadastro";
+import Financeiro from './components/financeiro';     
 
 function App() {
   const { isLoggedIn, userName } = useAuth();
@@ -37,6 +38,7 @@ function App() {
             <Route path="/agendamentoView" element={<AgendamentosView />} />
             <Route path="/boasvindas" element={<BoasVindas />} />
             <Route path="/opcoes" element={<Opcoes />} />
+            <Route path='financeiro' element={<Financeiro />} />
           </>
         ) : (
           <>
