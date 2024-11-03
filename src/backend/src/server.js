@@ -6,7 +6,7 @@ const router = require('./router');
 const app = express();
 const session = require('express-session');
 
-console.log(process.env.CHAVE_JWT);
+// console.log(process.env.CHAVE_JWT);
 
 app.use(session({
     secret: 'seu_segredo',
