@@ -13,6 +13,8 @@ import AgendamentoCadastro from './components/AgendamentoCadastro';
 import AgendamentosView from './components/AgendamentoView';
 import Opcoes from './components/opcoesCadastro';
 import ListaServicos from './components/ListaServicos';
+import ListaClientes from './components/listaclientes';
+import Financeiro from './components/financeiro';
 
 function App() {
   const { isLoggedIn, userName } = useAuth();
@@ -31,6 +33,8 @@ function App() {
           <Route path='/boasvindas' element={<BoasVindas />} />
           <Route path='/opcoes' element={<Opcoes />} />
           <Route path='listaServicos' element={ <ListaServicos/> } />
+          <Route path='/listaclientes' element={<ListaClientes />} />
+          <Route path='financeiro' element={<Financeiro />} />
         </>
         ) : (
           <>

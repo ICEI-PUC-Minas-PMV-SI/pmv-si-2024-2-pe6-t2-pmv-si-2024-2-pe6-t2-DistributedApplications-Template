@@ -6,23 +6,24 @@ function Opcoes() {
   const navigate = useNavigate();
 
   return (
-    <div className='row justify-content-center'>
-      <div className='col-sm-6 mb-3 mb-sm-0 pe-0'>
-        <div className="container text-center pe-0 p-3 m-5" style={{ padding: '5px' }}>
+    <div className="row justify-content-center mt-5">
+      <div className="col-sm-6 col-12 d-flex justify-content-center mb-3 pe-0 mt-5 mb-5">
+        <div className="container text-center">
           <h1
-            className="custom-title mt-5 mb-2"
+            className="custom-title mb-2"
             style={{ color: '#7E5A9B', fontSize: '50px', fontFamily: 'Roboto', textAlign: 'center' }}
           >
             CADASTROS
           </h1>
-          <div className="card-group d-flex text-center" style={{ gap: '20px' }}>
-
+          <div className="card-group d-flex justify-content-center text-center mt-5 flex-wrap" style={{ gap: '40px' }}>
             <div
               className="card align-middle p-3"
               style={{
                 backgroundColor: '#7E5A9B',
                 borderRadius: '10px',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                height: '175px',
+                maxWidth: '175px'
               }}
               onClick={() => navigate('/clientes')}
             >
@@ -40,12 +41,12 @@ function Opcoes() {
                   style={{
                     width: '85%',
                     height: 'auto',
-                    maxWidth: '150px'
+                    maxWidth: '90px'
                   }}
                 />
               </div>
               <div className="card-body">
-                <h5 className="card-title" style={{ textAlign: 'center', color:'#F79824', fontSize:'30px' }}>CLIENTES</h5>
+                <h5 className="card-title" style={{ textAlign: 'center', color: '#F79824', fontSize: '20px' }}>CLIENTES</h5>
               </div>
             </div>
 
@@ -54,7 +55,9 @@ function Opcoes() {
               style={{
                 backgroundColor: '#7E5A9B',
                 borderRadius: '10px',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                height: '175px',
+                maxWidth: '180px'
               }}
               onClick={() => navigate('/servico')}
             >
@@ -72,12 +75,12 @@ function Opcoes() {
                   style={{
                     width: '85%',
                     height: 'auto',
-                    maxWidth: '160px'
+                    maxWidth: '90px'
                   }}
                 />
               </div>
               <div className="card-body">
-                <h5 className="card-title" style={{ textAlign: 'center', color:'#F79824', fontSize:'30px'}}>SERVIÇOS</h5>
+                <h5 className="card-title" style={{ textAlign: 'center', color: '#F79824', fontSize: '20px' }}>SERVIÇOS</h5>
               </div>
             </div>
           </div>

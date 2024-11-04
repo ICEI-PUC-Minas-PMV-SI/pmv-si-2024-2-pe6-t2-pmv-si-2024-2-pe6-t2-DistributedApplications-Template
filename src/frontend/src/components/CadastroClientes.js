@@ -4,6 +4,8 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
+import ListaClientes from './listaclientes';
 
 const api = axios.create({ baseURL: "http://localhost:3000" });
 
@@ -13,6 +15,8 @@ function CadastroClientes() {
   const [clienteTelefone, setClienteTelefone] = useState('');
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+
+  const navigate = useNavigate(ListaClientes);
 
   const handleCadastroCliente = async (e) => {
     e.preventDefault();
@@ -40,10 +44,10 @@ function CadastroClientes() {
 
 
   return (
-    <Container className='w-50 p-3'>
+    <Container className='w-50 p-3' style={{ marginTop: '100px' }}>
 
       <Row className='justify-content-center'>
-        <h1 className="mb-4 mt-3 text-center" style={{ color: '#7E5A9B', fontSize: '58px', textAlign: 'center' }}>CADASTRO</h1>
+        <h1 className="mb-4 mt-3 text-center" style={{ color: '#7E5A9B', fontSize: '58px', textAlign: 'center'  }}>CADASTRO</h1>
 
         <div className="d-flex justify-content-end  gap-2 mb-3">
           <Button variant="light" style={{ padding: 0, border: 'none' }} >
@@ -54,7 +58,7 @@ function CadastroClientes() {
             </svg>
           </Button>
 
-          <Button variant="light" style={{ padding: 0, border: 'none' }}>
+          <Button variant="light" style={{ padding: 0, border: 'none' }} onClick={() => navigate('/listaclientes')}>
             <svg width="79px" height="83px" viewBox="0 0 79 83" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="79" height="83" rx="8" fill="#F79824" />
 
@@ -81,7 +85,7 @@ function CadastroClientes() {
           <Form.Group className="mb-3 mt-3" controlId="clienteNome">
             <Form.Label>Nome</Form.Label>
 
-            <Form.Control style={{ border: '3px solid #BDBDBD', borderradius: '8px' }}
+            <Form.Control style={{width: '100%', border: '3px solid #BDBDBD', borderradius: '8px' }}
               type="text"
               name='clienteNome'
               value={clienteNome}
@@ -93,7 +97,7 @@ function CadastroClientes() {
           <Form.Group className="mb-3 mt-3" controlId="clienteEmail">
             <Form.Label>Email</Form.Label>
 
-            <Form.Control style={{ border: '3px solid #BDBDBD', borderradius: '8px' }}
+            <Form.Control style={{width: '100%', border: '3px solid #BDBDBD', borderradius: '8px' }}
               type="email"
               value={clienteEmail}
               onChange={(e) => setClienteEmail(e.target.value)}
@@ -104,7 +108,7 @@ function CadastroClientes() {
           <Form.Group className="mb-3 mt-3" controlId="clienteTelefone">
             <Form.Label>Telefone</Form.Label>
 
-            <Form.Control style={{ border: '3px solid #BDBDBD', borderradius: '8px' }}
+            <Form.Control style={{width: '100%', border: '3px solid #BDBDBD', borderradius: '8px' }}
               type="tel"
               name='clienteTelefone'
               value={clienteTelefone}

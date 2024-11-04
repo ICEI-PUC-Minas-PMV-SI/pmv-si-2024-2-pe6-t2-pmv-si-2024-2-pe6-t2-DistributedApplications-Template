@@ -17,6 +17,24 @@ function Cadastro() {
 
   const navigate = useNavigate();
 
+  // Função para aplicar máscara de CPF ou CNPJ
+  const formatarCpfCnpj = (value) => {
+    value = value.replace(/\D/g, ""); // Remove caracteres não numéricos
+    if (value.length <= 11) {
+      // Aplica máscara de CPF
+      return value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
+    } else {
+      // Aplica máscara de CNPJ
+      return value.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, "$1.$2.$3/$4-$5");
+    }
+  };
+
+  // Função para aplicar máscara de telefone
+  const formatarTelefone = (value) => {
+    value = value.replace(/\D/g, ""); // Remove caracteres não numéricos
+    return value.replace(/(\d{2})(\d{1})(\d{4})(\d{4})/, "($1) $2 $3-$4");
+  };
+
   async function handleCadastro(e) {
     e.preventDefault();
     try { 
@@ -57,10 +75,10 @@ function Cadastro() {
   }
 
   return (
-    <Container fluid className="d-flex justify-content-center align-items-center min-vh-100">
+    <Container fluid className="d-flex justify-content-center align-items-center min-vh-100 mt-5">
       <Row className="w-100 justify-content-center">
-        <h1  className="text-center custom-title mt-5" style={{ color: '#7E5A9B', fontSize: '36px', fontFamily: 'Roboto' }}>
-          CADASTRO DO PRESTADOR
+        <h1  className="text-center custom-title mt-5" style={{ color: '#7E5A9B', fontSize: '44px', fontFamily: 'Roboto' }}>
+          CADASTRO
         </h1>
         <Form 
           className="w-100 mx-auto rounded"
@@ -101,7 +119,8 @@ function Cadastro() {
                 borderRadius: '8px'
               }}
               type="text"
-              onChange={(e) => setCnpj(e.target.value)}
+              value={cnpj}
+              onChange={(e) => setCnpj(formatarCpfCnpj(e.target.value))}
               required
             />
           </Form.Group>
@@ -114,7 +133,8 @@ function Cadastro() {
                 borderRadius: '8px'
               }}
               type="tel"
-              onChange={(e) => setTelefone(e.target.value)}
+              value={telefone}
+              onChange={(e) => setTelefone(formatarTelefone(e.target.value))}
               required
             />
           </Form.Group>
