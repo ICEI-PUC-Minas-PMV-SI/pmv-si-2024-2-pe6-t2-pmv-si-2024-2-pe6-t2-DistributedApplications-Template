@@ -3,17 +3,39 @@ import { Table, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import api from "../services/api";
 
-import "../components/styles/listaServicos.css";
-
 const ListaServicos = () => {
   const [servicos, setServicos] = useState([]);
   const navigate = useNavigate();
+
+  const servicosViewStyles = {
+    marginTop: "100px",
+  };
+
+  const tableStyles = {
+    width: "80%",
+    margin: "20px auto",
+    borderCollapse: "collapse",
+  };
+
+  const thTdStyles = {
+    border: "1px solid black",
+    padding: "10px",
+    fontWeight: "bold",
+  };
+
+  const trEvenStyles = {
+    backgroundColor: "#7E5A9B",
+  };
+
+  const trOddStyles = {
+    backgroundColor: "white",
+  };
 
   useEffect(() => {
     const fetchServicos = async () => {
       try {
         const token = localStorage.getItem("authToken"); // Obtém o token JWT do localStorage
-        const response = await api.get("http://localhost:3000/servicos", {
+        const response = await api.get("/servicos", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -29,13 +51,13 @@ const ListaServicos = () => {
   const handleDelete = async (id) => {
     try {
       const token = localStorage.getItem("authToken");
-      await api.delete(`http://localhost:3000/servicos/${id}`, {
+      await api.delete(`/servicos/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
       setServicos(servicos.filter((servico) => servico._id !== id));
-      alert("Serviço excluído com sucesso");
+      alert("Serviço excluído com sucesso!");
     } catch (error) {
       console.error("Erro ao excluir serviço:", error);
     }
@@ -46,7 +68,7 @@ const ListaServicos = () => {
   };
 
   return (
-    <div className="servicos-view">
+    <div style={servicosViewStyles}>
       <h1
         style={{
           fontSize: "58px",
@@ -56,22 +78,22 @@ const ListaServicos = () => {
       >
         LISTA DE SERVIÇOS
       </h1>
-      <Table striped bordered hover>
+      <Table striped bordered hover style={tableStyles}>
         <thead>
           <tr>
-            <th>Descrição</th>
-            <th>Preço</th>
-            <th>Duração</th>
-            <th>Ações</th>
+            <th style={thTdStyles}>Descrição</th>
+            <th style={thTdStyles}>Preço</th>
+            <th style={thTdStyles}>Duração</th>
+            <th style={thTdStyles}>Ações</th>
           </tr>
         </thead>
         <tbody>
-          {servicos.map((servico) => (
-            <tr key={servico._id}>
-              <td>{servico.descricao}</td>
-              <td>{servico.preco}</td>
-              <td>{servico.duracao}</td>
-              <td>
+          {servicos.map((servico, index) => (
+            <tr key={servico._id} style={index % 2 === 0 ? trEvenStyles : trOddStyles}>
+              <td style={thTdStyles}>{servico.descricao}</td>
+              <td style={thTdStyles}>{servico.preco}</td>
+              <td style={thTdStyles}>{servico.duracao}</td>
+              <td style={thTdStyles}>
                 <Button
                   variant="warning"
                   className="me-2"
