@@ -198,24 +198,19 @@ Requisitos de Hardware e Software:
 **Nuvem - AZURE:** A hospedagem e o lançamento da plataforma serão realizados na Azure, utilizando os serviços oferecidos pela Microsoft para garantir escalabilidade, segurança e disponibilidade.
 Servidor Dedicado com Windows Server.
 
+
+## Testes
+
 **Teste - Agendamento**
+
 ![Agendamento Calendario](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Agend%20-%201.jpeg)
 
 **Teste - Cadastro de Clientes**
+
 ![Cadastro](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cad%20-%201.jpeg)
 ![Cadastro2](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cad%20-%202.jpeg)
 ![Cadastro3](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cad%20-%203.jpeg)
 
-
-## Testes
-
-[Descreva a estratégia de teste, incluindo os tipos de teste a serem realizados (unitários, integração, carga, etc.) e as ferramentas a serem utilizadas.]
-
-1. Crie casos de teste para cobrir todos os requisitos funcionais e não funcionais da aplicação.
-2. Implemente testes unitários para testar unidades individuais de código, como funções e classes.
-3. Realize testes de integração para verificar a interação correta entre os componentes da aplicação.
-4. Execute testes de carga para avaliar o desempenho da aplicação sob carga significativa.
-5. Utilize ferramentas de teste adequadas, como frameworks de teste e ferramentas de automação de teste, para agilizar o processo de teste.
 
 # Referências
 
