@@ -106,11 +106,11 @@ A interface web da Agenda Fácil é projetada para proporcionar uma experiência
 A interface responsiva será essencial para garantir que a experiência do usuário seja intuitiva e agradável em qualquer dispositivo, seja ele um desktop, tablet ou celular. 
 A seguir estão algumas abordagens e melhores práticas que serão implementadas para otimizar a interface em várias resoluções.
 
-1.	**Design Responsivo:** O design do site será adaptado para redimensionar, esconder, ajustar e reorganizar elementos com base no tamanho da tela do dispositivo.
+* **Design Responsivo:** O design do site será adaptado para redimensionar, esconder, ajustar e reorganizar elementos com base no tamanho da tela do dispositivo.
 Desktop: Exibirá o layout completo, com barras laterais e menus expandidos, aproveitando a tela maior | Tablet: Manterá um layout mais compacto, geralmente com menus em forma de ícones ou um menu dobrável (menu hamburger) para liberar espaço | Celulares: Foco na navegação simplificada e principal, eliminando elementos secundários, e com botões maiores para facilitar o uso com o toque.
-2.	**Imagens e Ícones Escaláveis:** Utilizaremos imagens e ícones vetoriais, mantendo assim, a qualidade visual independentemente do tamanho.
-3.	**Tipografia e Espaçamento Ajustáveis:** As fontes e o espaçamento serão escaláveis para garantir que o texto seja legível em todas as telas.
-4.	**Componentes Interativos e Funcionalidades:** Componentes como agendamentos, formulários de contato, e a área do cliente serão ajustados para manter a funcionalidade principal em telas menores.
+* **Imagens e Ícones Escaláveis:** Utilizaremos imagens e ícones vetoriais, mantendo assim, a qualidade visual independentemente do tamanho.
+* **Tipografia e Espaçamento Ajustáveis:** As fontes e o espaçamento serão escaláveis para garantir que o texto seja legível em todas as telas.
+* **Componentes Interativos e Funcionalidades:** Componentes como agendamentos, formulários de contato, e a área do cliente serão ajustados para manter a funcionalidade principal em telas menores.
 
 
 ### Interações do Usuário
@@ -197,6 +197,14 @@ Requisitos de Hardware e Software:
 
 **Nuvem - AZURE:** A hospedagem e o lançamento da plataforma serão realizados na Azure, utilizando os serviços oferecidos pela Microsoft para garantir escalabilidade, segurança e disponibilidade.
 Servidor Dedicado com Windows Server.
+
+**Teste - Agendamento**
+![Agendamento Calendario](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Agend%20-%201.jpeg)
+
+**Teste - Cadastro de Clientes**
+![Cadastro](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cad%20-%201.jpeg)
+![Cadastro2](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cad%20-%202.jpeg)
+![Cadastro3](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cad%20-%203.jpeg)
 
 
 ## Testes
