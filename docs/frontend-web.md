@@ -46,8 +46,8 @@ A interface web da Agenda Fácil é projetada para proporcionar uma experiência
 **Layout das páginas:** A interface será composta por várias páginas-chave, cada uma com um layout intuitivo e funcional.
 
 * **Página de Login/Cadastro:** Os prestadores de serviços terão campos específicos para completar ou editar o seu perfil.
-* **Dashboard do usuário:** Prestadores de serviços poderão visualizar os próximos agendamentos. Vale desacar, que eles poderão editar ou excluir os agendamentos.
-* **Página de agendamento:** Um calendário que permite ao prestador de serviços selecionar datas e horários disponíveis para agendar os serviços disponíveis. Após escolher a data, o prestador de serviços poderá preencher um formulário com os detalhes como serviço, o cliente a ser atendido, tempo de duração e o valor. 
+* **Dashboard do usuário:** Prestadores de serviços poderão visualizar os próximos agendamentos. Vale destacar, que eles poderão editar ou excluir os agendamentos.
+* **Página de agendamento:** Um calendário que permite ao prestador de serviços selecionar datas e horários disponíveis para agendar os serviços cadastrados. Após escolher a data, o prestador de serviços poderá preencher um formulário com os detalhes como serviço, o cliente a ser atendido, tempo de duração e o valor. 
 * **Página de perfil:** Inclui campos para editar nome, e-mail, telefone e descrição dos serviços.
 * **Página de Serviços:** Lista de Serviços disponíveis, onde o prestador de serviços poderão gerenciar os serviços prestados, editando ou excluindo opções com descrição, tempo estimado e preço. 
 
