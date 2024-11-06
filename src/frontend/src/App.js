@@ -15,6 +15,8 @@ import Opcoes from './components/opcoesCadastro';
 import ListaServicos from './components/ListaServicos';
 import ListaClientes from './components/listaclientes';
 import Financeiro from './components/financeiro';
+import Relatorios from './components/relatorios';
+
 
 function App() {
   const { isLoggedIn, userName } = useAuth();
@@ -35,6 +37,7 @@ function App() {
           <Route path='listaServicos' element={ <ListaServicos/> } />
           <Route path='/listaclientes' element={<ListaClientes />} />
           <Route path='financeiro' element={<Financeiro />} />
+          <Route path='relatorios' element={<Relatorios />} />
         </>
         ) : (
           <>
