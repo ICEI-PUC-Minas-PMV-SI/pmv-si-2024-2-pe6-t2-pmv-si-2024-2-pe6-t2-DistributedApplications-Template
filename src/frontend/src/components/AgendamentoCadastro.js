@@ -5,8 +5,11 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
+import axios from "axios";
 
 import "../components/styles/AgendamentoCadastro.css";
+
+
 
 const AgendamentoCadastro = () => {
   const location = useLocation();
@@ -93,11 +96,6 @@ const AgendamentoCadastro = () => {
           style={{ backgroundColor: '#F5F5F5', borderRadius: '8px', border: '3px', color: '#7E5A9B', fontSize: '24px' }}
           onSubmit={handleCadastro}
         >
-          <Form.Group className="mb-3 mt-3" controlId="nomeCliente">
-            <Form.Label>Nome Cliente</Form.Label>
-            <Form.Control type="text" name='nomeCliente' value={nomeCliente} onChange={(e) => setNomeCliente(e.target.value)} />
-          </Form.Group>
-
           <Form.Group className="mb-3 mt-3" controlId="nomeCliente">
             <Form.Label>Nome Cliente</Form.Label>
             <Form.Control
