@@ -42,8 +42,8 @@ const Agendamento = () => {
       const response = await fetch('http://localhost:3000/agendamentos');
       const data = await response.json();
 
-      const formattedEvents = data.map(agendamento => ({
-        title: `${agendamento.nomeCliente} - ${agendamento.nomePrestador}`,
+      const formattedEvents = data.map((agendamento) => ({
+        title: `${agendamento.nomeCliente ? agendamento.nomeCliente : 'Cliente Desconhecido'} - ${agendamento.nomePrestador ? agendamento.nomePrestador : 'Prestador Desconhecido'}`,
         start: new Date(agendamento.data),
         end: new Date(agendamento.data),
       }));
@@ -53,7 +53,6 @@ const Agendamento = () => {
       console.error("Erro ao buscar eventos:", error);
     }
   };
-
 
 
   useEffect(() => {
