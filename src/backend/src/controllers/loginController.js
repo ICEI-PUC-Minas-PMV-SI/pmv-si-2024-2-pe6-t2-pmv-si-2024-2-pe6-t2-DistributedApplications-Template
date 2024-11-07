@@ -1,6 +1,8 @@
-// controllers/authController.js
 const bcryptjs = require("bcryptjs");
 const Prestador = require("../models/prestadorModel");
+const jwt = require("jsonwebtoken");
+
+const SECRET_KEY = process.env.CHAVE_JWT;
 
 exports.login = async (req, res) => {
     const { email, password } = req.body;
@@ -17,18 +19,16 @@ exports.login = async (req, res) => {
         console.log("Senha correta?", isPasswordCorrect);
 
         if (!isPasswordCorrect) {
-            console.log(401)
             return res.status(401).json({ error: "Credenciais inválidas!" });
-            
         }
 
-        // Sucesso no login
-        req.session.user = prestador; // Armazena o prestador na sessão
+        // Sucesso no login: gere o token
+        const token = jwt.sign({ id: prestador._id }, SECRET_KEY, { expiresIn: "1h" }); // Gera o token
 
-        return res.status(200).json({ message: "Login bem-sucedido!", user: prestador }); // Retorna a resposta com sucesso
-
+        // Retorna o token junto com os dados do usuário (opcional)
+        return res.status(200).json({ message: "Login bem-sucedido!", token, user: prestador });
+        
     } catch (error) {
         res.status(500).json({ error: "Erro no servidor: " + error.message });
-        
     }
 };

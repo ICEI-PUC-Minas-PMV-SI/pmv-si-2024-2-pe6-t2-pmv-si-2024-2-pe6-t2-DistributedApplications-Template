@@ -36,13 +36,7 @@ A aplicação Agenda Fácil é dividida em 03 (três) camadas principais: Front-
 
 ## Modelagem da Aplicação
 
-As entidades:
-* **Prestador de Serviços:** os usuários da aplicação.
-* **Clientes:** aquele consume os serviços dos Prestadores de serviços do sistema.
-* **Serviços:** atividade prestada pelo Prestador de serviços.
-* **Agendamentos:** marcação de atendimentos no sistema, demonstrando assim, a sua descrição, data e horário.
-
-----Complentar infos----
+![UserFlow](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/UserFlow..png)
 
 
 ## Projeto da Interface Web
@@ -52,8 +46,8 @@ A interface web da Agenda Fácil é projetada para proporcionar uma experiência
 **Layout das páginas:** A interface será composta por várias páginas-chave, cada uma com um layout intuitivo e funcional.
 
 * **Página de Login/Cadastro:** Os prestadores de serviços terão campos específicos para completar ou editar o seu perfil.
-* **Dashboard do usuário:** Prestadores de serviços poderão visualizar os próximos agendamentos. Vale desacar, que eles poderão editar ou excluir os agendamentos.
-* **Página de agendamento:** Um calendário que permite ao prestador de serviços selecionar datas e horários disponíveis para agendar os serviços disponíveis. Após escolher a data, o prestador de serviços poderá preencher um formulário com os detalhes como serviço, o cliente a ser atendido, tempo de duração e o valor. 
+* **Dashboard do usuário:** Prestadores de serviços poderão visualizar os próximos agendamentos. Vale destacar, que eles poderão editar ou excluir os agendamentos.
+* **Página de agendamento:** Um calendário que permite ao prestador de serviços selecionar datas e horários disponíveis para agendar os serviços cadastrados. Após escolher a data, o prestador de serviços poderá preencher um formulário com os detalhes como serviço, o cliente a ser atendido, tempo de duração e o valor. 
 * **Página de perfil:** Inclui campos para editar nome, e-mail, telefone e descrição dos serviços.
 * **Página de Serviços:** Lista de Serviços disponíveis, onde o prestador de serviços poderão gerenciar os serviços prestados, editando ou excluindo opções com descrição, tempo estimado e preço. 
 
@@ -67,34 +61,65 @@ A interface web da Agenda Fácil é projetada para proporcionar uma experiência
 
 ### Wireframes
 
+**Home**
 ![Home](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Home.png)
+**Página de Login**
 ![Página de Login](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Login.png)
-![Cadastro do Prestador](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cadastro%20do%20Prestador.png)
+**Cadastro do Prestador**
+![Cadastro do Prestador](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cadastro%20do%20Prestador%20(1).png)
+**Página Inicial**
 ![Página Inicial](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/P%C3%A1gina%20Inicial.png)
+**Página Cadastro - Opções**
 ![Página Cadastro - Opções](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cadastro.png)
-![Cadastro de Clientes](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cadastro%20-%20CLIENTES.png)
-![Cadastro de Serviços](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cadastro%20-%20SERVI%C3%87OS.png)
-![Calendário - Agendamento](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Agendamento%20-%20Usar%20API.png)
-![Página de agendamento](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Agendamento%20-%20Usar%20API%20(1).png)
+**Cadastro de Clientes**
+![Cadastro de Clientes](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cadastro%20-%20CLIENTES%20(1).png)
+**Lista de Clientes**
+![Lista de Clientes](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Lista%20de%20CLIENTES.png)
+**Cadastro de Serviços**
+![Cadastro de Serviços](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cadastro%20-%20SERVI%C3%87OS%20(2).png)
+**Lista de Serviços**
+![Lista de Serviços](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Lista%20de%20SERVI%C3%87OS.png)
+**Calendário - Agendamento**
+![Calendário - Agendamento](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Agendamento%20-%20Usar%20API%20(3).png)
+**Página de agendamento**
+![Página de agendamento](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Agendamento%20-%20Usar%20API%20(2).png)
+**Lista de agendamento**
+![Lista de agendamento](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Agendamento%20-%20Lista%20de%20agendamento.png)
+**Relatórios**
 ![Relatórios](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Relat%C3%B3rios.png)
+**Financeiro**
 ![Financeiro](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Financeito%20-%20Sangria%20do%20caixa.png)
+**Financeiro - Controle de retiradas**
+![Financeiro - Adc retirada](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Financeito%20-%20Sangria%20do%20caixa%20-%20Adicionar.png)
 
 
 ### Design Visual
 
-![Paleta de Cores](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Paleta%20de%20cores%20(2).png))
+![Paleta de Cores](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Paleta%20de%20cores%20(3).png)
 ![Justificativa das Cores](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cores%20(1).png)
-![Botões e Campos de texto](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Tipografia%20-%2002.png)
+![Botões e Campos de texto](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Tipografia%20-%2002%20(1).png)
 ![Ícones](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Iconografia.png)
 
 
 ### Layout Responsivo
-[Discuta como a interface será adaptada para diferentes tamanhos de tela e dispositivos.]
+
+A interface responsiva será essencial para garantir que a experiência do usuário seja intuitiva e agradável em qualquer dispositivo, seja ele um desktop, tablet ou celular. 
+A seguir estão algumas abordagens e melhores práticas que serão implementadas para otimizar a interface em várias resoluções.
+
+* **Design Responsivo:** O design do site será adaptado para redimensionar, esconder, ajustar e reorganizar elementos com base no tamanho da tela do dispositivo.
+Desktop: Exibirá o layout completo, com barras laterais e menus expandidos, aproveitando a tela maior | Tablet: Manterá um layout mais compacto, geralmente com menus em forma de ícones ou um menu dobrável (menu hamburger) para liberar espaço | Celulares: Foco na navegação simplificada e principal, eliminando elementos secundários, e com botões maiores para facilitar o uso com o toque.
+* **Imagens e Ícones Escaláveis:** Utilizaremos imagens e ícones vetoriais, mantendo assim, a qualidade visual independentemente do tamanho.
+* **Tipografia e Espaçamento Ajustáveis:** As fontes e o espaçamento serão escaláveis para garantir que o texto seja legível em todas as telas.
+* **Componentes Interativos e Funcionalidades:** Componentes como agendamentos, formulários de contato, e a área do cliente serão ajustados para manter a funcionalidade principal em telas menores.
 
 
 ### Interações do Usuário
-[Descreva as interações do usuário na interface, como animações, transições entre páginas e outras interações.]
 
+As animações e interações serão desenhadas para garantir uma experiência intuitiva, de forma a guiar e melhor a navegação do usuário.
+
+* **Campos de formulário:** Os placeholders se movem acima dos campos quando o usuário começa a digitar, mantendo clareza.
+* **Fluxo de agendamento em etapas:** O processo será dividido em passos, com transições suaves para indicar o progresso no preenchimento das informações;
+* **Transições suaves:** Troca de páginas suaves, dando continuidade à navegação do usuário.
 
 ## Fluxo de Dados
 
@@ -159,23 +184,33 @@ Exemplo | Fluxo em duas etapas (front-end e back-end), Agendamento de Serviço:
 
 ## Implantação
 
-[Instruções para implantar a aplicação distribuída em um ambiente de produção.]
+Requisitos de Hardware e Software:
 
-1. Defina os requisitos de hardware e software necessários para implantar a aplicação em um ambiente de produção.
-2. Escolha uma plataforma de hospedagem adequada, como um provedor de nuvem ou um servidor dedicado.
-3. Configure o ambiente de implantação, incluindo a instalação de dependências e configuração de variáveis de ambiente.
-4. Faça o deploy da aplicação no ambiente escolhido, seguindo as instruções específicas da plataforma de hospedagem.
-5. Realize testes para garantir que a aplicação esteja funcionando corretamente no ambiente de produção.
+**Hardware:**
+* CPU: 2 núcleos ou mais, dependendo da quantidade de acessos simultâneos;
+* Memória RAM: 4 GB no mínimo; 8 GB para uma aplicação com tráfego médio a alto;
+* Armazenamento: SSD com pelo menos 20 GB de espaço livre, considerando um crescimento futuro.
+
+**Software:**
+* Sistema Operacional: Windows Server 2019 ou superior;
+* Gerenciador de Processos;
+
+**Nuvem - AZURE:** A hospedagem e o lançamento da plataforma serão realizados na Azure, utilizando os serviços oferecidos pela Microsoft para garantir escalabilidade, segurança e disponibilidade.
+Servidor Dedicado com Windows Server.
+
 
 ## Testes
 
-[Descreva a estratégia de teste, incluindo os tipos de teste a serem realizados (unitários, integração, carga, etc.) e as ferramentas a serem utilizadas.]
+**Teste - Agendamento**
 
-1. Crie casos de teste para cobrir todos os requisitos funcionais e não funcionais da aplicação.
-2. Implemente testes unitários para testar unidades individuais de código, como funções e classes.
-3. Realize testes de integração para verificar a interação correta entre os componentes da aplicação.
-4. Execute testes de carga para avaliar o desempenho da aplicação sob carga significativa.
-5. Utilize ferramentas de teste adequadas, como frameworks de teste e ferramentas de automação de teste, para agilizar o processo de teste.
+![Agendamento Calendario](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Agend%20-%201.jpeg)
+
+**Teste - Cadastro de Clientes**
+
+![Cadastro](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cad%20-%201.jpeg)
+![Cadastro2](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cad%20-%202.jpeg)
+![Cadastro3](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cad%20-%203.jpeg)
+
 
 # Referências
 

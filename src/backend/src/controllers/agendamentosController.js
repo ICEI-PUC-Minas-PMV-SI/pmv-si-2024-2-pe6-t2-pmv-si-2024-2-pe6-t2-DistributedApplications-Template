@@ -25,7 +25,6 @@ const createAgendamento = async (request, response) => {
   });
 };
 
-
 const deleteAgendamento = async (request, response) => {
   const { id } = request.params;
 
@@ -39,7 +38,6 @@ const updateAgendamento = async (request, response) => {
   await agendamentosModel.updateAgendamento(id, request.body);
   return response.status(204).json();
 };
-
 
 module.exports = {
   getAll,

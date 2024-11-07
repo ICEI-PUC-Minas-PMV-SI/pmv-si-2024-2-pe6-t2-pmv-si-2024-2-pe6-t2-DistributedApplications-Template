@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-
 const agendamentoSchema = new mongoose.Schema({
   nomeCliente: { type: String, required: true },
   nomePrestador: { type: String, required: true },
@@ -32,16 +31,13 @@ const createAgendamento = async (data) => {
   }
 };
 
-
-const deleteAgendamento = async (id) => {
+const deleteAgendamento = async (id, prestadorId) => {
   try {
     return await Agendamento.findOneAndDelete({ _id: id, prestadorId });
   } catch (error) {
     throw error;
   }
 };
-
-
 
 const updateAgendamento = async (id, data) => {
   try {
@@ -54,8 +50,6 @@ const updateAgendamento = async (id, data) => {
     throw error;
   }
 };
-
-
 
 module.exports = {
   getAll,

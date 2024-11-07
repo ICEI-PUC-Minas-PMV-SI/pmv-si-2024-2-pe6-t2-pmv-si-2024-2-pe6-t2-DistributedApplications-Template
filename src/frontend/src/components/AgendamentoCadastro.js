@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import axios from 'axios';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
-import Container from 'react-bootstrap/Container';
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import api from "../services/api";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Container";
 
-import '../components/styles/AgendamentoCadastro.css';
+import "../components/styles/AgendamentoCadastro.css";
 
 const AgendamentoCadastro = () => {
   const location = useLocation();
