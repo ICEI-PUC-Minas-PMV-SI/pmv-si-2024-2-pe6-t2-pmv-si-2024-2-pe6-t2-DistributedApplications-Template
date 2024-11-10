@@ -42,7 +42,7 @@ const CadastroServico = () => {
     const { name, value } = e.target;
     let formattedValue = value;
     if (name === 'preco') {
-      formattedValue = value.replace(/[^\d,]/g, ''); // Remove qualquer caractere que não seja número ou vírgula
+      formattedValue = value.replace(/[^\d,]/g, '');
     }
     setFormServico({
       ...formServico,
@@ -57,7 +57,7 @@ const CadastroServico = () => {
       const token = localStorage.getItem('authToken');
       const data = {
         ...formServico,
-        preco: formServico.preco.replace(',', '.') // Substitui vírgula por ponto antes de enviar para o servidor
+        preco: formServico.preco.replace(',', '.')
       };
       if (servico._id) {
         await api.put(`http://localhost:3000/servicos/${servico._id}`, data, {
@@ -85,7 +85,7 @@ const CadastroServico = () => {
   return (    
     <Container className='w-50 p-3' style={{ marginTop: '100px' }}>
       <Row className='justify-content-center'>
-        <h1 className="mb-4 mt-3 text-center" style={{ color: '#7E5A9B', fontSize: '58px', textAlign: 'center' }}>CADASTRO</h1>
+        <h1 className="mb-4 mt-3 text-center" style={{ color: '#7E5A9B', fontSize: '58px', textAlign: 'center' }}>CADASTRO DE SERVIÇOS</h1>
 
         <div className="d-flex justify-content-end  gap-2 mb-3">
           <Button variant="light" style={{ padding: 0, border: 'none' }} onClick={paraListaServico}>
