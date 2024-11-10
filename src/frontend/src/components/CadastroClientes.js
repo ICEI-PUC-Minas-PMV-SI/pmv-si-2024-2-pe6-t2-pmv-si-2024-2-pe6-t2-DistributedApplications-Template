@@ -20,7 +20,9 @@ function CadastroClientes() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  
+  const paraPaginaCadastroInicial = () => {
+    navigate("/opcoes");
+  }
 
   const handleCadastroCliente = async (e) => {
     e.preventDefault();
@@ -55,7 +57,6 @@ function CadastroClientes() {
       console.error("Erro:", error);
     }
   };
-
 
   return (
     <Container className='w-50 p-3' style={{ marginTop: '100px' }}>
@@ -104,31 +105,29 @@ function CadastroClientes() {
               name='clienteNome'
               value={clienteNome}
               onChange={(e) => setClienteNome(e.target.value)}
-              required />
-
+              required 
+            />
           </Form.Group>
 
           <Form.Group className="mb-3 mt-3" controlId="clienteEmail">
             <Form.Label>Email</Form.Label>
-
             <Form.Control style={{width: '100%', border: '3px solid #BDBDBD', borderradius: '8px' }}
               type="email"
               value={clienteEmail}
               onChange={(e) => setClienteEmail(e.target.value)}
-              required />
-
+              required 
+            />
           </Form.Group>
 
           <Form.Group className="mb-3 mt-3" controlId="clienteTelefone">
             <Form.Label>Telefone</Form.Label>
-
             <Form.Control style={{width: '100%', border: '3px solid #BDBDBD', borderradius: '8px' }}
               type="tel"
               name='clienteTelefone'
               value={clienteTelefone}
               onChange={(e) => setClienteTelefone(e.target.value)}
-              required />
-
+              required 
+            />
           </Form.Group>
 
           <div className="d-grid gap-2 d-md-flex justify-content-md-end mb-3">
@@ -139,11 +138,7 @@ function CadastroClientes() {
               SALVAR
             </Button>
 
-            <Button type="button" className="btn btn-danger" onClick={() => {
-              setClienteNome('');
-              setClienteEmail('');
-              setClienteTelefone('');
-            }}>
+            <Button type="button" className="btn btn-danger" onClick={paraPaginaCadastroInicial}>
               <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="#FFFFFF">
                 <path d="m336-280-56-56 144-144-144-143 56-56 144 144 143-144 56 56-144 143 144 144-56 56-143-144-144 144Z" />
               </svg>
@@ -153,7 +148,6 @@ function CadastroClientes() {
         </Form>
       </Row>
     </Container>
-
   );
 }
 
