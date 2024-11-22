@@ -1,84 +1,89 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useAuth } from './AuthContext';
 import { useNavigation } from '@react-navigation/native';
 
+
+
 export default function Nbar() {
   const { isLoggedIn, logout } = useAuth();
   const navigation = useNavigation();
+  const [authState, setAuthState] = useState(isLoggedIn);
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+      navigation.navigate('pagInicial');
+    } catch (error) {
+      console.error('Erro ao fazer logout:', error);
+    }
+  };
+
+  useEffect(() => {
+    setAuthState(isLoggedIn);
+  }, [isLoggedIn]);
 
   return (
     <View style={styles.navbar}>
       <View style={styles.navLinks}>
-        {isLoggedIn ? (
+        {authState ? (
           <>
-            <TouchableOpacity
-              style={styles.navButton}
-              onPress={() => navigation.navigate('BoasVindas')}
-            >
-              <Text style={styles.navButtonText}>Página Inicial</Text>
+            <TouchableOpacity 
+              style={styles.navButton} 
+              onPress={() => navigation.navigate('BoasVindas')}>
+              <Text style={styles.buttonText}>Página Inicial</Text>
             </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.navButton}
-              onPress={() => navigation.navigate('Financeiro')}
-            >
-              <Text style={styles.navButtonText}>Financeiro</Text>
+            <TouchableOpacity 
+              style={styles.navButton} 
+              onPress={() => navigation.navigate('OpcoesCadastro')}>
+              <Text style={styles.buttonText}>Cadastros</Text>
+            </TouchableOpacity>
+            <TouchableOpacity 
+              style={styles.navButton} 
+              onPress={handleLogout}>
+              <Text style={styles.buttonText}>Sair</Text>
             </TouchableOpacity>
           </>
         ) : (
           <>
-            <TouchableOpacity
-              style={styles.navButton}
-              onPress={() => navigation.navigate('Cadastro')}
-            >
-              <Text style={styles.navButtonText}>Cadastre-se</Text>
+            <TouchableOpacity 
+              style={styles.navButton} 
+              onPress={() => navigation.navigate('Login')}>
+              <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.navButton}
-              onPress={() => navigation.navigate('Login')}
-            >
-              <Text style={styles.navButtonText}>Login</Text>
+            <TouchableOpacity 
+              style={styles.navButton} 
+              onPress={() => navigation.navigate('Cadastro')}>
+              <Text style={styles.buttonText}>Cadastre-se</Text>
             </TouchableOpacity>
           </>
         )}
       </View>
-
-      {isLoggedIn && (
-        <TouchableOpacity style={styles.navButton} onPress={logout}>
-          <Text style={styles.navButtonText}>Sair</Text>
-        </TouchableOpacity>
-      )}
     </View>
   );
 }
 
+
 const styles = StyleSheet.create({
   navbar: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    padding: 30,
     backgroundColor: '#7E5A9B',
-    alignItems: 'center',
-    position: 'absolute',
-    top: 0,
-    width: '100%',
-    zIndex: 1000,
+    padding: 10,
+    marginTop: 30
   },
   navLinks: {
     flexDirection: 'row',
-    paddingTop: 10,
+    justifyContent: 'flex-end',
   },
   navButton: {
-    paddingHorizontal: 10,
-    paddingVertical: 5,
+    backgroundColor: 'transparent',
+    padding: 10,
     marginHorizontal: 5,
-    borderRadius: 8,
-    backgroundColor: '#F79824',
-    justifyContent: 'center',
-    alignItems: 'center',
+    borderRadius: 5,
+    borderWidth: 2,
+    borderColor: '#F79824'
   },
-  navButtonText: {
-    color: '#FFF',
-    fontWeight: 'bold',
-  },
+  buttonText: {
+    color: '#F79824',
+    fontSize: 16
+  }
 });

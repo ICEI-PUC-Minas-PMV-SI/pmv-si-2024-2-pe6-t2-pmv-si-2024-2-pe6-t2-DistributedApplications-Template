@@ -8,6 +8,8 @@ import {
   Alert,
 } from "react-native";
 import api from "../services/api"; 
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function Cadastro() {
   const [nome, setNome] = useState("");
@@ -17,6 +19,8 @@ export default function Cadastro() {
   const [cnpj, setCnpj] = useState("");
   const [telefone, setTelefone] = useState("");
   const [endereco, setEndereco] = useState("");
+  const navigation = useNavigation();
+
 
   const handleCadastro = async () => {
     if (password !== confirmpassword) {
@@ -37,7 +41,7 @@ export default function Cadastro() {
 
       if (response.status === 201) {
         Alert.alert("Sucesso", response.data.message);
-        // Navegação ou limpeza do formulário
+        navigation.navigate('Login');
       }
     } catch (error) {
       if (error.response) {

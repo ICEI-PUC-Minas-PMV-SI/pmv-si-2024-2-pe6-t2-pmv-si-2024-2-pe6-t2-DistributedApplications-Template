@@ -11,21 +11,26 @@ import {
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import api from '../services/api';
+import { useAuth } from './AuthContext';
+
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const navigation = useNavigation(); // Hook para navegação
+  const navigation = useNavigation();
+  const { login } = useAuth();
 
   async function handleLogin() {
     try {
       const response = await api.post('/login', { email, password });
       if (response.status === 200) {
         const { token, user } = response.data;
+        await login(token, user.nome, user._id);
 
         // Armazena o token no AsyncStorage
         await AsyncStorage.setItem('@userToken', token);
         await AsyncStorage.setItem('@userName', user.nome);
+        await AsyncStorage.setItem('@userID', user._id);
 
         // Navega para a tela de boas-vindas, passando o nome do usuário como parâmetro
         navigation.navigate('BoasVindas', { nome: user.nome });
@@ -87,7 +92,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 20,
     backgroundColor: '#FFF',
-    width: '90%',
+    width: '100%',
   },
   logo: {
     width: 120,

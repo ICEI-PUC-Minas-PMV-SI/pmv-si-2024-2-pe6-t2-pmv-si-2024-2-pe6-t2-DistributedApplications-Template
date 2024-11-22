@@ -5,6 +5,7 @@ import BoasVindas from './BoasVindas';
 import Nbar from './nav';
 import Cadastro from './cadastro';
 import pagInicial from './pagInicial';
+import OpcoesCadastro from './opcoesCadastros';
 
 const Stack = createStackNavigator();
 
@@ -17,6 +18,7 @@ export default function AppNavigator() {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="BoasVindas" component={BoasVindas} />
         <Stack.Screen name="Cadastro" component={Cadastro} />
+        <Stack.Screen name="OpcoesCadastro" component={OpcoesCadastro} />
       </Stack.Navigator>
     </>
   );
