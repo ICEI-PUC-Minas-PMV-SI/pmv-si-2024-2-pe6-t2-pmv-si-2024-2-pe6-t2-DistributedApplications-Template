@@ -46,9 +46,19 @@ const deleteServico = async (req, res) => {
   }
 };
 
+const getAllServicosByPrestador = async (req, res) => {
+  try {
+    const servicos = await Servico.find({prestadorId: req.prestador._id });
+    return res.status(200).json(servicos);
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+};
+
 module.exports = {
   getAllServicos,
   createServico,
   updateServico,
-  deleteServico
+  deleteServico,
+  getAllServicosByPrestador
 };

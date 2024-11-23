@@ -5,36 +5,74 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-
 import "../components/styles/AgendamentoCadastro.css";
+import axios from "axios";
+
 
 const AgendamentoCadastro = () => {
-  const location = useLocation(); // Hook para acessar os dados da rota
-  const agendamentoData = location.state?.agendamento; // Obtém os dados do agendamento
+  // const location = useLocation(); // Hook para acessar os dados da rota
+  // const agendamentoData = location.state?.agendamento; // Obtém os dados do agendamento
 
-  const [nomeCliente, setNomeCliente] = useState(
-    agendamentoData ? agendamentoData.nomeCliente : "",
-  );
-  const [nomePrestador, setNomePrestador] = useState(
-    agendamentoData ? agendamentoData.nomePrestador : "",
-  );
-  const [data, setData] = useState(
-    agendamentoData
-      ? new Date(agendamentoData.data).toISOString().substring(0, 10)
-      : "",
-  );
-  const [horario, setHorario] = useState(
-    agendamentoData ? agendamentoData.horario : "",
-  );
+  // const [nomeCliente, setNomeCliente] = useState(
+  //   agendamentoData ? agendamentoData.nomeCliente : "",
+  // );
+  // const [nomePrestador, setNomePrestador] = useState(
+  //   agendamentoData ? agendamentoData.nomePrestador : "",
+  // );
+  // const [data, setData] = useState(
+  //   agendamentoData
+  //     ? new Date(agendamentoData.data).toISOString().substring(0, 10)
+  //     : "",
+  // );
+  // const [horario, setHorario] = useState(
+  //   agendamentoData ? agendamentoData.horario : "",
+  const location = useLocation();
+  const agendamentoData = location.state?.agendamento;
+
+  const [nomeCliente, setNomeCliente] = useState(agendamentoData ? agendamentoData.nomeCliente : "");
+  const [nomePrestador, setNomePrestador] = useState(agendamentoData ? agendamentoData.nomePrestador : "");
+  const [data, setData] = useState(agendamentoData ? new Date(agendamentoData.data).toISOString().substring(0, 10) : "");
+  const [horario, setHorario] = useState(agendamentoData ? agendamentoData.horario : "");
+
+  const [clientes, setClientes] = useState([]);
+  const [prestadores, setPrestadores] = useState([]);
+  const [servicos, setServicos] = useState([]);
+  const [prestadorSelecionado, setPrestadorSelecionado] = useState('');
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const token = localStorage.getItem("authToken");
+
+        const clienteResponse = await axios.get("http://localhost:3000/clientes", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+
+        const prestadorResponse = await axios.get("http://localhost:3000/prestador", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+
+        setClientes(clienteResponse.data);
+        setPrestadores(prestadorResponse.data);
+      } catch (error) {
+        console.error("Erro ao buscar dados de clientes ou prestadores", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handleCadastro = async (e) => {
     e.preventDefault();
+    const clienteSelecionado = clientes.find(cliente => cliente._id === nomeCliente);
+    const prestadorSelecionado = prestadores.find(prestador => prestador._id === nomePrestador);
 
     const agendamento = {
-      nomeCliente,
-      nomePrestador,
+      nomeCliente: clienteSelecionado ? clienteSelecionado.nome : nomeCliente,
+      nomePrestador: prestadorSelecionado ? prestadorSelecionado.nome : nomePrestador,
+      prestadorId: prestadorSelecionado ? prestadorSelecionado._id : nomePrestador,
       data: new Date(data).toISOString(),
-      horario: Number(horario), // Converter para número
+      horario: horario,
     };
 
     try {
@@ -67,6 +105,30 @@ const AgendamentoCadastro = () => {
     } catch (error) {
       console.error("Erro ao enviar dados:", error.response ? error.response.data : error.message);
       alert("Erro ao conectar com o servidor");
+    }
+  };
+
+  const handlePrestadorChange = async (e) => {
+    const token = localStorage.getItem("authToken");
+    const prestadorId = e.target.value;
+    setPrestadorSelecionado(prestadorId);
+    console.log("setPrestadorSelecionado", prestadorId);
+
+    if (prestadorId) {
+      try {
+        const response = await axios.get(`http://localhost:3000/servicos/prestador/${prestadorId}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        const result = await response;
+        console.log("Serviços recebidos:", result);         
+        setServicos(result.data);
+      } catch (error) {
+
+        console.error(error.message);
+      }
+    } else {
+      console.error('Resposta da API não é um array:', data);
+      setServicos([]);
     }
   };
 
@@ -104,15 +166,44 @@ const AgendamentoCadastro = () => {
               onChange={(e) => setNomeCliente(e.target.value)}
             />
           </Form.Group>
-
           <Form.Group className="mb-3 mt-3" controlId="nomePrestador">
             <Form.Label>Nome Prestador</Form.Label>
             <Form.Control
-              type="text"
-              name="nomePrestador"
-              value={nomePrestador}
-              onChange={(e) => setNomePrestador(e.target.value)}
-            />
+              as="select"
+              name="servicos"
+              value={prestadorSelecionado}
+              onChange={handlePrestadorChange}
+            >
+              <option value="">Selecione um Prestador</option>
+              {prestadores.map((prestador) => (
+                <option key={prestador._id} value={prestador._id}>
+                  {prestador.nome}
+                </option>
+              ))}
+            </Form.Control>
+          </Form.Group>
+
+          {/* <Form.Group className="mb-3 mt-3" controlId="nomeServico">
+            <Form.Label>Serviços do Prestador</Form.Label>
+            <Form.Control as="select" name="nomeServico">
+              <option value="">Selecione um Serviço</option>
+              {servicos.map((servico) => (
+                <option key={servico._id} value={servico._id}>
+                  {servico.descricao}
+                </option>
+              ))}
+            </Form.Control>
+          </Form.Group> */}
+          <Form.Group className="mb-3 mt-3" controlId="nomeServico">
+            <Form.Label>Serviços do Prestador</Form.Label>
+            <Form.Control as="select" name="nomeServico">
+              <option value="">Selecione um Serviço</option>
+              {Array.isArray(servicos) && servicos.map((servico) => (
+                <option key={servico._id} value={servico._id}>
+                  {servico.descricao}
+                </option>
+              ))}
+            </Form.Control>
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="data">
