@@ -13,7 +13,7 @@ export default function OpcoesCadastro() {
       <View style={styles.cardContainer}>
         <TouchableOpacity 
           style={styles.card}
-          onPress={() => navigation.navigate('Clientes')}>
+          onPress={() => navigation.navigate('CadastroClientes')}>
           <Image
             source={require('../../assets/cliente.png')}
             style={styles.cardImage}

@@ -6,6 +6,8 @@ import Nbar from './nav';
 import Cadastro from './cadastro';
 import pagInicial from './pagInicial';
 import OpcoesCadastro from './opcoesCadastros';
+import CadastroClientes from './Cadastroclientes';
+import ListaClientes from './Listaclientes';
 
 const Stack = createStackNavigator();
 
@@ -19,6 +21,8 @@ export default function AppNavigator() {
         <Stack.Screen name="BoasVindas" component={BoasVindas} />
         <Stack.Screen name="Cadastro" component={Cadastro} />
         <Stack.Screen name="OpcoesCadastro" component={OpcoesCadastro} />
+        <Stack.Screen name="CadastroClientes" component={CadastroClientes}/>
+        <Stack.Screen name="Listaclientes" component={ListaClientes}/>
       </Stack.Navigator>
     </>
   );
