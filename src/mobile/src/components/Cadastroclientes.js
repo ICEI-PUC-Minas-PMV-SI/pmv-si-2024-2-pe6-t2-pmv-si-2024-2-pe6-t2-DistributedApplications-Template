@@ -93,6 +93,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#f5f5f5',
         justifyContent: 'center',
     },
+    
     title: {
         fontSize: 36,
         fontWeight: 'bold',
@@ -138,7 +139,7 @@ const styles = StyleSheet.create({
 
     iconButton: {
         flexDirection: 'row',
-        justifyContent: 'flex-start',
+        justifyContent: 'flex-end',
         alignItems: 'center',
         marginBottom: 20,
     },

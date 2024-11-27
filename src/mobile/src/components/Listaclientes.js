@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import api from '../services/api';
-import { SvgXml } from 'react-native-svg';
-
 
 const ListaClientes = ({ navigation }) => {
   const [clientes, setClientes] = useState([]);
-
 
   useEffect(() => {
     const fetchClientes = async () => {
@@ -21,10 +18,9 @@ const ListaClientes = ({ navigation }) => {
     fetchClientes();
   }, []);
 
-  // Deleta 
   const handleDelete = async (id) => {
     try {
-      await api.delete(`/CadastroClientes/${id}`);
+      await api.delete(`/clientes/${id}`);
       setClientes(clientes.filter(cliente => cliente._id !== id));
     } catch (error) {
       console.error('Erro ao excluir cliente:', error);
@@ -32,17 +28,10 @@ const ListaClientes = ({ navigation }) => {
     }
   };
 
-  // Edita 
   const handleEdit = (cliente) => {
     navigation.navigate('CadastroClientes', { cliente });
   };
 
-  // Adiciona 
-  const handleAdd = () => {
-    navigation.navigate('CadastroClientes');
-  };
-
-  // Renderiza os itens da lista
   const renderItem = ({ item, index }) => (
     <View style={[styles.row, index % 2 === 0 ? styles.rowEven : styles.rowOdd]}>
       <Text style={styles.cell}>{item.nome}</Text>
@@ -59,12 +48,9 @@ const ListaClientes = ({ navigation }) => {
     </View>
   );
 
-
-
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Lista de Clientes</Text>
-
       <View style={styles.table}>
         <View style={styles.tableHeader}>
           <Text style={styles.tableHeaderCell}>Nome</Text>
@@ -86,7 +72,7 @@ const ListaClientes = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    padding: 10,
     backgroundColor: '#fff',
   },
   header: {
@@ -96,75 +82,71 @@ const styles = StyleSheet.create({
     color: '#7E5A9B',
     marginBottom: 20,
   },
-  buttonContainer: {
-    marginBottom: 20,
-    alignItems: 'flex-end',
-  },
-  addButton: {
-    backgroundColor: '#7E5A9B',
-    paddingVertical: 10,
-    borderRadius: 5,
-    marginBottom: 20,
-    alignItems: 'center',
-  },
-  addButtonText: {
-    color: 'white',
-    fontSize: 16,
-  },
   table: {
-    width: '100%',
-    borderTopWidth: 1,
-    borderTopColor: '#7E5A9B',
+    flex: 1,
+    borderWidth: 1,
+    borderColor: 'black',
+    overflow: 'hidden',
   },
   tableHeader: {
     flexDirection: 'row',
-    backgroundColor: '#7E5A9B',
+    backgroundColor: '',
     paddingVertical: 10,
+    borderBottomWidth: 1, 
+  borderBottomColor: 'black'
   },
   tableHeaderCell: {
     flex: 1,
-    color: 'white',
+    color: 'black',
     textAlign: 'center',
     fontWeight: 'bold',
     fontSize: 16,
     padding: 5,
+    borderRightWidth: 1, // Adiciona linha vertical entre as colunas
+    borderRightColor: 'black',
   },
   row: {
     flexDirection: 'row',
-    padding: 15,
     borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
+    borderBottomColor: 'black',
   },
   rowEven: {
     backgroundColor: '#f9f9f9',
   },
   rowOdd: {
-    backgroundColor: '#fff',
+    backgroundColor: 'white',
   },
   cell: {
     flex: 1,
-    fontSize: 16,
+    fontSize: 14,
     textAlign: 'center',
+    paddingVertical: 10,
+    paddingHorizontal: 0,
+    borderRightWidth: 1,
+    borderRightColor: 'black',
   },
   actions: {
     flexDirection: 'row',
+    justifyContent: 'center',
+    flex: 1,
   },
   buttonEdit: {
     backgroundColor: '#7E5A9B',
-    paddingVertical: 5,
-    paddingHorizontal: 10,
+    paddingVertical: 20,
+    paddingHorizontal: 2,
     borderRadius: 5,
-    marginRight: 10,
+    marginHorizontal: 2,
   },
   buttonDelete: {
     backgroundColor: '#d9534f',
-    paddingVertical: 5,
-    paddingHorizontal: 10,
+    paddingVertical: 20,
+    paddingHorizontal: 2,
     borderRadius: 5,
+    marginHorizontal: 2,
   },
   buttonText: {
     color: 'white',
-    fontSize: 14,
+    fontSize: 12,
   },
 });
 
