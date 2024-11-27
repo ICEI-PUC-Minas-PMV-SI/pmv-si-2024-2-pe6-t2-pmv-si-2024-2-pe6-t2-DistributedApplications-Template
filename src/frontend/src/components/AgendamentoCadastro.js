@@ -7,25 +7,11 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import "../components/styles/AgendamentoCadastro.css";
 import axios from "axios";
+import { useAuth } from './AuthContext';
 
 
 const AgendamentoCadastro = () => {
-  // const location = useLocation(); // Hook para acessar os dados da rota
-  // const agendamentoData = location.state?.agendamento; // Obtém os dados do agendamento
 
-  // const [nomeCliente, setNomeCliente] = useState(
-  //   agendamentoData ? agendamentoData.nomeCliente : "",
-  // );
-  // const [nomePrestador, setNomePrestador] = useState(
-  //   agendamentoData ? agendamentoData.nomePrestador : "",
-  // );
-  // const [data, setData] = useState(
-  //   agendamentoData
-  //     ? new Date(agendamentoData.data).toISOString().substring(0, 10)
-  //     : "",
-  // );
-  // const [horario, setHorario] = useState(
-  //   agendamentoData ? agendamentoData.horario : "",
   const location = useLocation();
   const agendamentoData = location.state?.agendamento;
 
@@ -38,6 +24,7 @@ const AgendamentoCadastro = () => {
   const [prestadores, setPrestadores] = useState([]);
   const [servicos, setServicos] = useState([]);
   const [prestadorSelecionado, setPrestadorSelecionado] = useState('');
+  const { userName } = useAuth();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -54,6 +41,7 @@ const AgendamentoCadastro = () => {
 
         setClientes(clienteResponse.data);
         setPrestadores(prestadorResponse.data);
+        console.log(prestadorResponse)
       } catch (error) {
         console.error("Erro ao buscar dados de clientes ou prestadores", error);
       }
@@ -64,8 +52,10 @@ const AgendamentoCadastro = () => {
 
   const handleCadastro = async (e) => {
     e.preventDefault();
+
     const clienteSelecionado = clientes.find(cliente => cliente._id === nomeCliente);
     const prestadorSelecionado = prestadores.find(prestador => prestador._id === nomePrestador);
+    console.log("prestador selecionado > ", prestadorSelecionado)
 
     const agendamento = {
       nomeCliente: clienteSelecionado ? clienteSelecionado.nome : nomeCliente,
@@ -78,8 +68,7 @@ const AgendamentoCadastro = () => {
     try {
       const token = localStorage.getItem("authToken");
       console.log("Token: ", token);
-      if (agendamentoData && agendamentoData._id) {
-        // Se estamos editando, fazemos uma atualização
+      if (agendamentoData && agendamentoData._id) {        
         await api.put(
           `http://localhost:3000/agendamentos/${agendamentoData._id}`,
           agendamento,
@@ -89,8 +78,7 @@ const AgendamentoCadastro = () => {
             },
           },
         );
-      } else {
-        // Se estamos criando, fazemos uma criação
+      } else {        
         await api.post("http://localhost:3000/agendamentos", agendamento, {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -102,8 +90,11 @@ const AgendamentoCadastro = () => {
       setNomePrestador("");
       setData("");
       setHorario("");
+
     } catch (error) {
       console.error("Erro ao enviar dados:", error.response ? error.response.data : error.message);
+      console.log(agendamentoData);
+      console.log(agendamento);
       alert("Erro ao conectar com o servidor");
     }
   };
@@ -112,7 +103,9 @@ const AgendamentoCadastro = () => {
     const token = localStorage.getItem("authToken");
     const prestadorId = e.target.value;
     setPrestadorSelecionado(prestadorId);
-    console.log("setPrestadorSelecionado", prestadorId);
+    console.log("prestador selecionado dps blur,", prestadorSelecionado)
+
+
 
     if (prestadorId) {
       try {
@@ -120,7 +113,7 @@ const AgendamentoCadastro = () => {
           headers: { Authorization: `Bearer ${token}` },
         });
         const result = await response;
-        console.log("Serviços recebidos:", result);         
+        console.log("Serviços recebidos:", result);
         setServicos(result.data);
       } catch (error) {
 
@@ -160,40 +153,38 @@ const AgendamentoCadastro = () => {
           <Form.Group className="mb-3 mt-3" controlId="nomeCliente">
             <Form.Label>Nome Cliente</Form.Label>
             <Form.Control
-              type="text"
+              as="select"
               name="nomeCliente"
               value={nomeCliente}
               onChange={(e) => setNomeCliente(e.target.value)}
-            />
+            >
+              <option value="">Selecione um Cliente</option>
+              {Array.isArray(clientes) &&
+                clientes.map((cliente) => (
+                  <option key={cliente._id} value={cliente._id}>
+                    {cliente.nome}
+                  </option>
+                ))}
+            </Form.Control>
+
           </Form.Group>
           <Form.Group className="mb-3 mt-3" controlId="nomePrestador">
             <Form.Label>Nome Prestador</Form.Label>
             <Form.Control
-              as="select"
-              name="servicos"
-              value={prestadorSelecionado}
-              onChange={handlePrestadorChange}
-            >
-              <option value="">Selecione um Prestador</option>
-              {prestadores.map((prestador) => (
-                <option key={prestador._id} value={prestador._id}>
-                  {prestador.nome}
-                </option>
-              ))}
-            </Form.Control>
+              type="text"
+              name="nomePrestador"
+              value={nomePrestador}
+              onChange={(e) => {
+                const nome = e.target.value;
+                setNomePrestador(nome);
+                const prestador = prestadores.find(p => p.nome === nome);
+                setPrestadorSelecionado(prestador ? prestador._id : "");
+              }}
+              onBlur={handlePrestadorChange}
+              placeholder="Digite o nome do prestador"
+            />
           </Form.Group>
 
-          {/* <Form.Group className="mb-3 mt-3" controlId="nomeServico">
-            <Form.Label>Serviços do Prestador</Form.Label>
-            <Form.Control as="select" name="nomeServico">
-              <option value="">Selecione um Serviço</option>
-              {servicos.map((servico) => (
-                <option key={servico._id} value={servico._id}>
-                  {servico.descricao}
-                </option>
-              ))}
-            </Form.Control>
-          </Form.Group> */}
           <Form.Group className="mb-3 mt-3" controlId="nomeServico">
             <Form.Label>Serviços do Prestador</Form.Label>
             <Form.Control as="select" name="nomeServico">
@@ -219,10 +210,18 @@ const AgendamentoCadastro = () => {
           <Form.Group className="mb-3" controlId="horario">
             <Form.Label>Horário</Form.Label>
             <Form.Control
-              type="number"
+              type="text"
               name="horario"
               value={horario}
-              onChange={(e) => setHorario(e.target.value)}
+              onChange={(e) => {
+                let input = e.target.value.replace(/\D/g, "");
+                if (input.length > 2) {
+                  input = input.slice(0, 2) + ":" + input.slice(2, 4);
+                }
+                setHorario(input.slice(0, 5));
+              }}
+              maxLength="5"
+              placeholder="HH:mm"
             />
           </Form.Group>
 
