@@ -1,15 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, Button, Alert, StyleSheet, TouchableOpacity } from 'react-native';
 import { SvgXml } from 'react-native-svg';
 import api from '../services/api';
 
-const CadastroClientes = ({ navigation }) => {
+const CadastroClientes = ({ navigation, route }) => {
     const [formData, setFormData] = useState({
         nome: '',
         email: '',
         telefone: '',
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
+
+    useEffect(() => {
+        if (route.params?.cliente) {
+            setFormData({
+                nome: route.params.cliente.nome,
+                email: route.params.cliente.email,
+                telefone: route.params.cliente.telefone,
+            });
+        }
+    }, [route.params?.cliente]);
 
     const handleInputChange = (field, value) => {
         setFormData({ ...formData, [field]: value });
@@ -25,11 +35,19 @@ const CadastroClientes = ({ navigation }) => {
 
         setIsSubmitting(true);
         try {
-            const response = await api.post('/clientes', formData);
-            Alert.alert('Sucesso', 'Cliente cadastrado com sucesso!');
+            if (route.params?.cliente?._id) {
+
+                await api.put(`/clientes/${cliente.id}`, formData);
+                Alert.alert('Sucesso', 'Cliente atualizado com sucesso!');
+            } else {
+
+                await api.post('/clientes', formData);
+                Alert.alert('Sucesso', 'Cliente cadastrado com sucesso!');
+            }
             setFormData({ nome: '', email: '', telefone: '' });
+            navigation.navigate('Listaclientes');
         } catch (error) {
-            Alert.alert('Erro', 'Falha ao cadastrar cliente. Tente novamente.');
+            Alert.alert('Erro', 'Falha ao salvar cliente. Tente novamente.');
         } finally {
             setIsSubmitting(false);
         }
@@ -78,7 +96,7 @@ const CadastroClientes = ({ navigation }) => {
             />
 
             <View style={styles.buttonContainer}>
-                <Button title="Salvar" onPress={handleSubmit} disabled={isSubmitting} />
+                <Button title="Salvar" onPress={handleSubmit} disabled={isSubmitting} color='#28a745' />
                 <Button title="Cancelar" onPress={handleCancel} color="red" />
             </View>
         </View>
@@ -90,16 +108,15 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 20,
-        backgroundColor: '#f5f5f5',
-        justifyContent: 'center',
+        backgroundColor: 'white',
     },
-    
+
     title: {
         fontSize: 36,
         fontWeight: 'bold',
         color: '#7E5A9B',
         textAlign: 'center',
-        marginBottom: 20,
+        marginBottom: 50,
     },
     input: {
         height: 50,
@@ -114,40 +131,21 @@ const styles = StyleSheet.create({
     },
     buttonContainer: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        justifyContent: 'flex-end',
         marginTop: 20,
-    },
-
-    buttonSalvar: {
-        flex: 1,
-        backgroundColor: '#28a745',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: 12,
-        marginRight: 10,
-        borderRadius: 8,
-    },
-
-    buttonCancelar: {
-        flex: 1,
-        backgroundColor: '#dc3545',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: 12,
-        borderRadius: 8,
     },
 
     iconButton: {
         flexDirection: 'row',
         justifyContent: 'flex-end',
+        left: -12,
         alignItems: 'center',
-        marginBottom: 20,
+        marginBottom: 50,
     },
 
     iconBackground: {
         width: 53,
         height: 55,
-        backgroundColor: '#F79824',
         borderRadius: 8,
         justifyContent: 'center',
         alignItems: 'center',

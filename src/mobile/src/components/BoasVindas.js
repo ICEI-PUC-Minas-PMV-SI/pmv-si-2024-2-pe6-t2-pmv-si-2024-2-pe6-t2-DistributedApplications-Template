@@ -6,7 +6,14 @@ export default function BoasVindas({ route }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Bem-vindo(a) {nome} ao Agenda Fácil!</Text>
+
+      <Text style={styles.title}>Bem-vindo(a), {nome}!</Text>
+
+      <View style={styles.messageBox}>
+        <Text style={styles.messageText}>
+          Sua agenda organizada, seus clientes satisfeitos.
+        </Text>
+      </View>
     </View>
   );
 }
@@ -14,13 +21,28 @@ export default function BoasVindas({ route }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    padding: 20,
     backgroundColor: '#FFF',
+    justifyContent: 'flex-start',
   },
   title: {
-    color: '#F79824',
     fontSize: 24,
     fontWeight: 'bold',
+    color: 'Black',
+    textAlign: 'left',
+    marginBottom: 20,
+  },
+  messageBox: {
+    backgroundColor: '#9A879D66',
+    borderRadius: 8,
+    padding: 15,
+    maxWidth: 350,
+    width: '100%',
+  },
+  messageText: {
+    color: 'black',
+    fontSize: 16,
+    textAlign: 'center',
+    fontFamily: 'Roboto',
   },
 });
