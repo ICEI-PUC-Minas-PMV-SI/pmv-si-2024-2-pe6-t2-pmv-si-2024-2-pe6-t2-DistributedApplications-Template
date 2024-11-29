@@ -37,8 +37,8 @@ const CadastroClientes = ({ navigation, route }) => {
         try {
             if (route.params?.cliente?._id) {
 
-                await api.put(`/clientes/${cliente.id}`, formData);
-                Alert.alert('Sucesso', 'Cliente atualizado com sucesso!');
+                await api.put(`/clientes/${route.params?.cliente?._id}`, formData);
+            Alert.alert('Sucesso', 'Cliente atualizado com sucesso!');
             } else {
 
                 await api.post('/clientes', formData);
@@ -96,8 +96,17 @@ const CadastroClientes = ({ navigation, route }) => {
             />
 
             <View style={styles.buttonContainer}>
-                <Button title="Salvar" onPress={handleSubmit} disabled={isSubmitting} color='#28a745' />
-                <Button title="Cancelar" onPress={handleCancel} color="red" />
+                <TouchableOpacity
+                    style={[styles.button, styles.saveButton]}
+                    onPress={handleSubmit}
+                    disabled={isSubmitting}
+                >
+                    <Text style={styles.buttonText}>Salvar</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={[styles.button, styles.cancelButton]} onPress={handleCancel}>
+                    <Text style={styles.buttonText}>Cancelar</Text>
+                </TouchableOpacity>
             </View>
         </View>
     );
@@ -135,12 +144,37 @@ const styles = StyleSheet.create({
         marginTop: 20,
     },
 
+    button: {
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        borderRadius: 8,
+        marginLeft: 10,
+
+    },
+
+    buttonText: {
+
+        color: 'white',
+        fontSize: 16,
+        fontWeight: 'bold',
+    },
+
+
+    saveButton: {
+        backgroundColor: '#28a745',
+    },
+
+    cancelButton: {
+        backgroundColor: 'red',
+    },
+
     iconButton: {
         flexDirection: 'row',
         justifyContent: 'flex-end',
         left: -12,
         alignItems: 'center',
         marginBottom: 50,
+
     },
 
     iconBackground: {

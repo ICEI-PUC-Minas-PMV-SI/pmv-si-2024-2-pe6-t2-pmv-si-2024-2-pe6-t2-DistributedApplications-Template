@@ -34,7 +34,7 @@ const ListaClientes = ({ navigation }) => {
   };
 
   const handleEdit = (cliente) => {
-    navigation.navigate('clientes', { cliente });
+    navigation.navigate('CadastroClientes', { cliente });
   };
 
   const renderItem = ({ item, index }) => (
