@@ -1,7 +1,7 @@
 # Front-end Móvel
 
 A Agenda Fácil é um aplicativo móvel projetado para ajudar empreendedores a gerenciar seus compromissos de forma simples e prática. O aplicativo objetiva facilitar as atividades diárias dos empreendedores, proporcionando uma experiência organizada e intuitiva para todos os usuários.
-Optamos por desenvolver a Agenda Fácil utilizando React Native com a biblioteca Expo. Essa combinação nos permitiu criar um aplicativo multiplataforma (iOS e Android) de forma eficiente, reduzindo o tempo de desenvolvimento e os custos. Além disso, o React Native e o Expo nos garantem interfaces rápidas, dinâmicas e responsivas, adaptando-se perfeitamente a diferentes tamanhos de tela e dispositivos, assegurando uma navegação fluida e sem interrupções para nossos usuários.
+Optamos por desenvolver a Agenda Fácil utilizando React Native com a biblioteca Expo. Essa combinação nos permitiu criar um aplicativo multiplataforma (iOS e Android) de forma eficiente, reduzindo o tempo de desenvolvimento. Além disso, o React Native e o Expo nos garantem interfaces rápidas, dinâmicas e responsivas, adaptando-se perfeitamente a diferentes tamanhos de tela e dispositivos, assegurando uma navegação fluida e sem interrupções para nossos usuários.
 O resultado é um aplicativo com desempenho otimizado, visual moderno e uma experiência de agendamento ágil e agradável. A Agenda Fácil será uma ferramenta valiosa tanto para empreendedores que precisam gerenciar seus compromissos de forma eficiente, quanto para seus clientes, que se beneficiarão de um processo de agendamento mais simples e organizado.
 
 
@@ -103,16 +103,17 @@ Possui foco na experiência do usuário, bem como na interação em tempo real. 
 * **Relatórios:** Haverá uma consulta de dados no back-end, na qual, o usuário poderá verificar a quantia arrecadada em um determinado período, a partir do período selecionado.
 * **Financeiro:** O usuário poderá cadastrar as suas retiradas de dinheiro (sangria do caixa) e estes dados serão encaminhados para o back-end. 
 
-Exemplo | Fluxo em duas etapas (front-end e back-end), CADASTRO DE CLIENTE:
+Exemplo | Fluxo em duas etapas (front-end e back-end), **Cadastro de Clientes**:
 
 **Font-end:**
-* O usuário, prestador de serviços, irá acessar a página de Cadastro de Clientes e inserir os dados necessários.
+* O usuário, prestador de serviços, irá acessar a página de Cadastro de Clientes e inserir os dados necessários. Os dados são validados localmente e, em seguida, enviados para a API REST do back-end.
 * Os dados inseridos atualiza o estado local da interface (calendário).
 * Quando o usuário clica em "Salvar", o front-end envia os dados para o back-end, via uma chamada API.
 
 **Back-End:**
 * O back-end recebe os dados do Cliente cadastrado.
-* Valida se todos os dados do Cliente são válidos. Logo após, o cadastro é efetivado e salvo no banco de dados.
+* Valida se todos os dados do Cliente são válidos, caso estejam válidos, os dados são persistidos no banco de dados.
+* Logo após, o cadastro é efetivado e salvo no banco de dados.
 * O back-end envia uma resposta para o front-end confirmando o sucesso ou reportando erros.
 
 
@@ -145,19 +146,37 @@ Exemplo | Fluxo em duas etapas (front-end e back-end), CADASTRO DE CLIENTE:
 Tendo em vista, que a aplicação com dados sensíveis, é necessários priorizar preoteção das informações dos usuários, garantindo assim, que tudo funcione corretamente.
 
 * **Autenticação:** O uso de JWT permite que a autenticação seja segura e escalável, pois não requer que o servidor mantenha sessões.
-* **Validação de Dados:** A validação no front-end melhora a experiência do usuário, mas a validação no back-end é crucial para evitar ataques. 
-* **Comunicação Segura:** Uso do protocolo HTTPS para proteger a comunicação entre o cliente e o servidor. Isso garante que os dados, como senhas e informações pessoais, sejam transmitidos de forma segura e não possam ser interceptados.
+* **Validação de Dados:** A validação no front-end melhora a experiência do usuário, mas a validação no back-end é crucial para evitar ataques.
 
 
 ## Implantação
 
-[Instruções para implantar a aplicação distribuída em um ambiente de produção.]
+**Hardware e Software**
 
-1. Defina os requisitos de hardware e software necessários para implantar a aplicação em um ambiente de produção.
-2. Escolha uma plataforma de hospedagem adequada, como um provedor de nuvem ou um servidor dedicado.
-3. Configure o ambiente de implantação, incluindo a instalação de dependências e configuração de variáveis de ambiente.
-4. Faça o deploy da aplicação no ambiente escolhido, seguindo as instruções específicas da plataforma de hospedagem.
-5. Realize testes para garantir que a aplicação esteja funcionando corretamente no ambiente de produção.
+**Back-end:**
+**Servidor:**
+* **Processador:** Intel Core i5 ou superior.
+* **Memória RAM:** 8GB ou mais (escalável conforme demanda).
+* **Armazenamento:** SSD de 500GB ou mais.
+
+**Front-end:**
+* **Dispositivos:** Smartphones e tablets com sistemas operacionais iOS e Android.
+* **Tecnologias:** React Native.
+
+
+**Plataforma de Hospedagem:**
+**Back-end:** 
+* **Servidor Dedicado:** Para maior controle e personalização.
+
+
+**Implantação:**
+**Back-end**
+* **Instalação:** Instalar Node.js, npm, banco de dados e servidor web.
+* **Configuração:** Configurar variáveis de ambiente, rotas, banco de dados e servidor web.
+
+**Front-end**
+* **Build:** Construir a aplicação para as plataformas iOS e Android.
+* **Configuração:** Configurar as chaves de API e URLs do backend.
 
 
 ## Testes
@@ -169,6 +188,134 @@ Tendo em vista, que a aplicação com dados sensíveis, é necessários prioriza
 3. Realize testes de integração para verificar a interação correta entre os componentes da aplicação.
 4. Execute testes de carga para avaliar o desempenho da aplicação sob carga significativa.
 5. Utilize ferramentas de teste adequadas, como frameworks de teste e ferramentas de automação de teste, para agilizar o processo de teste.
+
+**REQUISITOS FUNCIONAIS**
+
+**RF-001: PERMITIR QUE O PRESTADOR SE CADASTRE NO SISTEMA**
+**CT-01: Cadastrar um novo prestador com todos os dados válidos**
+•	Pré-condições: O prestador não deve estar cadastrado no sistema.
+•	Passos:
+1.	Acesse a página, clicar no botão CADASTRE-SE (localizado no campo superior à direita).
+2.	Preencha todos os campos obrigatórios com dados válidos (nome, CNPJ, telefone, endereço e senha).
+3.	Clique em “Salvar”.
+
+**Resultado esperado:** O prestador é cadastrado com sucesso e uma mensagem de confirmação é exibida.
+
+
+**RF-002: PERMITIR O GERENCIAMENTO DE CLIENTES**
+**CT-02: Cadastrar um novo cliente**
+•	Pré-condições: O prestador deve estar logado no sistema.
+•	Passos:
+1.	Acesse a área de Cadastro.
+2.	Clique em “CLIENTES”.
+3.	Preencha os dados obrigatórios (nome, telefone e e-mail).
+4.	Clique em “Salvar”.
+
+**Resultado esperado:** O cliente é adicionado com sucesso e aparece na lista de clientes.
+
+
+**RF-003: PERMITIR O GERENCIAMENTO DE SERVIÇOS**
+**CT-03: Cadastrar um novo serviço**
+•	Pré-condições: O usuário deve estar logado no sistema.
+•	Passos:
+1.	Acesse a área de Cadastro.
+2.	Clique em “SERVIÇOS”.
+3.	Preencha os dados obrigatórios (descrição, preço e duração).
+4.	Clique em “Salvar”.
+
+**Resultado esperado:** O serviço é adicionado com sucesso e aparece na lista de serviços.
+
+
+**RF-004: PERMITIR O GERENCIAMENTO DOS AGENDAMENTOS DOS PRESTADORES**
+**CT-04: Editar um agendamento existente**
+•	Pré-condições: Pelo menos um agendamento deve estar cadastrado.
+•	Passos:
+1.	Acesse a área de Agendamentos.
+2.	Clique no botão “Lista”.
+3.	Selecione o agendamento a ser editado.
+4.	Clique em “Editar”.
+5.	Alterar dados (exemplo: horário ou data).
+6.	Clique em “Salvar”.
+
+**Resultado esperado:** As alterações são salvas corretamente e o agendamento editado aparece com os novos dados.
+
+
+**RF-005: PERMITIR GERENCIAMENTO DAS TRANSAÇÕES FINANCEIRAS (RECEITAS E DESPESAS)**
+**CT-05: Excluir uma transação**
+•	Pré-condições: Pelo menos uma transação de receita deve estar cadastrada.
+•	Passos:
+1.	Acesse a área Financeiro.
+2.	Selecione a transação a ser excluída.
+3.	Clique em “Excluir”.
+4.	Confirme a exclusão.
+
+**Resultado esperado:** A transação é removida do sistema e não aparece mais na lista.
+
+
+**RF-006: PERMITIR QUE OS USUÁRIOS POSSAM EMITIR RELATÓRIOS**
+**CT-06: Emitir relatório de transações financeiras**
+•	Pré-condições: O usuário deve estar logado no sistema e devem existir transações financeiras cadastradas.
+•	Passos:
+1.	Acesse a área de Relatórios.
+2.	Selecione “Selecione o período".
+3.	Clique em "Emitir Relatório".
+
+**Resultado esperado:** O relatório de transações financeiras é gerado e exibido na tela.
+
+
+**REQUISITOS NÃO FUNCIONAIS**
+
+**RNF-001: Permitir a autenticação dos usuários (login e senha)**
+**CT-RNF01: Autenticar com credenciais válidas**
+•	Pré-condições: O usuário já deve estar cadastrado no sistema com credenciais válidas.
+•	Passos:
+1.	Acesse a página de login.
+2.	Insira o usuário (e-mail) e senha corretos.
+3.	Clique em “Entrar”.
+
+**Resultado esperado:** O usuário é redirecionado para a página inicial do sistema.
+
+
+**RNF-002: Oferecer uma interface intuitiva**
+**CT-RNF02: Validar a facilidade de navegação entre as páginas do sistema**
+•	Pré-condições: O usuário deve estar logado no sistema.
+•	Passos:
+1.	Navegue entre as seções principais do sistema.
+2.	Observe a resposta visual e tempo de navegação entre as páginas.
+
+**Resultado esperado:** A navegação entre as seções é intuitiva e sem dificuldades. O sistema carrega as páginas de maneira rápida e sem erros.
+
+
+**RNF-003: Desenvolver um sistema responsivo para acesso em dispositivos móveis**
+**CT-RNF03: Testar a responsividade em diferentes resoluções de tela**
+•	Pré-condições: O sistema deve ser acessado em diferentes resoluções de tela.
+•	Passos:
+1.	Acesse o Inspecionar no navegador.
+2.	Verifique os diferentes tipos de dispositivos através DIMENSIONS.
+3.	Navegue pelas páginas e observe o layout.
+
+**Resultado esperado:** O layout do sistema é ajustado corretamente, sem quebras de design ou problemas de visualização.
+
+
+**RNF-004: Preparar o sistema para suportar aumento no número de clientes, agendamentos e transações**
+**CT-RNF04: Testar o comportamento do sistema com uma carga de dados crescente**
+•	Pré-condições: O sistema deve ter um número razoável de clientes, agendamentos e transações (por exemplo, 1000 clientes e 1000 agendamentos).
+•	Passos:
+1.	Realize uma carga progressiva de dados, adicionando clientes, agendamentos e transações.
+2.	Após atingir a carga de 1000 dados, execute ações comuns (adicionar e editar).
+
+**Resultado esperado:** O sistema continua funcionando corretamente sem lentidão ou travamentos.
+
+
+**RNF-005: Adequar a aplicação perante as normas de proteção de dados**
+**RNF-006: Garantir a segurança dos dados pessoais e financeiros**
+**CT-RNF05: Testar se a senha do usuário é armazenada de forma segura**
+•	Pré-condições: O usuário deve ter uma conta no sistema.
+•	Passos:
+1.	Acesse o banco de dados ou utilize ferramentas de desenvolvedor para verificar o armazenamento de senhas.
+2.	Verifique se as senhas são armazenadas em formato de hash (não em texto simples).
+
+**Resultado esperado:** As senhas são armazenadas de forma segura utilizando um algoritmo de hash adequado (ex.: bcrypt, SHA-256).
 
 
 # Referências
