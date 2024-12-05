@@ -8,6 +8,7 @@ import pagInicial from './pagInicial';
 import OpcoesCadastro from './opcoesCadastros';
 import CadastroClientes from './Cadastroclientes';
 import ListaClientes from './Listaclientes';
+import Financeiro from './Financeiro';
 
 const Stack = createStackNavigator();
 
@@ -23,6 +24,7 @@ export default function AppNavigator() {
         <Stack.Screen name="OpcoesCadastro" component={OpcoesCadastro} />
         <Stack.Screen name="CadastroClientes" component={CadastroClientes}/>
         <Stack.Screen name="Listaclientes" component={ListaClientes}/>
+        <Stack.Screen name="Financeiro" component={Financeiro} />
       </Stack.Navigator>
     </>
   );
