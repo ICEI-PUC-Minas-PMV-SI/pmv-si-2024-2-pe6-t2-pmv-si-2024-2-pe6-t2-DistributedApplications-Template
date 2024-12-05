@@ -90,6 +90,16 @@ export default function Nbar() {
                     </TouchableOpacity>
                     <TouchableOpacity
                       style={styles.navItem}
+                      onPress={() => {
+                        closeOffcanvas();
+                        navigation.navigate('Financeiro');
+                      }}
+                    >
+                      <Text style={styles.navItemText}>Financeiro</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity
+                      style={styles.navItem}
                       onPress={handleLogout}
                     >
                       <Text style={styles.navItemText}>Sair</Text>
@@ -136,9 +146,9 @@ const styles = StyleSheet.create({
     elevation: 3,
     zIndex: 10,
     marginTop: 30,
-  }, 
+  },
   logo: {
-    width: 45, 
+    width: 45,
     height: 45,
   },
   brand: {

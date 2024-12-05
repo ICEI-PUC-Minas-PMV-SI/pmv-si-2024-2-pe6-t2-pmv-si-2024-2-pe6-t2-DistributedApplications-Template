@@ -26,8 +26,10 @@ export default function Login() {
       if (response.status === 200) {
         const { token, user } = response.data;
         await login(token, user.nome, user._id);
+        
 
         // Armazena o token no AsyncStorage
+        await AsyncStorage.setItem('@userCnpj', user.cnpj);
         await AsyncStorage.setItem('@userToken', token);
         await AsyncStorage.setItem('@userName', user.nome);
         await AsyncStorage.setItem('@userID', user._id);
