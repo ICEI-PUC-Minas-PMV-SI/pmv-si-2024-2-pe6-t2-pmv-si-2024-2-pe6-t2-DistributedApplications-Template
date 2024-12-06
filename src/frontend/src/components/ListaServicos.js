@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Table, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import api from "../services/api";
+import axios from 'axios';
 
 const ListaServicos = () => {
   const [servicos, setServicos] = useState([]);
+
   const navigate = useNavigate();
 
   const servicosViewStyles = {
@@ -45,12 +46,7 @@ const ListaServicos = () => {
   useEffect(() => {
     const fetchServicos = async () => {
       try {
-        const token = localStorage.getItem("authToken");
-        const response = await api.get("/servicos", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const response = await axios.get(`http://localhost:3000/servicos`);
         setServicos(response.data);
       } catch (error) {
         console.error("Erro ao buscar serviços:", error);
@@ -61,12 +57,7 @@ const ListaServicos = () => {
 
   const handleDelete = async (id) => {
     try {
-      const token = localStorage.getItem("authToken");
-      await api.delete(`/servicos/${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      await axios.delete(`http://localhost:3000/servicos/${id}`);
       setServicos(servicos.filter((servico) => servico._id !== id));
       alert("Serviço excluído com sucesso!");
     } catch (error) {
@@ -166,6 +157,11 @@ const ListaServicos = () => {
                   <Button
                     variant="danger"
                     onClick={() => handleDelete(servico._id)}
+                    style={{
+                      backgroundColor: '#d9534f',
+                      borderColor: '#d9534f',
+                      color: 'white' 
+                    }}
                   >
                     Excluir
                   </Button>
