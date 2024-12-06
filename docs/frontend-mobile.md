@@ -60,7 +60,35 @@ A interface web da Agenda Fácil é projetada para proporcionar uma experiência
 
 
 ### Wireframes
-[Inclua os wireframes das páginas principais da interface, mostrando a disposição dos elementos na página.]
+
+**Home**
+![Home](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Home%20(1).png)
+**Login**
+![Login](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Login%20(1).png)
+**Cadastro do Prestador**
+![Cadastro do Prestador](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cadastro%20-%20Prestador.png)
+**Página Inicial**
+![Pagina Inicial]()
+**Agendamento**
+![Agendamento](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Agendamento.png)
+**Agendamento | Calendário**
+![Calendario](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Agendamento%20-%20Calend%C3%A1rio.png)
+**Agendamento | Lista**
+![Lista](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Agendamento%20-%20Calend%C3%A1rio%20(1).png)
+**Cadastro**
+![Cadastro](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cadastro%20(1).png)
+**Clientes**
+![Clientes](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Cliente%20-%20Cadastro.png)
+**Serviços**
+![Serviços](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Servi%C3%A7os%20-%20Cadastro.png)
+**Lista | Clientes**
+![Lista](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Lista%20_%20Clientes%20e%20Servi%C3%A7os.png)
+**Financeiro**
+![Financeiro](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Financeiro.png)
+**Financeiro | Cadastro**
+![Cadastro](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Financeiro%20(1).png)
+**Relatório**
+![Relatorio](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-2-pe6-t2-g10-gestao-de-agenda-e-financas/blob/main/docs/img/Relat%C3%B3rio.png)
 
 
 ### Design Visual
@@ -163,11 +191,9 @@ Tendo em vista, que a aplicação com dados sensíveis, é necessários prioriza
 * **Dispositivos:** Smartphones e tablets com sistemas operacionais iOS e Android.
 * **Tecnologias:** React Native.
 
-
 **Plataforma de Hospedagem:**
 **Back-end:** 
 * **Servidor Dedicado:** Para maior controle e personalização.
-
 
 **Implantação:**
 **Back-end**
@@ -181,20 +207,13 @@ Tendo em vista, que a aplicação com dados sensíveis, é necessários prioriza
 
 ## Testes
 
-[Descreva a estratégia de teste, incluindo os tipos de teste a serem realizados (unitários, integração, carga, etc.) e as ferramentas a serem utilizadas.]
-
-1. Crie casos de teste para cobrir todos os requisitos funcionais e não funcionais da aplicação.
-2. Implemente testes unitários para testar unidades individuais de código, como funções e classes.
-3. Realize testes de integração para verificar a interação correta entre os componentes da aplicação.
-4. Execute testes de carga para avaliar o desempenho da aplicação sob carga significativa.
-5. Utilize ferramentas de teste adequadas, como frameworks de teste e ferramentas de automação de teste, para agilizar o processo de teste.
-
 **REQUISITOS FUNCIONAIS**
 
 **RF-001: PERMITIR QUE O PRESTADOR SE CADASTRE NO SISTEMA**
+
 **CT-01: Cadastrar um novo prestador com todos os dados válidos**
-•	Pré-condições: O prestador não deve estar cadastrado no sistema.
-•	Passos:
+* Pré-condições: O prestador não deve estar cadastrado no sistema.
+* Passos:
 1.	Acesse a página, clicar no botão CADASTRE-SE (localizado no campo superior à direita).
 2.	Preencha todos os campos obrigatórios com dados válidos (nome, CNPJ, telefone, endereço e senha).
 3.	Clique em “Salvar”.
@@ -203,9 +222,10 @@ Tendo em vista, que a aplicação com dados sensíveis, é necessários prioriza
 
 
 **RF-002: PERMITIR O GERENCIAMENTO DE CLIENTES**
+
 **CT-02: Cadastrar um novo cliente**
-•	Pré-condições: O prestador deve estar logado no sistema.
-•	Passos:
+* Pré-condições: O prestador deve estar logado no sistema.
+* Passos:
 1.	Acesse a área de Cadastro.
 2.	Clique em “CLIENTES”.
 3.	Preencha os dados obrigatórios (nome, telefone e e-mail).
@@ -215,9 +235,10 @@ Tendo em vista, que a aplicação com dados sensíveis, é necessários prioriza
 
 
 **RF-003: PERMITIR O GERENCIAMENTO DE SERVIÇOS**
+
 **CT-03: Cadastrar um novo serviço**
-•	Pré-condições: O usuário deve estar logado no sistema.
-•	Passos:
+* Pré-condições: O usuário deve estar logado no sistema.
+* Passos:
 1.	Acesse a área de Cadastro.
 2.	Clique em “SERVIÇOS”.
 3.	Preencha os dados obrigatórios (descrição, preço e duração).
@@ -227,9 +248,10 @@ Tendo em vista, que a aplicação com dados sensíveis, é necessários prioriza
 
 
 **RF-004: PERMITIR O GERENCIAMENTO DOS AGENDAMENTOS DOS PRESTADORES**
+
 **CT-04: Editar um agendamento existente**
-•	Pré-condições: Pelo menos um agendamento deve estar cadastrado.
-•	Passos:
+* Pré-condições: Pelo menos um agendamento deve estar cadastrado.
+* Passos:
 1.	Acesse a área de Agendamentos.
 2.	Clique no botão “Lista”.
 3.	Selecione o agendamento a ser editado.
@@ -241,9 +263,10 @@ Tendo em vista, que a aplicação com dados sensíveis, é necessários prioriza
 
 
 **RF-005: PERMITIR GERENCIAMENTO DAS TRANSAÇÕES FINANCEIRAS (RECEITAS E DESPESAS)**
+
 **CT-05: Excluir uma transação**
-•	Pré-condições: Pelo menos uma transação de receita deve estar cadastrada.
-•	Passos:
+* Pré-condições: Pelo menos uma transação de receita deve estar cadastrada.
+* Passos:
 1.	Acesse a área Financeiro.
 2.	Selecione a transação a ser excluída.
 3.	Clique em “Excluir”.
@@ -253,9 +276,10 @@ Tendo em vista, que a aplicação com dados sensíveis, é necessários prioriza
 
 
 **RF-006: PERMITIR QUE OS USUÁRIOS POSSAM EMITIR RELATÓRIOS**
+
 **CT-06: Emitir relatório de transações financeiras**
-•	Pré-condições: O usuário deve estar logado no sistema e devem existir transações financeiras cadastradas.
-•	Passos:
+* Pré-condições: O usuário deve estar logado no sistema e devem existir transações financeiras cadastradas.
+* Passos:
 1.	Acesse a área de Relatórios.
 2.	Selecione “Selecione o período".
 3.	Clique em "Emitir Relatório".
@@ -266,9 +290,10 @@ Tendo em vista, que a aplicação com dados sensíveis, é necessários prioriza
 **REQUISITOS NÃO FUNCIONAIS**
 
 **RNF-001: Permitir a autenticação dos usuários (login e senha)**
+
 **CT-RNF01: Autenticar com credenciais válidas**
-•	Pré-condições: O usuário já deve estar cadastrado no sistema com credenciais válidas.
-•	Passos:
+* Pré-condições: O usuário já deve estar cadastrado no sistema com credenciais válidas.
+* Passos:
 1.	Acesse a página de login.
 2.	Insira o usuário (e-mail) e senha corretos.
 3.	Clique em “Entrar”.
@@ -277,9 +302,10 @@ Tendo em vista, que a aplicação com dados sensíveis, é necessários prioriza
 
 
 **RNF-002: Oferecer uma interface intuitiva**
+
 **CT-RNF02: Validar a facilidade de navegação entre as páginas do sistema**
-•	Pré-condições: O usuário deve estar logado no sistema.
-•	Passos:
+* Pré-condições: O usuário deve estar logado no sistema.
+* Passos:
 1.	Navegue entre as seções principais do sistema.
 2.	Observe a resposta visual e tempo de navegação entre as páginas.
 
@@ -287,9 +313,10 @@ Tendo em vista, que a aplicação com dados sensíveis, é necessários prioriza
 
 
 **RNF-003: Desenvolver um sistema responsivo para acesso em dispositivos móveis**
+
 **CT-RNF03: Testar a responsividade em diferentes resoluções de tela**
-•	Pré-condições: O sistema deve ser acessado em diferentes resoluções de tela.
-•	Passos:
+* Pré-condições: O sistema deve ser acessado em diferentes resoluções de tela.
+* Passos:
 1.	Acesse o Inspecionar no navegador.
 2.	Verifique os diferentes tipos de dispositivos através DIMENSIONS.
 3.	Navegue pelas páginas e observe o layout.
@@ -298,20 +325,21 @@ Tendo em vista, que a aplicação com dados sensíveis, é necessários prioriza
 
 
 **RNF-004: Preparar o sistema para suportar aumento no número de clientes, agendamentos e transações**
+
 **CT-RNF04: Testar o comportamento do sistema com uma carga de dados crescente**
-•	Pré-condições: O sistema deve ter um número razoável de clientes, agendamentos e transações (por exemplo, 1000 clientes e 1000 agendamentos).
-•	Passos:
+* Pré-condições: O sistema deve ter um número razoável de clientes, agendamentos e transações (por exemplo, 1000 clientes e 1000 agendamentos).
+* Passos:
 1.	Realize uma carga progressiva de dados, adicionando clientes, agendamentos e transações.
 2.	Após atingir a carga de 1000 dados, execute ações comuns (adicionar e editar).
 
 **Resultado esperado:** O sistema continua funcionando corretamente sem lentidão ou travamentos.
 
 
-**RNF-005: Adequar a aplicação perante as normas de proteção de dados**
-**RNF-006: Garantir a segurança dos dados pessoais e financeiros**
+**RNF-005: Adequar a aplicação perante as normas de proteção de dados** | **RNF-006: Garantir a segurança dos dados pessoais e financeiros**
+
 **CT-RNF05: Testar se a senha do usuário é armazenada de forma segura**
-•	Pré-condições: O usuário deve ter uma conta no sistema.
-•	Passos:
+* Pré-condições: O usuário deve ter uma conta no sistema.
+* Passos:
 1.	Acesse o banco de dados ou utilize ferramentas de desenvolvedor para verificar o armazenamento de senhas.
 2.	Verifique se as senhas são armazenadas em formato de hash (não em texto simples).
 
