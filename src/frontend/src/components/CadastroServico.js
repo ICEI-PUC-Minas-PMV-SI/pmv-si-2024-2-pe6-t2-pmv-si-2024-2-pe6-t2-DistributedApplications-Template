@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Row from 'react-bootstrap/Row';
@@ -8,11 +8,11 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 const CadastroServico = () => {
   const location = useLocation();
-  const servico = location.state?.servico || {};
-  
+  const servico = useMemo(() => location.state?.servico || {}, [location.state?.servico]);
+
   const navigate = useNavigate();
 
-
+  
   const [formServico, setFormServico] = useState({
     descricao: "",
     preco: "",
