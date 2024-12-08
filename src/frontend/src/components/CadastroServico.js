@@ -10,18 +10,24 @@ const CadastroServico = () => {
   const location = useLocation();
   const servico = useMemo(() => location.state?.servico || {}, [location.state?.servico]);
 
-  const navigate = useNavigate();
-
-  
   const [formServico, setFormServico] = useState({
     descricao: "",
     preco: "",
     duracao: "",
   });
+  
+  const navigate = useNavigate();
+  const paraListaServico = () => {
+    navigate("/listaServicos");
+  };
+  
+  const paraPaginaCadastroInicial = () => {
+    navigate("/opcoes");
+  }
 
   const [error, setError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
-  
+
   useEffect(() => {
     if (servico._id) {
       setFormServico({
@@ -33,33 +39,35 @@ const CadastroServico = () => {
   }, [servico]);
 
   const alteraCadastroServico = (e) => {
+    const { name, value } = e.target;
+    let formattedValue = value;
+    if (name === 'preco') {
+      formattedValue = value.replace(/[^\d,]/g, '');
+    }
     setFormServico({
       ...formServico,
-      [e.target.name]: e.target.value,
+      [name]: formattedValue,
     });
   };
 
-  const paraListaServico = () => {
-    navigate("/listaServicos");
-  };
-  
-  const paraPaginaCadastroInicial = () => {
-    navigate("/opcoes");
-  }
 
   const enviaCadastroServico = async (e) => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('authToken');
+      const data = {
+        ...formServico,
+        preco: formServico.preco.replace(',', '.')
+      };
       if (servico._id) {
-        await api.put(`http://localhost:3000/servicos/${servico._id}`, formServico, {
+        await api.put(`http://localhost:3000/servicos/${servico._id}`, data, {
           headers: {
             Authorization: `Bearer ${token}`
           },
         });
         setSuccessMessage("Serviço atualizado com sucesso!");
       } else {
-        await api.post("http://localhost:3000/servicos", formServico, {
+        await api.post("http://localhost:3000/servicos", data, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
