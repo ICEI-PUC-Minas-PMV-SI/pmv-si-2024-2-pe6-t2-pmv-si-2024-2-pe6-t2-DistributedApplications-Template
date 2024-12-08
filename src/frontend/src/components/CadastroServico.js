@@ -29,24 +29,35 @@ const CadastroServico = () => {
   const [successMessage, setSuccessMessage] = useState("");
 
   useEffect(() => {
-    if (servico._id) {
-      setFormServico({
-        descricao: servico.descricao || "",
-        preco: servico.preco || "",
-        duracao: servico.duracao || "",
-      });
-    }
-  }, [servico]);
+    const fetchServico = async () => {
+      try {
+        if (servico._id) {
+          const token = localStorage.getItem('authToken');
+          const response = await api.get(`/servicos/${servico._id}`, {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
+          });
+          setFormServico({
+            descricao: response.data.descricao,
+            preco: response.data.preco,
+            duracao: response.data.duracao
+          });
+        }
+      } catch (error) {
+        setError("Falha ao buscar serviço:", error.message);
+        console.error("Erro ao buscar o serviço:", error);
+      }
+    };
+  
+    fetchServico();
+  }, [servico._id]);
 
+  
   const alteraCadastroServico = (e) => {
-    const { name, value } = e.target;
-    let formattedValue = value;
-    if (name === 'preco') {
-      formattedValue = value.replace(/[^\d,]/g, '');
-    }
     setFormServico({
       ...formServico,
-      [name]: formattedValue,
+      [e.target.name]: e.target.value,
     });
   };
 
