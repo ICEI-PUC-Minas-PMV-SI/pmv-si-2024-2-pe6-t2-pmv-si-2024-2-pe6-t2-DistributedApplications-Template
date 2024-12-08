@@ -19,10 +19,10 @@ router.put('/prestador/:id', prestadorController.updatePrestador);
 // Serviços
 router.post('/servicos', authMiddleware, servicoController.createServico);
 router.get('/servicos', authMiddleware, servicoController.getAllServicos);
-router.get('/servicos/:id', authMiddleware, servicoController.getServicoById);
+//router.get('/servicos/:id', authMiddleware, servicoController.getServicoById);
 router.put('/servicos/:id', authMiddleware, servicoController.updateServico);
 router.delete('/servicos/:id', authMiddleware, servicoController.deleteServico);
-//router.get('/servicos/prestador/:id', authMiddleware, servicoController.getAllServicosByPrestador);
+router.get('/servicos/prestador/:id', authMiddleware, servicoController.getAllServicosByPrestador);
 
 //Agendamentos
 router.get('/agendamentos', authMiddleware, agendamentosController.getAll);
