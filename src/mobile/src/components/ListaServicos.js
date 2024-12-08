@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import api from '../services/api';
+import { createApiWithToken } from '../services/api';
+import { useAuth } from './AuthContext';
+
+
 
 const ListaServicos = ({ navigation }) => {
   const [servicos, setServicos] = useState([]);
+  const { userToken } = useAuth();
+  const api = createApiWithToken(userToken);
+
 
   useEffect(() => {
     const fetchServicos = async () => {
@@ -16,7 +23,7 @@ const ListaServicos = ({ navigation }) => {
       }
     };
     fetchServicos();
-  }, []);
+  }, [api]);
 
   const handleDelete = async (id) => {
     try {
