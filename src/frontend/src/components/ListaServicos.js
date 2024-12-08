@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Table, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import axios from 'axios';
+import api from "../services/api";
 
 const ListaServicos = () => {
   const [servicos, setServicos] = useState([]);
-
   const navigate = useNavigate();
 
   const servicosViewStyles = {
@@ -46,7 +45,12 @@ const ListaServicos = () => {
   useEffect(() => {
     const fetchServicos = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/servicos`);
+        const token = localStorage.getItem("authToken");
+        const response = await api.get("/servicos", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
         setServicos(response.data);
       } catch (error) {
         console.error("Erro ao buscar serviços:", error);
@@ -57,7 +61,12 @@ const ListaServicos = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/servicos/${id}`);
+      const token = localStorage.getItem("authToken");
+      await api.delete(`/servicos/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       setServicos(servicos.filter((servico) => servico._id !== id));
       alert("Serviço excluído com sucesso!");
     } catch (error) {
