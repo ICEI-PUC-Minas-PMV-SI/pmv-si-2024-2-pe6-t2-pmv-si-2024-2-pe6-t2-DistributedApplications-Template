@@ -1,0 +1,48 @@
+//Testes Rotas Prestadores de Serviços
+
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  
+    "email":"h@gmail.com",
+    "password": "123",
+    
+
+
+}
+
+###
+
+PUT http://localhost:3000/prestador/66f976be3ee201353402f7d9
+Content-Type: application/json
+
+{
+    "nome": "Thalita Oliveira",
+    "email":"teste@teste.com",
+    "cnpj": "000000000000",
+    "telefone": "31999999999",
+    "endereco": "Rua A, Bairro B, Cidade C",
+    "password": "123456"
+
+}
+
+###
+
+DELETE http://localhost:3000/prestador/66f97b34c0d7960a53bdc32c
+
+###
+GET http://localhost:3000/prestador/
+
+###
+POST  http://localhost:3000/servicos
+Content-Type: application/json
+Authorization: Bearer <1ad1f0e45b35a70a11472f99aa0eb129f54aa2ba3f76b394ea7ee7929e3d84b5cfa17208971204c323b979e8>
+
+
+{
+    "descricao":"teste@gmail.com",
+    "preco": "12",
+    "duracao": "23"
+
+}

@@ -1,84 +1,69 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+Este trabalho objetiva a criação de um sistema distribuído, que permite o prestador de serviços gerenciar sua agenda de clientes, como também suas finanças, para a disciplina de Projeto: Arquitetura de Sistemas Distribuídos.
+No cotidiano os prestadores de serviços enfrentam problemas para gerenciar os agendamentos, o que ocasiona maior tempo de resposta aos clientes. Ainda, há o risco de perda das anotações físicas. 
+A Agenda Fácil pretende solucionar esses problemas substituindo as agendas físicas por uma alternativa online, onde os prestadores poderão gerir os atendimentos e as receitas obtidas nos atendimentos. A aplicação pretende facilitar as relações entre os clientes e os prestadores de serviços.
+
 
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
+Prestadores de serviços frequentemente enfrentam dificuldades na gestão eficiente de suas agendas e finanças, o que pode levar a problemas como a sobrecarga de compromissos, dificuldades no acompanhamento dos pagamentos, e falta de controle sobre despesas adicionais. A ausência de uma solução integrada que combine funcionalidades de agendamento com controle financeiro resulta em uma administração fragmentada e ineficaz. Sem um sistema centralizado, esses profissionais tendem a usar métodos manuais e desconexos, como planilhas e anotações físicas, o que pode resultar em erros, falta de precisão e perda de tempo. A necessidade de um software que ofereça uma abordagem integrada para o gerenciamento de compromissos e finanças é evidente para melhorar a eficiência operacional e o controle financeiro desses prestadores.
 
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
-
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+**Objetivo Geral**
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+Desenvolver um software de gestão integrada que permita aos prestadores de serviços gerenciarem eficientemente sua agenda e suas finanças, centralizando o controle de compromissos e transações financeiras em uma única plataforma para melhorar a organização e a administração de suas atividades profissionais.
+
+**Objetivos Específicos**
+
+* **Criar um módulo de agendamento de compromissos:**
+Desenvolver uma funcionalidade que permita aos usuários registrem, visualizem e gerenciem compromissos futuros.
+* **Implementar um Módulo de Controle Financeiro:**
+Criar funcionalidades que possibilitem o registro e acompanhamento de receitas e despesas relacionadas aos serviços prestados.
+* **Desenvolver Ferramentas de Relatórios Financeiros:**
+Implementar recursos que gerem relatórios e gráficos sobre a situação financeira, ajudando os usuários a visualizarem e analisarem suas finanças e o desempenho dos serviços prestados.
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
+O mercado nacional oferece diversas soluções em matéria de sistemas de gestão empresarial, conhecidos como ERP (Enterprise Resource Planning). Segundo o site da Mobills (2024), podemos apresentar, como exemplo, o TOTVS Protheus e o Conta Azul, entre outros. Em comum, todos estes sistemas estão voltados para pequenos, médios e grandes negócios.
 
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
+Observando-se este cenário, foi possível identificar a ausência de software voltado para o trabalhador autônomo, que carece de ferramenta de apresentação mais simplificada com leque de funcionalidades mais reduzidos, quando comparados às alternativas mencionadas anteriormente, mas que forneça funcionalidades que estejam na medida de suas necessidades operacionais.
 
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
 
 ## Público-Alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações
-hierárquicas, etc.
+Profissionais de natureza autônoma, com nível educacional variado, que não desejam investir em software sofisticado para gestão de agendamentos e para gestão financeira de seus serviços e que, portanto, buscam solução simplificada que permita, via web ou mobile, acompanhar os gastos com insumos, os valores recebidos e a receber, os compromissos com clientes, e gerar relatórios com dados de interesse para seu negócio.
 
-Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
-
-> **Links Úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
 
 # Especificações do Projeto
 
 ## Requisitos
 
-As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto. Para determinar a prioridade de requisitos, aplicar uma técnica de priorização de requisitos e detalhar como a técnica foi aplicada.
-
 ### Requisitos Funcionais
 
-|ID    | Descrição do Requisito  | Prioridade |
-|------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+| ID    | Descrição do Requisito                                        | Prioridade |
+|-------|---------------------------------------------------------------|------------|
+| RF-001 | Permitir que o prestador se cadastre no sistema | ALTA       |
+| RF-002 | Permitir o gerenciamento de clientes | ALTA |
+| RF-003 | Permitir o gerenciamento de serviços | MÉDIA |
+| RF-004 | Permitir o gerenciamento dos agendamentos dos prestadores | MÉDIA |
+| RF-005 |Permitir gerenciamento das transações financeiras (receitas e despesas) | ALTA |
+| RF-006 | Permitir que os usuários possam emitir relatórios | ALTA       |
+
 
 ### Requisitos não Funcionais
 
-|ID     | Descrição do Requisito  |Prioridade |
-|-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
-|RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+| ID    | Descrição do Requisito                                      | Prioridade |
+|-------|-------------------------------------------------------------|------------|
+| RNF-001 | Permitir a autenticação dos usuários (login e senha) | ALTA  |
+| RNF-002 | Oferecer uma interface intuitiva | MÉDIA |
+| RNF-003 | Desenvolver um sistema responsivo para acesso em dispositivos móveis | ALTA |
+| RNF-004 | Preparar o sistema para suportar aumento no número de clientes, agendamentos e transações | ALTA |
+| RNF-005 | Adequar a aplicação perante as normas de proteção de dados | ALTA |
+| RNF-006 | Garantir a segurança dos dados pessoais e financeiros | ALTA |
 
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
-
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
 
 ## Restrições
 
@@ -86,39 +71,52 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
-|01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
+|01| Limitação de tempo: o sistema possui um prazo determinado para cada entrega |
+|02| Limitação orçamentária: restringindo a escolha de tecnologias por se tratar de projeto acadêmico |
 
-Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
-
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
 
 # Catálogo de Serviços
 
-Descreva aqui todos os serviços que serão disponibilizados pelo seu projeto, detalhando suas características e funcionalidades.
+•	**Gerenciar os clientes:** o módulo de gerenciamento de clientes oferece uma solução para a administração dos dados dos clientes/usuários. Com ele, é possível realizar o cadastro, fazer edições nas informações existentes e inativar registros quando necessário. Isso garante que todos os dados estejam sempre atualizados e organizados, facilitando a comunicação e o atendimento personalizado.
+
+•	**Gerenciar dos serviços prestados:** permite o gerenciamento eficiente dos serviços oferecidos pela empresa. É possível cadastrar novos serviços, editar informações de serviços existentes e inativar aqueles que não estão mais disponíveis. Além disso, o sistema permite o registro dos valores cobrados por cada serviço, proporcionando um controle das finanças.
+
+•	**Gerenciar os agendamentos:** a funcionalidade de gerenciamento de agendamentos assegura que todos os serviços sejam programados e administrados de maneira eficaz. Os usuários podem incluir novos agendamentos, editar os existentes e cancelar aqueles que não são mais necessários. Isso ajuda a manter a agenda dos prestadores de serviços organizada e evita conflitos ou sobreposições de horários.
+
+•	**Gestão financeira:** oferece uma maneira prática para registrar e acompanhar as despesas fixas e variáveis. Os usuários e prestadores de serviços podem registrar todas as suas despesas, o que facilita o controle financeiro e a análise dos custos operacionais. 
+
+•	**Emissão de relatórios:** a funcionalidade de emissão de relatórios detalhados com base em períodos específicos, como diários, mensais ou anuais. Os usuários podem criar relatórios financeiros para acompanhar o desempenho econômico da empresa e relatórios de lucro presumido para entender melhor a rentabilidade dos serviços prestados.
+
 
 # Arquitetura da Solução
 
-Definição de como o software é estruturado em termos dos componentes que fazem parte da solução e do ambiente de hospedagem da aplicação.
-
-![arq](https://github.com/user-attachments/assets/b9402e05-8445-47c3-9d47-f11696e38a3d)
+![Arquitetura da Solução - Agenda Fácil](img/arquitetura-sistema)
 
 
 ## Tecnologias Utilizadas
 
-Descreva aqui qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
-
-Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
+* **Back-End:** utilizaremos JavaScript com Node.js e o framework Express, que oferecem um ambiente de execução leve e escalável para construir APIs e gerenciar a lógica do servidor. 
+* **Front-End:** optamos por React, uma biblioteca JavaScript que permite criar interfaces de usuário dinâmicas e responsivas com eficiência. 
+* **Aplicações móveis:** empregamos React Native junto com a biblioteca Expo, que simplifica a criação e o teste de aplicativos para iOS e Android, promovendo uma experiência de desenvolvimento ágil e integrada.
 
 ## Hospedagem
 
-Explique como a hospedagem e o lançamento da plataforma foi feita.
+A hospedagem e o lançamento da plataforma serão realizados na Azure, utilizando os serviços oferecidos pela Microsoft para garantir escalabilidade, segurança e disponibilidade.
 
-> **Links Úteis**:
->
-> - [Website com GitHub Pages](https://pages.github.com/)
-> - [Programação colaborativa com Repl.it](https://repl.it/)
-> - [Getting Started with Heroku](https://devcenter.heroku.com/start)
-> - [Publicando Seu Site No Heroku](http://pythonclub.com.br/publicando-seu-hello-world-no-heroku.html)
+Etapas do processo:
+
+**Preparação do Ambiente:**
+* Criaremos uma conta (estudante) na Azure e configuraremos os recursos necessários, como máquinas virtuais, banco de dados e redes virtuais.
+* Configuraremos a segurança do ambiente.
+
+**Configuração do Aplicativo:**
+* Implementaremos o código da plataforma usando o Azure DevOps para o controle de versões e pipelines de CI/CD (Integração Contínua/Entrega Contínua).
+* Configuraremos os serviços de Aplicações Web no Azure (Azure App Services) para hospedar a aplicação, garantindo que ela esteja pronta para escalar conforme a demanda.
+
+**Banco de Dados:**
+* Utilizaremos o banco de dados MongoDB para armazenar os dados, garantindo backups automáticos, alta disponibilidade e recuperação em caso de falhas.
+* Otimizamos o desempenho do banco de dados com base nos requisitos da aplicação.
+
+**Lançamento:**
+* Realizaremos testes finais no ambiente de staging antes de mover para produção.
+* Executamos o lançamento da plataforma de forma controlada.

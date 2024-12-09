@@ -1,0 +1,19 @@
+.nav-button {
+    width: auto; /* Largura padrão */
+    margin-right: 10px; /* Ajuste o valor conforme necessário */
+
+  }
+  
+  /* Estilo para telas menores (navbar recolhida) */
+  @media (max-width: 992px) { /* Largura de tela para navbar recolhida */
+    .nav-button {
+      width: 80%; /* Ajuste a largura conforme necessário (por exemplo, 80%) */
+      margin: 5px 10% auto; /* Centraliza e adiciona espaço vertical entre os botões */
+      display: block; /* Faz com que os botões sejam exibidos em blocos */
+     
+    }
+  }
+  .nav-button:last-child {
+    margin-right: 0; /* Remove a margem à direita do último botão */
+  }
+  

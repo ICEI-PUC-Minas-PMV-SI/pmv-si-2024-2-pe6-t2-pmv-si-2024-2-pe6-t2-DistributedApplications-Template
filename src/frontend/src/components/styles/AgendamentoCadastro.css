@@ -1,0 +1,40 @@
+.title {
+    text-align: center;
+    color: #7E5A9B;
+    font-size: 58px;
+    margin-bottom: 20px;
+  }
+
+  .svg-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+  }
+
+  .svg-button {
+    padding: 0;
+    border: none;
+  }
+  
+  .input {
+    border: 3px solid #BDBDBD;
+    border-radius: 8px;
+    width: 585px;
+  }
+  
+  .form-style {
+    background-color: #F5F5F5;
+    border-radius: 8px;
+    border: 3px solid #BDBDBD;
+    color: #7E5A9B;
+    font-size: 24px;
+    padding: 20px;
+  }
+  
+  .btn-success svg,
+  .btn-danger svg {
+    height: 24px;
+    width: 24px;
+    fill: #FFFFFF;
+  }
+  
